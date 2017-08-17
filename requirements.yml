@@ -1,0 +1,73 @@
+---
+
+- src: https://github.com/escalate/ansible-openvpn-network-manager.git
+  version: master
+  name: vpn
+
+- src: https://github.com/escalate/ansible-atom.git
+  version: master
+  name: atom
+
+- src: https://github.com/escalate/ansible-wifi-network-manager.git
+  version: master
+  name: wifi
+
+- src: https://github.com/escalate/ansible-timezone.git
+  version: master
+  name: timezone
+
+- src: https://github.com/escalate/ansible-vagrant.git
+  version: master
+  name: vagrant
+
+- src: https://github.com/escalate/ansible-virtualbox.git
+  version: master
+  name: virtualbox
+
+- src: https://github.com/escalate/ansible-gsettings.git
+  version: master
+  name: gsettings
+
+- src: https://github.com/escalate/ansible-google-chrome.git
+  version: master
+  name: chrome
+
+- src: https://github.com/escalate/ansible-apt.git
+  version: master
+  name: apt
+
+- src: https://github.com/escalate/ansible-oracle-java.git
+  version: master
+  name: java
+
+- src: https://github.com/escalate/ansible-keeweb.git
+  version: master
+  name: keeweb
+
+- src: https://github.com/escalate/ansible-guest-login.git
+  version: master
+  name: guest_login
+
+- src: https://github.com/escalate/ansible-homemaker.git
+  version: master
+  name: homemaker
+
+- src: https://github.com/escalate/ansible-adapta-gtk-theme.git
+  version: master
+  name: adapta
+
+- src: https://github.com/escalate/ansible-paper-theme.git
+  version: master
+  name: paper
+
+- src: https://github.com/rvm/rvm1-ansible.git
+  version: 72552c313965c1c36361a56fd89d281c8ab6986b
+  name: rvm
+
+- src: https://github.com/angstwad/docker.ubuntu.git
+  version: aea9095b7a36e0e08c8a1318297717619ffb87a1
+  name: docker
+
+- src: https://github.com/suzuki-shunsuke/ansible-pyenv.git
+  version: 7099aa5f7e6c5736019cecd31fa87d63ca29048e
+  name: pyenv

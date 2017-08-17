@@ -1,0 +1,23 @@
+---
+- hosts: all
+  vars_files:
+    - encrypted_vars.yml
+  roles:
+    - apt
+    - timezone
+    - gsettings
+    - guest_login
+    - homemaker
+    - atom
+    - keeweb
+    - virtualbox
+    - wifi
+    - java
+    - vpn
+    - vagrant
+    - chrome
+    - adapta
+    - paper
+    - { role: rvm, tags: rvm }
+    - { role: docker, tags: docker }
+    - { role: pyenv, tags: pyenv }

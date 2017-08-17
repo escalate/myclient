@@ -1,0 +1,7 @@
+*~
+*.swp
+*.retry
+Makefile
+encrypted_vars.yml
+pass.sh
+roles/
