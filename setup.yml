@@ -3,21 +3,21 @@
   vars_files:
     - encrypted_vars.yml
   roles:
-    - apt
-    - timezone
-    - gsettings
-    - guest_login
-    - homemaker
-    - atom
-    - keeweb
-    - virtualbox
-    - wifi
-    - java
-    - vpn
-    - vagrant
-    - chrome
-    - adapta
-    - paper
+    - { role: apt }
+    - { role: timezone }
+    - { role: gsettings }
+    - { role: guest_login }
+    - { role: homemaker }
+    - { role: atom }
+    - { role: keeweb }
+    - { role: virtualbox }
+    - { role: wifi }
+    - { role: java }
+    - { role: vpn }
+    - { role: vagrant }
+    - { role: chrome }
+    - { role: adapta }
+    - { role: paper }
     - { role: rvm, tags: rvm }
     - { role: docker, tags: docker }
     - { role: pyenv, tags: pyenv }
