@@ -21,3 +21,4 @@
     - { role: rvm, tags: rvm }
     - { role: docker, tags: docker }
     - { role: pyenv, tags: pyenv }
+    - { role: adr_tools }

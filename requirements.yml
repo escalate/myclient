@@ -60,6 +60,10 @@
   version: master
   name: paper
 
+- src: https://github.com/escalate/ansible-adr-tools.git
+  version: master
+  name: adr_tools
+
 - src: https://github.com/rvm/rvm1-ansible.git
   version: 72552c313965c1c36361a56fd89d281c8ab6986b
   name: rvm
