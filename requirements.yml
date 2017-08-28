@@ -75,3 +75,7 @@
 - src: https://github.com/suzuki-shunsuke/ansible-pyenv.git
   version: 7099aa5f7e6c5736019cecd31fa87d63ca29048e
   name: pyenv
+
+- src: https://github.com/suzuki-shunsuke/ansible-git-ubuntu.git
+  version: 3049434d74769abd7f01df5fc9033c443d9d5114
+  name: git
