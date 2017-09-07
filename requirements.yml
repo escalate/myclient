@@ -73,7 +73,7 @@
   name: docker
 
 - src: https://github.com/suzuki-shunsuke/ansible-pyenv.git
-  version: 7099aa5f7e6c5736019cecd31fa87d63ca29048e
+  version: e9ace94dd361039e530bf8139cb67761ba7a9cce
   name: pyenv
 
 - src: https://github.com/suzuki-shunsuke/ansible-git-ubuntu.git
