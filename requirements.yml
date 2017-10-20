@@ -65,7 +65,7 @@
   name: adr_tools
 
 - src: https://github.com/rvm/rvm1-ansible.git
-  version: 72552c313965c1c36361a56fd89d281c8ab6986b
+  version: 2f12dc279cf726858e58a1ed41e8a373da46a629
   name: rvm
 
 - src: https://github.com/angstwad/docker.ubuntu.git
