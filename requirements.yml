@@ -69,7 +69,7 @@
   name: rvm
 
 - src: https://github.com/angstwad/docker.ubuntu.git
-  version: 8f05bd16929ac7d26d6cd08ef4a5b44811a5dd7d
+  version: 82295b90d5d2877741295382cf6016a6cdc50269
   name: docker
 
 - src: https://github.com/suzuki-shunsuke/ansible-pyenv.git
