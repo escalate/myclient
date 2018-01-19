@@ -17,6 +17,7 @@
     - { role: vpn }
     - { role: vagrant }
     - { role: chrome }
+    - { role: gnome_shell }
     - { role: adapta }
     - { role: paper }
     - { role: rvm, tags: rvm }

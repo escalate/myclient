@@ -52,6 +52,10 @@
   version: master
   name: homemaker
 
+- src: https://github.com/escalate/ansible-gnome-shell-desktop.git
+  version: master
+  name: gnome_shell
+
 - src: https://github.com/escalate/ansible-adapta-gtk-theme.git
   version: master
   name: adapta
