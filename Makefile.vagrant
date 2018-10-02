@@ -1,0 +1,15 @@
+.PHONY: install
+install: update
+	apt-get install --yes vagrant
+
+.PHONY: update
+update: key
+	apt-get update
+
+.PHONY: key
+key: repository
+	apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-key AD319E0F7CFFA38B4D9F6E55CE3F3DE92099F7A4
+
+.PHONY: repository
+repository:
+	echo "deb https://vagrant-deb.linestarve.com/ any main" > /etc/apt/sources.list.d/hashicorp_vagrant.list
