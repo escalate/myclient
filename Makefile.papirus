@@ -1,6 +1,6 @@
 .PHONY: install
 install: update
-	apt-get install -y papirus-icon-theme
+	apt-get install --yes papirus-icon-theme
 
 .PHONY: update
 update: repository
@@ -8,4 +8,4 @@ update: repository
 
 .PHONY: repository
 repository:
-	add-apt-repository -y ppa:papirus/papirus
+	add-apt-repository --yes ppa:papirus/papirus

@@ -1,7 +1,7 @@
 .PHONY: bootstrap
 bootstrap:
-	$(MAKE) -f Makefile.pkg_install
-	$(MAKE) -f Makefile.pkg_erase
-	$(MAKE) -f Makefile.adapta
-	$(MAKE) -f Makefile.chrome
-	$(MAKE) -f Makefile.papirus
+	$(MAKE) --file Makefile.pkg_install
+	$(MAKE) --file Makefile.pkg_erase
+	$(MAKE) --file Makefile.adapta
+	$(MAKE) --file Makefile.chrome
+	$(MAKE) --file Makefile.papirus

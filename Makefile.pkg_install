@@ -20,7 +20,7 @@ packages := ${common} ${browser} ${messaging} ${office} ${editor} ${python_dev} 
 
 .PHONY: install
 install: update
-	apt-get install -y $(packages)
+	apt-get install --yes $(packages)
 
 .PHONY: update
 update:

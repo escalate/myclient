@@ -2,4 +2,4 @@ packages = nano
 
 .PHONY: erase
 erase:
-	apt-get remove -y $(packages)
+	apt-get remove --yes $(packages)

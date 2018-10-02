@@ -1,6 +1,6 @@
 .PHONY: install
 install: update
-	apt-get install -y google-chrome-stable
+	apt-get install --yes google-chrome-stable
 
 .PHONY: update
 update: repository
