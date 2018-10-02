@@ -1,0 +1,5 @@
+plugins = vagrant-hostmanager vagrant-proxyconf vagrant-vbguest
+
+.PHONY: install
+install:
+	vagrant plugin install $(plugins)
