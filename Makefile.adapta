@@ -1,0 +1,11 @@
+.PHONY: install
+install: update
+	apt-get install -y adapta-gtk-theme adapta-backgrounds
+
+.PHONY: update
+update: repository
+	apt-get update
+
+.PHONY: repository
+repository:
+	add-apt-repository -y ppa:tista/adapta
