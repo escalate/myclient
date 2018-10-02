@@ -1,2 +1,3 @@
-# myclient
-Central place to manage my client setup with ansible
+# My Client
+
+... is managed with make
