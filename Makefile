@@ -1,5 +1,6 @@
 .PHONY: root
 root:
+	$(MAKE) --file Makefile.timezone
 	$(MAKE) --file Makefile.pkg_install
 	$(MAKE) --file Makefile.pkg_erase
 	$(MAKE) --file Makefile.adapta
