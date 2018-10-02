@@ -7,6 +7,7 @@ root:
 	$(MAKE) --file Makefile.chrome
 	$(MAKE) --file Makefile.keeweb
 	$(MAKE) --file Makefile.papirus
+	$(MAKE) --file Makefile.virtualbox
 	$(MAKE) --file Makefile.vagrant
 
 .PHONY: user

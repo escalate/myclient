@@ -1,0 +1,15 @@
+.PHONY: vboxconfig
+vboxconfig: install
+	/sbin/vboxconfig
+
+.PHONY: install
+install: update
+	apt-get install --yes virtualbox-5.2 dkms
+
+.PHONY: update
+update: repository
+	apt-get update
+
+.PHONY: repository
+repository:
+	echo "deb http://download.virtualbox.org/virtualbox/debian bionic contrib" > /etc/apt/sources.list.d/oracle_virtualbox.list
