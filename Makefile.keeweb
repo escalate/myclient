@@ -1,0 +1,13 @@
+latest_version := $(shell curl --silent "https://api.github.com/repos/keeweb/keeweb/releases/latest" | jq --raw-output '.assets[] | select(.name | test(".*.x64.deb")).browser_download_url')
+
+.PHONY: install
+install: download
+	apt-get install --yes /tmp/KeeWeb*.deb
+
+.PHONY: download
+download: clean
+	wget --quiet --no-clobber --directory-prefix /tmp --content-disposition "$(latest_version)"
+
+.PHONY: clean
+clean:
+	rm --force /tmp/KeeWeb*.deb
