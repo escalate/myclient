@@ -6,6 +6,7 @@ bootstrap:
 	$(MAKE) --file Makefile.adapta
 	$(MAKE) --file Makefile.chrome
 	$(MAKE) --file Makefile.git
+	$(MAKE) --file Makefile.java
 	$(MAKE) --file Makefile.keeweb
 	$(MAKE) --file Makefile.papirus
 	$(MAKE) --file Makefile.virtualbox
