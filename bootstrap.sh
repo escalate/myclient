@@ -11,5 +11,4 @@ echo "Clone myclient repository"
 git clone https://github.com/escalate/myclient.git "${HOME}/myclient"
 
 cd "${HOME}/myclient"
-sudo make root
-make user
+make bootstrap
