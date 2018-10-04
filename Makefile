@@ -9,5 +9,6 @@ bootstrap:
 	sudo $(MAKE) --file Makefile.keeweb
 	sudo $(MAKE) --file Makefile.papirus
 	sudo $(MAKE) --file Makefile.virtualbox
+	$(MAKE) --file Makefile.virtualbox_user
 	sudo $(MAKE) --file Makefile.vagrant
 	$(MAKE) --file Makefile.vagrant_plugins
