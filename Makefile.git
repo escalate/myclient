@@ -1,0 +1,11 @@
+.PHONY: install
+install: update
+	apt-get install --yes git
+
+.PHONY: update
+update: repository
+	apt-get update
+
+.PHONY: repository
+repository:
+	add-apt-repository --yes ppa:git-core/ppa
