@@ -1,10 +1,10 @@
 anti_virus = clamav clamav-freshclam clamav-daemon clamtk clamtk-nautilus
 archive_manager = rar unrar
 browser = firefox lynx
-common = jq ldap-utils tree
+common = jq ldap-utils software-properties-common tree
 dev_libs = libssl-dev
 dev_tools = build-essential
-desktop = chrome-gnome-shell gnome-tweak-tool xclip
+desktop = chrome-gnome-shell debconf debconf-utils gnome-tweak-tool xclip
 editor = vim vim-addon-manager
 messaging = pidgin
 network = cifs-utils curl filezilla netcat netcat-traditional wget wireshark
