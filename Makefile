@@ -9,6 +9,7 @@ bootstrap:
 	$(MAKE) --file Makefile.java
 	$(MAKE) --file Makefile.keeweb
 	$(MAKE) --file Makefile.papirus
+	$(MAKE) --file Makefile.pyenv
 	$(MAKE) --file Makefile.virtualbox
 	$(MAKE) --file Makefile.virtualbox_user
 	$(MAKE) --file Makefile.vagrant

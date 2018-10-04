@@ -1,0 +1,7 @@
+.PHONY: clone
+clone: clean
+	git clone https://github.com/pyenv/pyenv.git "$(HOME)/.pyenv"
+
+.PHONY: clean
+clean:
+	rm -rf "$(HOME)/.pyenv"
