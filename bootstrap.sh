@@ -1,5 +1,4 @@
 #!/bin/bash
-set -e
 
 echo "Install base packages"
 sudo apt-get install -y git make
