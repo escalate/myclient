@@ -1,0 +1,7 @@
+.PHONY: clone
+clone: clean
+	sudo git clone https://github.com/npryce/adr-tools.git /usr/local/bin/adr-tools
+
+.PHONY: clean
+clean:
+	sudo rm -rf /usr/local/bin/adr-tools
