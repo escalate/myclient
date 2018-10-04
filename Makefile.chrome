@@ -1,11 +1,11 @@
 .PHONY: install
 install: update
-	apt-get install --yes google-chrome-stable
+	sudo apt-get install --yes google-chrome-stable
 
 .PHONY: update
 update: repository
-	apt-get update
+	sudo apt-get update
 
 .PHONY: repository
 repository:
-	echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google_chrome.list
+	sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google_chrome.list'

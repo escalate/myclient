@@ -21,8 +21,8 @@ packages := ${anti_virus} ${archive_manager} ${browser} ${common} ${dev_libs} ${
 
 .PHONY: install
 install: update
-	apt-get install --yes $(packages)
+	sudo apt-get install --yes $(packages)
 
 .PHONY: update
 update:
-	apt-get update
+	sudo apt-get update

@@ -2,12 +2,12 @@ tz = Europe/Berlin
 
 .PHONY: timezone
 timezone: localtime
-	echo "$(tz)" > /etc/timezone
+	sudo sh -c 'echo "$(tz)" > /etc/timezone'
 
 .PHONY: localtime
 localtime: install
-	ln --symbolic --force "/usr/share/zoneinfo/$(tz)" /etc/localtime
+	sudo ln --symbolic --force "/usr/share/zoneinfo/$(tz)" /etc/localtime
 
 .PHONY: install
 install:
-	apt-get install --yes tzdata
+	sudo apt-get install --yes tzdata

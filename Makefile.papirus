@@ -1,11 +1,11 @@
 .PHONY: install
 install: update
-	apt-get install --yes papirus-icon-theme
+	sudo apt-get install --yes papirus-icon-theme
 
 .PHONY: update
 update: repository
-	apt-get update
+	sudo apt-get update
 
 .PHONY: repository
 repository:
-	add-apt-repository --yes ppa:papirus/papirus
+	sudo add-apt-repository --yes ppa:papirus/papirus

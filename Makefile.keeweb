@@ -2,7 +2,7 @@ latest_version := $(shell curl --silent "https://api.github.com/repos/keeweb/kee
 
 .PHONY: install
 install: download
-	apt-get install --yes /tmp/KeeWeb*.deb
+	sudo apt-get install --yes /tmp/KeeWeb*.deb
 
 .PHONY: download
 download: clean
