@@ -10,4 +10,4 @@ echo "Clone myclient repository"
 git clone https://github.com/escalate/myclient.git "${HOME}/myclient"
 
 cd "${HOME}/myclient"
-make bootstrap
+make
