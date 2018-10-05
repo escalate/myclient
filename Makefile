@@ -17,3 +17,4 @@ all:
 	$(MAKE) --file Makefile.virtualbox
 	$(MAKE) --file Makefile.vagrant
 	$(MAKE) --file Makefile.vagrant_plugins
+	$(MAKE) --file Makefile.vscode
