@@ -1,0 +1,13 @@
+.DEFAULT_GOAL := install
+
+.PHONY: repository
+repository:
+	sudo add-apt-repository --yes ppa:ansible/ansible
+
+.PHONY: update
+update: repository
+	sudo apt-get update
+
+.PHONY: install
+install: update
+	sudo apt-get install --yes ansible
