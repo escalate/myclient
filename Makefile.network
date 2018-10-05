@@ -1,7 +1,9 @@
-.PHONY: net
-net: install
-	sudo cp --force $(HOME)/secrets/.network/* /etc/NetworkManager/system-connections/
+.DEFAULT_GOAL := connections
 
 .PHONY: install
 install:
 	sudo apt-get install --yes network-manager network-manager-openvpn network-manager-vpnc resolvconf
+
+.PHONY: connections
+connections: install
+	sudo cp --force $(HOME)/secrets/.network/* /etc/NetworkManager/system-connections/

@@ -1,15 +1,24 @@
-.PHONY: vboxconfig
-vboxconfig: install
-	sudo /sbin/vboxconfig
+.DEFAULT_GOAL := all
 
-.PHONY: install
-install: update
-	sudo apt-get install --yes virtualbox-5.2 dkms
+.PHONY: repository
+repository:
+	sudo sh -c 'echo "deb [arch=amd64] http://download.virtualbox.org/virtualbox/debian bionic contrib" > /etc/apt/sources.list.d/oracle_virtualbox.list'
 
 .PHONY: update
 update: repository
 	sudo apt-get update
 
-.PHONY: repository
-repository:
-	sudo sh -c 'echo "deb [arch=amd64] http://download.virtualbox.org/virtualbox/debian bionic contrib" > /etc/apt/sources.list.d/oracle_virtualbox.list'
+.PHONY: install
+install: update
+	sudo apt-get install --yes virtualbox-5.2 dkms
+
+.PHONY: vboxconfig
+vboxconfig: install
+	sudo /sbin/vboxconfig
+
+.PHONY: usermod
+usermod:
+	sudo usermod --append --groups vboxusers $(USER)
+
+.PHONY: all
+all: vboxconfig usermod

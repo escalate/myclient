@@ -1,3 +1,0 @@
-.PHONY: usermod
-usermod:
-	sudo usermod --append --groups vboxusers $(USER)

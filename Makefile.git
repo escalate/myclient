@@ -1,11 +1,13 @@
-.PHONY: install
-install: update
-	sudo apt-get install --yes git
+.DEFAULT_GOAL := install
+
+.PHONY: repository
+repository:
+	sudo add-apt-repository --yes ppa:git-core/ppa
 
 .PHONY: update
 update: repository
 	sudo apt-get update
 
-.PHONY: repository
-repository:
-	sudo add-apt-repository --yes ppa:git-core/ppa
+.PHONY: install
+install: update
+	sudo apt-get install --yes git

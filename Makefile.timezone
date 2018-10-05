@@ -1,13 +1,18 @@
+.DEFAULT_GOAL := all
+
 tz = Europe/Berlin
 
+.PHONY: install
+install:
+	sudo apt-get install --yes tzdata
+
 .PHONY: timezone
-timezone: localtime
+timezone: install
 	sudo sh -c 'echo "$(tz)" > /etc/timezone'
 
 .PHONY: localtime
 localtime: install
 	sudo ln --symbolic --force "/usr/share/zoneinfo/$(tz)" /etc/localtime
 
-.PHONY: install
-install:
-	sudo apt-get install --yes tzdata
+.PHONY: all
+all: timezone localtime

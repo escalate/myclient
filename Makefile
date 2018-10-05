@@ -15,6 +15,5 @@ all:
 	$(MAKE) --file Makefile.pyenv
 	$(MAKE) --file Makefile.rvm
 	$(MAKE) --file Makefile.virtualbox
-	$(MAKE) --file Makefile.virtualbox_user
 	$(MAKE) --file Makefile.vagrant
 	$(MAKE) --file Makefile.vagrant_plugins
