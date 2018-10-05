@@ -9,6 +9,7 @@ all:
 	$(MAKE) --file Makefile.adr_tools
 	$(MAKE) --file Makefile.ansible
 	$(MAKE) --file Makefile.chrome
+	$(MAKE) --file Makefile.etcher
 	$(MAKE) --file Makefile.git
 	$(MAKE) --file Makefile.java
 	$(MAKE) --file Makefile.keeweb
