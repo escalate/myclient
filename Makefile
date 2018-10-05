@@ -1,6 +1,7 @@
 .PHONY: all
 all:
 	$(MAKE) --file Makefile.apt
+	$(MAKE) --file Makefile.network
 	$(MAKE) --file Makefile.timezone
 	$(MAKE) --file Makefile.pkg_install
 	$(MAKE) --file Makefile.pkg_erase
