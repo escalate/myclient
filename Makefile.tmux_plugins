@@ -2,7 +2,7 @@
 
 .PHONY: clean
 clean:
-	rm --force --recursive "$(HOME)/.tmux/"
+	rm --recursive --force "$(HOME)/.tmux/"
 
 .PHONY: clone
 clone: clean
