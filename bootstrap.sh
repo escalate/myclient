@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Install base packages"
-sudo apt-get install -y git make
+sudo apt-get install --yes git make
 
 echo "Clone dotfiles repository"
 git clone https://github.com/escalate/dotfiles.git "${HOME}/dotfiles"
