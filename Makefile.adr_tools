@@ -2,7 +2,7 @@
 
 .PHONY: clean
 clean:
-	sudo rm -rf /usr/local/bin/adr-tools
+	sudo rm --force --recursive /usr/local/bin/adr-tools
 
 .PHONY: clone
 clone: clean

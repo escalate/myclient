@@ -2,7 +2,7 @@
 
 .PHONY: clean
 clean:
-	rm -rf "$(HOME)/.pyenv"
+	rm --force --recursive "$(HOME)/.pyenv"
 
 .PHONY: clone
 clone: clean
