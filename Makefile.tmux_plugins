@@ -1,0 +1,13 @@
+.DEFAULT_GOAL := clone
+
+.PHONY: clean
+clean:
+	rm --force --recursive "$(HOME)/.tmux/"
+
+.PHONY: clone
+clone: clean
+	git clone https://github.com/tmux-plugins/tpm.git "$(HOME)/.tmux/plugins/tpm"
+	git clone https://github.com/tmux-plugins/tmux-logging.git "$(HOME)/.tmux/plugins/tmux-logging"
+	git clone https://github.com/tmux-plugins/tmux-open.git "$(HOME)/.tmux/plugins/tmux-open"
+	git clone https://github.com/tmux-plugins/tmux-pain-control.git "$(HOME)/.tmux/plugins/tmux-pain-control"
+	git clone https://github.com/tmux-plugins/tmux-resurrect.git "$(HOME)/.tmux/plugins/tmux-resurrect"
