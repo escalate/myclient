@@ -14,6 +14,7 @@ all:
 	$(MAKE) --file Makefile.git
 	$(MAKE) --file Makefile.java
 	$(MAKE) --file Makefile.keeweb
+	$(MAKE) --file Makefile.ohmyzsh
 	$(MAKE) --file Makefile.papirus
 	$(MAKE) --file Makefile.pyenv
 	$(MAKE) --file Makefile.rvm
