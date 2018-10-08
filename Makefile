@@ -13,6 +13,7 @@ all:
 	$(MAKE) --file Makefile.docker
 	$(MAKE) --file Makefile.etcher
 	$(MAKE) --file Makefile.git
+	$(MAKE) --file Makefile.gnometerminal
 	$(MAKE) --file Makefile.gsettings
 	$(MAKE) --file Makefile.java
 	$(MAKE) --file Makefile.keeweb

@@ -1,0 +1,13 @@
+.DEFAULT_GOAL := install
+
+.PHONY: clean
+clean:
+	rm --recursive --force /tmp/gnome-terminal-colors-solarized/
+
+.PHONY: clone
+clone: clean
+	git clone https://github.com/Anthony25/gnome-terminal-colors-solarized.git /tmp/gnome-terminal-colors-solarized
+
+.PHONY: install
+install: clone
+	/tmp/gnome-terminal-colors-solarized/install.sh --scheme=dark --skip-dircolors
