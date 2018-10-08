@@ -1,0 +1,9 @@
+dotfiles = $(shell find $(HOME)/dotfiles -type f -name ".*" -printf '%f\n')
+
+.PHONY: symlink
+symlink:
+	@for file in $(dotfiles); do \
+		if [ ! -e "$(HOME)/$$file" ]; then \
+			echo ln --symbolic --force "$(HOME)/dotfiles/$$file" "$(HOME)/$$file"; \
+		fi; \
+	done

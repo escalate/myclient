@@ -11,6 +11,7 @@ all:
 	$(MAKE) --file Makefile.chrome
 	$(MAKE) --file Makefile.dircolors
 	$(MAKE) --file Makefile.docker
+	$(MAKE) --file Makefile.dotfiles
 	$(MAKE) --file Makefile.etcher
 	$(MAKE) --file Makefile.git
 	$(MAKE) --file Makefile.gnometerminal
