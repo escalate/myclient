@@ -1,0 +1,17 @@
+.DEFAULT_GOAL := install
+
+latest_version := $(shell curl --silent "https://api.github.com/repos/ryanoasis/nerd-fonts/releases/latest" | jq --raw-output '.assets[] | select(.name | test("UbuntuMono.*")).browser_download_url')
+
+.PHONY: clean
+clean:
+	rm --force /tmp/UbuntuMono.zip
+	sudo rm --force /usr/local/share/fonts/*
+
+.PHONY: download
+download: clean
+	wget --quiet --no-clobber --directory-prefix /tmp --content-disposition "$(latest_version)"
+
+.PHONY: install
+install: download
+	sudo unzip /tmp/UbuntuMono.zip -d /usr/local/share/fonts/
+	sudo fc-cache -vf /usr/local/share/fonts/
