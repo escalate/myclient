@@ -9,6 +9,7 @@ all:
 	$(MAKE) --file Makefile.adr_tools
 	$(MAKE) --file Makefile.ansible
 	$(MAKE) --file Makefile.chrome
+	$(MAKE) --file Makefile.dircolors
 	$(MAKE) --file Makefile.docker
 	$(MAKE) --file Makefile.etcher
 	$(MAKE) --file Makefile.git

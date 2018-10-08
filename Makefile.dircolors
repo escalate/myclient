@@ -1,0 +1,9 @@
+.DEFAULT_GOAL := install
+
+.PHONY: download
+download:
+	wget --quiet --no-clobber --directory-prefix /tmp --content-disposition "https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.ansi-dark"
+
+.PHONY: install
+install: download
+	mv --force /tmp/dircolors.ansi-dark "$(HOME)/.dircolors"
