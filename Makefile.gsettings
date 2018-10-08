@@ -1,0 +1,17 @@
+.DEFAULT_GOAL := all
+
+.PHONY: install
+install:
+	sudo apt-get install --yes libglib2.0-bin
+
+.PHONY: settings
+settings: install
+	gsettings set "org.gnome.desktop.interface" "monospace-font-name" "UbuntuMono Nerd Font Mono 13"
+	gsettings set "org.gnome.desktop.peripherals.touchpad" "natural-scroll" "false"
+
+.PHONY: dump
+dump:
+	sudo cp --force "$(CURDIR)/scripts/gsettings-dump" /usr/local/bin/gsettings-dump
+
+.PHONY: all
+all: settings dump
