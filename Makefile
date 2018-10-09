@@ -1,5 +1,6 @@
 .PHONY: all
 all:
+	$(MAKE) --file Makefile.secrets
 	$(MAKE) --file Makefile.apt
 	$(MAKE) --file Makefile.network
 	$(MAKE) --file Makefile.timezone
