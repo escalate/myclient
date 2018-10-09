@@ -2,7 +2,7 @@
 
 .PHONY: install
 install:
-	sudo apt-get install --yes network-manager network-manager-openvpn network-manager-vpnc resolvconf
+	sudo apt-get install --yes network-manager openvpn network-manager-openvpn vpnc network-manager-vpnc resolvconf
 
 .PHONY: connections
 connections: install
