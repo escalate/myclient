@@ -4,8 +4,13 @@
 repository:
 	sudo sh -c 'echo "deb [arch=amd64] http://download.virtualbox.org/virtualbox/debian $(shell lsb_release -cs) contrib" > /etc/apt/sources.list.d/oracle-virtualbox.list'
 
+.PHONY: key
+key: repository
+	wget --quiet --output-document - https://www.virtualbox.org/download/oracle_vbox_2016.asc | sudo apt-key add -
+	wget --quiet --output-document - https://www.virtualbox.org/download/oracle_vbox.asc | sudo apt-key add -
+
 .PHONY: update
-update: repository
+update: key
 	sudo apt-get update
 
 .PHONY: install
