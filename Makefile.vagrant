@@ -2,7 +2,7 @@
 
 .PHONY: repository
 repository:
-	sudo sh -c 'echo "deb https://vagrant-deb.linestarve.com/ any main" > /etc/apt/sources.list.d/hashicorp_vagrant.list'
+	sudo sh -c 'echo "deb https://vagrant-deb.linestarve.com/ any main" > /etc/apt/sources.list.d/hashicorp-vagrant.list'
 
 .PHONY: key
 key: repository
