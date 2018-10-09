@@ -8,6 +8,12 @@ install:
 settings: install
 	gsettings set "org.gnome.desktop.interface" "monospace-font-name" "UbuntuMono Nerd Font Mono 13"
 	gsettings set "org.gnome.desktop.peripherals.touchpad" "natural-scroll" "false"
+	gsettings set "org.gnome.nautilus.preferences" "default-folder-viewer" "list-view"
+	gsettings set "org.gtk.Settings.FileChooser" "show-hidden" "true"
+	gsettings set "org.gnome.desktop.background" "picture-uri" "file:///usr/share/backgrounds/adapta/tri-fadeno.jpg"
+	gsettings set "org.gnome.desktop.screensaver" "picture-uri" "file:///usr/share/backgrounds/adapta/tri-fadeno.jpg"
+	gsettings set "org.gnome.desktop.screensaver" "lock-enabled" "true"
+	gsettings set "org.gnome.desktop.notifications" "show-in-lock-screen" "false"
 
 .PHONY: dump
 dump:
