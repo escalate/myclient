@@ -15,7 +15,7 @@ install: update
 .PHONY: proxy
 proxy:
 	sudo mkdir --parents /etc/systemd/system/docker.service.d/
-	sudo sh -c 'echo "[Service]\nEnvironment=\"http_proxy=$(shell cat $(HOME)/secrets/.proxy/http_proxy)\"\nEnvironment=\"https_proxy=$(shell cat $(HOME)/secrets/.proxy/https_proxy)\"\nEnvironment=\"no_proxy=$(shell cat $(HOME)/secrets/.proxy/no_proxy)\"" > /etc/systemd/system/docker.service.d/proxy.conf'
+	sudo sh -c 'echo "[Service]\nEnvironment=\"http_proxy=$(shell cat $(HOME)/.proxy/http_proxy)\"\nEnvironment=\"https_proxy=$(shell cat $(HOME)/.proxy/https_proxy)\"\nEnvironment=\"no_proxy=$(shell cat $(HOME)/.proxy/no_proxy)\"" > /etc/systemd/system/docker.service.d/proxy.conf'
 	sudo systemctl daemon-reload
 	sudo systemctl restart docker
 

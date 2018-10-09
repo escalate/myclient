@@ -6,4 +6,4 @@ install:
 
 .PHONY: connections
 connections: install
-	sudo cp --force $(HOME)/secrets/.network/* /etc/NetworkManager/system-connections/
+	sudo cp --force $(HOME)/.network/* /etc/NetworkManager/system-connections/
