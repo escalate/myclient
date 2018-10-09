@@ -1,5 +1,6 @@
 .PHONY: all
 all:
+	$(MAKE) --file Makefile.dotfiles
 	$(MAKE) --file Makefile.secrets
 	$(MAKE) --file Makefile.apt
 	$(MAKE) --file Makefile.network
@@ -12,11 +13,9 @@ all:
 	$(MAKE) --file Makefile.chrome
 	$(MAKE) --file Makefile.dircolors
 	$(MAKE) --file Makefile.docker
-	$(MAKE) --file Makefile.dotfiles
 	$(MAKE) --file Makefile.etcher
 	$(MAKE) --file Makefile.git
 	$(MAKE) --file Makefile.gnometerminal
-	$(MAKE) --file Makefile.gsettings
 	$(MAKE) --file Makefile.java
 	$(MAKE) --file Makefile.keeweb
 	$(MAKE) --file Makefile.nerdfonts
@@ -30,3 +29,4 @@ all:
 	$(MAKE) --file Makefile.vagrant_plugins
 	$(MAKE) --file Makefile.vim_plugins
 	$(MAKE) --file Makefile.vscode
+	$(MAKE) --file Makefile.gsettings
