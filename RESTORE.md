@@ -44,19 +44,6 @@ mv * ~/Dokumente/
 * Maschine -> Hinzufügen...
 * .vbox-Datei auswählen
 
-## Dock
-
-* Order icons
-  * Dateien
-  * Terminal
-  * Google Chrome
-  * Oracle VM VirtualBox Manager
-  * Gedit
-  * Visual Studio Code
-  * Pidgin
-  * KeeWeb
-  * Taschenrechner
-
 ## Theme / Symbols
 
 * Open GOME Tweak Tool
