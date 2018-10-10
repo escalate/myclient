@@ -1,0 +1,15 @@
+.DEFAULT_GOAL := install
+
+latest_version := $(shell curl --silent "https://api.github.com/repos/gohugoio/hugo/releases/latest" | jq --raw-output '.assets[] | select(.name | test("hugo_extended_.*64bit.deb")).browser_download_url')
+
+.PHONY: clean
+clean:
+	rm --force /tmp/hugo_extended_*.deb
+
+.PHONY: download
+download: clean
+	wget --quiet --no-clobber --directory-prefix /tmp --content-disposition "$(latest_version)"
+
+.PHONY: install
+install: download
+	sudo apt-get install --yes /tmp/hugo_extended_*.deb

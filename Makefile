@@ -16,6 +16,7 @@ all:
 	$(MAKE) --file Makefile.etcher
 	$(MAKE) --file Makefile.git
 	$(MAKE) --file Makefile.gnometerminal
+	$(MAKE) --file Makefile.hugo
 	$(MAKE) --file Makefile.java
 	$(MAKE) --file Makefile.keeweb
 	$(MAKE) --file Makefile.nerdfonts
