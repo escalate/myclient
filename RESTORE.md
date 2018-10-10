@@ -12,7 +12,7 @@
 
 * Run bootstrap shell script
 ```bash
-curl -sSL https://raw.githubusercontent.com/escalate/myclient/master/bootstrap.sh | bash
+curl --silent --show-error --location https://raw.githubusercontent.com/escalate/myclient/master/bootstrap.sh | bash
 ```
 
 ## Home directory
