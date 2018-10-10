@@ -1,0 +1,4 @@
+.PHONY: settings
+settings:
+	dconf write "/org/gnome/desktop/interface/icon-theme" "'Papirus-Adapta-Nokto'"
+	dconf write "/org/gnome/desktop/interface/gtk-theme" "'Adapta-Nokto'"

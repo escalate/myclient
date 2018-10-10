@@ -44,12 +44,7 @@ mv * ~/Dokumente/
 * Maschine -> Hinzufügen...
 * .vbox-Datei auswählen
 
-## Theme / Symbols
-
-* Open GOME Tweak Tool
-  * Erscheinungsbild -> Themen
-    * Anwendungen: Adapta-Nokto
-    * Symbole: Papirus-Adapta-Nokto
+## Gnome Shell Extensions
 
 * Open Google Chrome
   * Install GNOME Shell-Integration extension
