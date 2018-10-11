@@ -54,6 +54,7 @@ mv * ~/Dokumente/
       * Extension Update Notifier
       * Frippery Move Clock
       * OpenWeather
+      * Panel OSD
 
 ## Sound
 
