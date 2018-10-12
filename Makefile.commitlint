@@ -2,12 +2,12 @@
 
 .PHONY: clean
 clean:
-	rm --recursive --force /tmp/docker-commitlint/
+	rm --recursive --force /tmp/commitlint-docker/
 
 .PHONY: clone
 clone: clean
-	git clone https://github.com/escalate/docker-commitlint.git /tmp/docker-commitlint
+	git clone https://github.com/escalate/commitlint-docker.git /tmp/commitlint-docker
 
 .PHONY: install
 install: clone
-	cd /tmp/docker-commitlint && make build
+	cd /tmp/commitlint-docker/ && make build
