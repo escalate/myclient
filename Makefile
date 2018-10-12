@@ -15,6 +15,7 @@ all:
 	$(MAKE) --file Makefile.docker
 	$(MAKE) --file Makefile.etcher
 	$(MAKE) --file Makefile.git
+	$(MAKE) --file Makefile.commitlint
 	$(MAKE) --file Makefile.gnometerminal
 	$(MAKE) --file Makefile.hugo
 	$(MAKE) --file Makefile.java

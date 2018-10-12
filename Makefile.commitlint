@@ -1,0 +1,13 @@
+.DEFAULT_GOAL := install
+
+.PHONY: clean
+clean:
+	rm --recursive --force /tmp/docker-commitlint/
+
+.PHONY: clone
+clone: clean
+	git clone https://github.com/escalate/docker-commitlint.git /tmp/docker-commitlint
+
+.PHONY: install
+install: clone
+	cd /tmp/docker-commitlint && make build
