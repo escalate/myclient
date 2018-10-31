@@ -2,7 +2,7 @@
 set -e
 
 DATE=$(date +%Y_%m_%d)
-DIRS_TO_TAR=( "${HOME}/Dokumente" "${HOME}/Downloads" "${HOME}/Schreibtisch" "${HOME}/Bilder" "${HOME}/.local/share/Trash" "${HOME}/.purple" "${HOME}/secrets" "/etc" )
+DIRS_TO_TAR=( "${HOME}/Dokumente/workspace/private" "${HOME}/Dokumente/workspace/work" "${HOME}/Downloads" "${HOME}/Schreibtisch" "${HOME}/Bilder" "${HOME}/.local/share/Trash" "${HOME}/.purple" "${HOME}/secrets" "/etc" )
 DIRS_TO_RSYNC=( "${HOME}/VirtualBox VMs" )
 LOCAL_BACKUP_PATH="/tmp/backup_${DATE}"
 MOUNT_PATH="/mnt/nas"
