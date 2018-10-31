@@ -15,16 +15,16 @@ fi
 for d in "${DIRS_TO_TAR[@]}"; do
     BACKUP_FILE="backup_$(basename ${d})_${DATE}.tar.bz2"
     if [ ! -f "${LOCAL_BACKUP_PATH}/${BACKUP_FILE}" ]; then
-        echo "INFO: Backup directory ${d} to ${BACKUP_FILE}"
+        echo "INFO: Create backup archive \"${LOCAL_BACKUP_PATH}/${BACKUP_FILE}\" for directory \"${d}\""
         sudo tar -cjf "${LOCAL_BACKUP_PATH}/${BACKUP_FILE}" "${d}"
         sudo chown ${USER}:${USER} "${LOCAL_BACKUP_PATH}/${BACKUP_FILE}"
     else
-        echo "INFO: Backup ${BACKUP_FILE} already created"
+        echo "INFO: Backup archive \"${LOCAL_BACKUP_PATH}/${BACKUP_FILE}\" for directory \"${d}\" already created"
     fi
 done
 
 if grep -qs ${MOUNT_PATH} /proc/mounts; then
-    echo "INFO: Synology already mounted"
+    echo "INFO: NAS already mounted"
 else
     ./mount-nas.sh
 fi
