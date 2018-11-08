@@ -10,4 +10,4 @@ clone: clean
 
 .PHONY: install
 install: clone
-	cd /tmp/commitlint-docker/ && make build
+	cd /tmp/commitlint-docker/ && sudo make build
