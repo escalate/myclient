@@ -37,26 +37,26 @@ mv * ~/Dokumente/
 
 * Download [Extension Pack](https://www.virtualbox.org/wiki/Downloads)
 * Import .vbox-extpack file
-  * Datei -> Einstellungen -> Zusatzpaket
+  * File -> Preferences... -> Extensions
 
 ### Restore VMs
 
-* Maschine -> Hinzufügen...
-* .vbox-Datei auswählen
+* Machine -> Add...
+* Open .vbox file
 
 ## Gnome Shell Extensions
 
 * Open Google Chrome
-  * Install GNOME Shell-Integration extension
-    * Install [GNOME Extensions](https://extensions.gnome.org)
-      * Caffeine
-      * Dash to Dock
-      * Extension Update Notifier
-      * Frippery Move Clock
-      * OpenWeather
-      * Panel OSD
+  * Install [GNOME Shell-Integration](https://chrome.google.com/webstore/detail/gnome-shell-integration/gphhapmejobijbbhgpjhcjognlahblep) addon
+  * Install [GNOME Extensions](https://extensions.gnome.org)
+    * Caffeine
+    * Dash to Dock
+    * Extension Update Notifier
+    * Frippery Move Clock
+    * OpenWeather
+    * Panel OSD
 
 ## Sound
 
-* Open Einstellungen
-  * Klang -> Klangeffekte -> Warnlautstärke stumm
+* Open Settings
+  * Sound -> Sound Effects -> Alert volume off
