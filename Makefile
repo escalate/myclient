@@ -13,6 +13,7 @@ all:
 	$(MAKE) --file Makefile.chrome
 	$(MAKE) --file Makefile.dircolors
 	$(MAKE) --file Makefile.docker
+	$(MAKE) --file Makefile.docker_compose
 	$(MAKE) --file Makefile.etcher
 	$(MAKE) --file Makefile.git
 	$(MAKE) --file Makefile.commitlint
