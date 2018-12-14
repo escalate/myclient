@@ -1,4 +1,4 @@
-.DEFAULT_GOAL := install
+.DEFAULT_GOAL := all
 
 .PHONY: repository
 repository:
@@ -15,3 +15,10 @@ update: key
 .PHONY: install
 install: update
 	sudo apt-get install --yes code
+
+.PHONY: clean
+clean:
+	sudo rm --force /etc/apt/sources.list.d/vscode.list
+
+.PHONY: all
+all: install clean
