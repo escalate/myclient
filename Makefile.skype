@@ -1,0 +1,24 @@
+.DEFAULT_GOAL := all
+
+.PHONY: repository
+repository:
+	sudo sh -c 'echo "deb [arch=amd64] https://repo.skype.com/deb stable main" > /etc/apt/sources.list.d/microsoft-skype.list'
+
+.PHONY: key
+key: repository
+	wget --quiet --output-document - https://repo.skype.com/data/SKYPE-GPG-KEY | sudo apt-key add -
+
+.PHONY: update
+update: key
+	sudo apt-get update
+
+.PHONY: install
+install: update
+	sudo apt-get install --yes skypeforlinux
+
+.PHONY: clean
+clean:
+	sudo rm --force /etc/apt/sources.list.d/skype-stable.list
+
+.PHONY: all
+all: install clean
