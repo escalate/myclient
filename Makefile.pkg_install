@@ -3,7 +3,7 @@
 anti_virus = clamav clamav-freshclam clamav-daemon clamtk clamtk-nautilus
 archive_manager = rar unrar
 browser = firefox lynx
-common = jq ldap-utils software-properties-common tree
+common = expect jq ldap-utils software-properties-common tree
 dev_libs = libssl-dev
 dev_tools = build-essential
 desktop = chrome-gnome-shell debconf debconf-utils gnome-tweak-tool xclip

@@ -10,4 +10,4 @@ clone: clean
 
 .PHONY: install
 install: clone
-	/tmp/gnome-terminal-colors-solarized/install.sh --scheme=dark --skip-dircolors
+	expect -c "spawn /tmp/gnome-terminal-colors-solarized/install.sh --scheme=dark --skip-dircolors; expect \"#?\" { send \"1\r\" }; expect \"(YES to continue)\" { send \"YES\r\"; exp_continue }"
