@@ -1,5 +1,6 @@
 .PHONY: all
 all:
+	$(MAKE) --file Makefile.workspace
 	$(MAKE) --file Makefile.dotfiles
 	$(MAKE) --file Makefile.secrets
 	$(MAKE) --file Makefile.apt
