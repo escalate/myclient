@@ -60,3 +60,9 @@ mv * ~/Dokumente/
 
 * Open Settings
   * Sound -> Sound Effects -> Alert volume off
+
+## Location Bookmarks
+
+* Open Files
+  * Other Locations -> smb://...
+  * Right click -> Add Bookmark
