@@ -20,5 +20,9 @@ install: update
 clean:
 	sudo rm --force /etc/apt/sources.list.d/skype-stable.list
 
+.PHONY: disable
+disable:
+	rm --force "$(HOME)/.config/autostart/skypeforlinux.desktop"
+
 .PHONY: all
-all: install clean
+all: install clean disable
