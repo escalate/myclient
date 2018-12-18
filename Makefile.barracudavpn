@@ -1,0 +1,12 @@
+.DEFAULT_GOAL := configure
+
+.PHONY: install
+install:
+	sudo apt-get install --yes /tmp/barracudavpn*.deb
+	sudo mkdir --parents "/etc/barracudavpn/ca"
+
+.PHONY: configure
+configure: install
+	sudo cp "$(HOME)/secrets/.barracudavpn/barracudavpn.conf" "/etc/barracudavpn/"
+	sudo chown root:root "/etc/barracudavpn/barracudavpn.conf"
+	sudo chmod 600 "/etc/barracudavpn/barracudavpn.conf"

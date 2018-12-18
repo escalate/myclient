@@ -66,3 +66,9 @@ mv * ~/Dokumente/
 * Open Files
   * Other Locations -> smb://...
   * Right click -> Add Bookmark
+
+## Optional: Barracuda VPN
+
+```
+make -f Makefile.barracudavpn
+```
