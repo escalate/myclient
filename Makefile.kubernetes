@@ -1,0 +1,18 @@
+.DEFAULT_GOAL := install
+
+.PHONY: repository
+repository:
+	# At the moment there is no release for Ubuntu Bionic available
+	sudo sh -c 'echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" > /etc/apt/sources.list.d/kubernetes.list'
+
+.PHONY: key
+key: repository
+	wget --quiet --output-document - https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+
+.PHONY: update
+update: key
+	sudo apt-get update
+
+.PHONY: install
+install: update
+	sudo apt-get install --yes kubectl
