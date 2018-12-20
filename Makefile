@@ -19,9 +19,11 @@ all:
 	$(MAKE) --file Makefile.git
 	$(MAKE) --file Makefile.commitlint
 	$(MAKE) --file Makefile.gnometerminal
+	$(MAKE) --file Makefile.hamster
 	$(MAKE) --file Makefile.hugo
 	$(MAKE) --file Makefile.java
 	$(MAKE) --file Makefile.keeweb
+	$(MAKE) --file Makefile.kubernetes
 	$(MAKE) --file Makefile.nerdfonts
 	$(MAKE) --file Makefile.ohmyzsh
 	$(MAKE) --file Makefile.papirus
