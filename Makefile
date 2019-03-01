@@ -18,6 +18,7 @@ all:
 	$(MAKE) --file Makefile.hadolint
 	$(MAKE) --file Makefile.etcher
 	$(MAKE) --file Makefile.git
+	$(MAKE) --file Makefile.go
 	$(MAKE) --file Makefile.commitlint
 	$(MAKE) --file Makefile.gnometerminal
 	$(MAKE) --file Makefile.hamster
