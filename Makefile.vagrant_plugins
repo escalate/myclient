@@ -1,5 +1,12 @@
+.DEFAULT_GOAL := update
+
 plugins = vagrant-hostmanager vagrant-proxyconf vagrant-vbguest
 
 .PHONY: install
 install:
 	vagrant plugin install $(plugins)
+
+.PHONY: update
+update: install
+	vagrant plugin update $(plugins)
+
