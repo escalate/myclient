@@ -4,6 +4,7 @@ anti_virus = clamav clamav-freshclam clamav-daemon clamtk clamtk-nautilus
 archive_manager = rar unrar
 browser = firefox lynx
 common = expect jq ldap-utils software-properties-common tree
+database = mysql-client
 dev_libs = libssl-dev
 dev_tools = build-essential
 desktop = chrome-gnome-shell debconf debconf-utils gnome-tweak-tool xclip
@@ -20,7 +21,7 @@ shell = bash zsh
 terminal_multiplexer = screen tmux
 video = ubuntu-restricted-extras vlc
 
-packages := ${anti_virus} ${archive_manager} ${browser} ${common} ${dev_libs} ${dev_tools} ${desktop} ${editor} ${messaging} ${network} ${office} ${partitioning} ${password} ${python_dev} ${remote_viewer} ${ruby_dev} ${shell} ${terminal_multiplexer} ${video}
+packages := ${anti_virus} ${archive_manager} ${browser} ${common} ${database} ${dev_libs} ${dev_tools} ${desktop} ${editor} ${messaging} ${network} ${office} ${partitioning} ${password} ${python_dev} ${remote_viewer} ${ruby_dev} ${shell} ${terminal_multiplexer} ${video}
 
 .PHONY: update
 update:
