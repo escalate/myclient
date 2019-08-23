@@ -1,5 +1,5 @@
 .DEFAULT_GOAL := install
 
 .PHONY: install
-install: update
+install:
 	sudo snap install slack --classic
