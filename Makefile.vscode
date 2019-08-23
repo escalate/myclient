@@ -1,8 +1,8 @@
-.DEFAULT_GOAL := all
+.DEFAULT_GOAL := install
 
 .PHONY: repository
 repository:
-	sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/microsoft-vscode.list'
+	sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
 
 .PHONY: key
 key: repository
@@ -15,10 +15,3 @@ update: key
 .PHONY: install
 install: update
 	sudo apt-get install --yes code
-
-.PHONY: clean
-clean:
-	sudo rm --force /etc/apt/sources.list.d/vscode.list
-
-.PHONY: all
-all: install clean
