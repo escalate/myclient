@@ -2,7 +2,7 @@
 
 .PHONY: repository
 repository:
-	sudo sh -c 'echo "deb [arch=amd64] https://repo.skype.com/deb stable main" > /etc/apt/sources.list.d/microsoft-skype.list'
+	sudo sh -c 'echo "deb [arch=amd64] https://repo.skype.com/deb stable main" > /etc/apt/sources.list.d/skype-stable.list'
 
 .PHONY: key
 key: repository
@@ -16,13 +16,9 @@ update: key
 install: update
 	sudo apt-get install --yes skypeforlinux
 
-.PHONY: clean
-clean:
-	sudo rm --force /etc/apt/sources.list.d/skype-stable.list
-
 .PHONY: disable
 disable:
 	rm --force "$(HOME)/.config/autostart/skypeforlinux.desktop"
 
 .PHONY: all
-all: install clean disable
+all: install disable
