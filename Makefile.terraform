@@ -1,0 +1,16 @@
+.DEFAULT_GOAL := install
+
+latest_version := $(shell curl --silent "https://checkpoint-api.hashicorp.com/v1/check/terraform" | jq --raw-output '.current_version')
+
+.PHONY: clean
+clean:
+	sudo rm --force /usr/local/bin/terraform
+
+.PHONY: download
+download: clean
+	wget --quiet --no-clobber --directory-prefix /tmp --content-disposition "https://releases.hashicorp.com/terraform/$(latest_version)/terraform_$(latest_version)_linux_amd64.zip"
+
+.PHONY: install
+install: download
+	sudo unzip /tmp/terraform_*.zip -d /usr/local/bin
+
