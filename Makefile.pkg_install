@@ -9,6 +9,7 @@ dev_libs = libssl-dev
 dev_tools = build-essential
 desktop = chrome-gnome-shell debconf debconf-utils gnome-tweak-tool xclip
 editor = vim vim-addon-manager
+java_dev = openjdk-8-jdk
 messaging = pidgin
 network = cifs-utils curl filezilla netcat netcat-traditional wget wireshark
 office = gimp gnome-calculator libreoffice
@@ -21,7 +22,7 @@ shell = bash zsh
 terminal_multiplexer = screen tmux
 video = ubuntu-restricted-extras vlc
 
-packages := ${anti_virus} ${archive_manager} ${browser} ${common} ${database} ${dev_libs} ${dev_tools} ${desktop} ${editor} ${messaging} ${network} ${office} ${partitioning} ${password} ${python_dev} ${remote_viewer} ${ruby_dev} ${shell} ${terminal_multiplexer} ${video}
+packages := ${anti_virus} ${archive_manager} ${browser} ${common} ${database} ${dev_libs} ${dev_tools} ${desktop} ${editor} ${java_dev} ${messaging} ${network} ${office} ${partitioning} ${password} ${python_dev} ${remote_viewer} ${ruby_dev} ${shell} ${terminal_multiplexer} ${video}
 
 .PHONY: update
 update:
