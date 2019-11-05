@@ -20,6 +20,7 @@ all:
 	$(MAKE) --file Makefile.git
 	$(MAKE) --file Makefile.go
 	$(MAKE) --file Makefile.commitlint
+	$(MAKE) --file Makefile.devspace
 	$(MAKE) --file Makefile.gnometerminal
 	$(MAKE) --file Makefile.hamster
 	$(MAKE) --file Makefile.hugo
