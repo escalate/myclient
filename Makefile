@@ -27,6 +27,7 @@ all:
 	$(MAKE) --file Makefile.java
 	$(MAKE) --file Makefile.keeweb
 	$(MAKE) --file Makefile.kubernetes
+	$(MAKE) --file Makefile.minikube
 	$(MAKE) --file Makefile.nerdfonts
 	$(MAKE) --file Makefile.ohmyzsh
 	$(MAKE) --file Makefile.papirus
