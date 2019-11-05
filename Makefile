@@ -23,6 +23,7 @@ all:
 	$(MAKE) --file Makefile.devspace
 	$(MAKE) --file Makefile.gnometerminal
 	$(MAKE) --file Makefile.hamster
+	$(MAKE) --file Makefile.helm
 	$(MAKE) --file Makefile.hugo
 	$(MAKE) --file Makefile.java
 	$(MAKE) --file Makefile.keeweb
