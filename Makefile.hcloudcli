@@ -1,0 +1,18 @@
+.DEFAULT_GOAL := install
+
+latest_version := $(shell curl --silent "https://api.github.com/repos/hetznercloud/cli/releases/latest" | jq --raw-output '.assets[] | select(.name | test(".*-linux-amd64.tar.gz")).browser_download_url')
+
+.PHONY: clean
+clean:
+	rm --force /tmp/hcloud-linux-amd64.tar.gz
+	sudo rm --force /usr/local/bin/hcloud
+
+.PHONY: download
+download: clean
+	wget --quiet --no-clobber --directory-prefix /tmp --content-disposition "$(latest_version)"
+
+.PHONY: install
+install: download
+	tar xzf /tmp/hcloud-linux-amd64.tar.gz -C /tmp
+	sudo cp /tmp/hcloud /usr/local/bin/hcloud
+	sudo chmod +x /usr/local/bin/hcloud
