@@ -55,6 +55,7 @@ mv * ~/Dokumente/
     * Frippery Move Clock
     * OpenWeather
     * Panel OSD
+    * Refresh Wifi Connections
 
 ## Sound
 
