@@ -10,4 +10,4 @@ update: repository
 
 .PHONY: install
 install: update
-	sudo apt-get install --yes ansible python-jmespath
+	sudo apt-get install --yes ansible python3-jmespath python3-passlib python3-bcrypt
