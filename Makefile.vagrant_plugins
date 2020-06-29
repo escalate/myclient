@@ -1,6 +1,6 @@
 .DEFAULT_GOAL := update
 
-plugins = vagrant-hostmanager  # vagrant-proxyconf vagrant-vbguest
+plugins = vagrant-hostmanager vagrant-vbguest  # vagrant-proxyconf
 
 .PHONY: install
 install:
