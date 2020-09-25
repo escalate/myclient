@@ -19,7 +19,7 @@ all:
 	$(MAKE) --file Makefile.hcloudcli
 	$(MAKE) --file Makefile.etcher
 	$(MAKE) --file Makefile.git
-	$(MAKE) --file Makefile.go
+	$(MAKE) --file Makefile.golang
 	$(MAKE) --file Makefile.commitlint
 	$(MAKE) --file Makefile.devspace
 	$(MAKE) --file Makefile.gnometerminal
