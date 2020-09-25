@@ -2,7 +2,7 @@
 
 .PHONY: install
 install:
-	sudo apt-get install --yes /tmp/barracudavpn*amd64.deb
+	sudo apt install --yes /tmp/barracudavpn*amd64.deb
 	sudo mkdir --parents "/etc/barracudavpn/ca"
 
 .PHONY: configure

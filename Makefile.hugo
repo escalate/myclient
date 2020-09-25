@@ -12,4 +12,4 @@ download: clean
 
 .PHONY: install
 install: download
-	sudo apt-get install --yes /tmp/hugo_extended_*.deb
+	sudo apt install --yes /tmp/hugo_extended_*.deb

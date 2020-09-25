@@ -11,11 +11,11 @@ key: repository
 
 .PHONY: update
 update: key
-	sudo apt-get update
+	sudo apt update
 
 .PHONY: install
 install: update
-	sudo apt-get install --yes virtualbox-6.1 dkms
+	sudo apt install --yes virtualbox-6.1 dkms
 
 .PHONY: vboxconfig
 vboxconfig: install

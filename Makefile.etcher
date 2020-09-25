@@ -12,4 +12,4 @@ download: clean
 
 .PHONY: install
 install: download
-	sudo apt-get install --yes /tmp/balena-etcher*.deb
+	sudo apt install --yes /tmp/balena-etcher*.deb

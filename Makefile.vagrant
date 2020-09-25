@@ -10,8 +10,8 @@ key: repository
 
 .PHONY: update
 update: key
-	sudo apt-get update
+	sudo apt update
 
 .PHONY: install
 install: update
-	sudo apt-get install --yes vagrant
+	sudo apt install --yes vagrant

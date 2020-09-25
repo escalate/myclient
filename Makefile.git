@@ -6,8 +6,8 @@ repository:
 
 .PHONY: update
 update: repository
-	sudo apt-get update
+	sudo apt update
 
 .PHONY: install
 install: update
-	sudo apt-get install --yes git
+	sudo apt install --yes git

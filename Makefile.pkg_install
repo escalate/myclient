@@ -26,8 +26,8 @@ packages := ${anti_virus} ${archive_manager} ${browser} ${common} ${database} ${
 
 .PHONY: update
 update:
-	sudo apt-get update
+	sudo apt update
 
 .PHONY: install
 install: update
-	sudo apt-get install --yes $(packages)
+	sudo apt install --yes $(packages)

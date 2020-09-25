@@ -6,8 +6,8 @@ repository:
 
 .PHONY: update
 update: repository
-	sudo apt-get update
+	sudo apt update
 
 .PHONY: install
 install: update
-	sudo apt-get install --yes golang-go
+	sudo apt install --yes golang-go

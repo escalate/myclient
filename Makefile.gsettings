@@ -2,7 +2,7 @@
 
 .PHONY: install
 install:
-	sudo apt-get install --yes libglib2.0-bin
+	sudo apt install --yes libglib2.0-bin
 
 .PHONY: settings
 settings: install

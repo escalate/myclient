@@ -12,7 +12,7 @@ download: clean
 
 .PHONY: install
 install: download
-	sudo apt-get install --yes /tmp/minikube*.deb
+	sudo apt install --yes /tmp/minikube*.deb
 
 .PHONY: hypervisor
 hypervisor: install

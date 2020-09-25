@@ -6,8 +6,8 @@ repository:
 
 .PHONY: update
 update: repository
-	sudo apt-get update
+	sudo apt update
 
 .PHONY: install
 install: update
-	sudo apt-get install --yes ansible python3-jmespath python3-passlib python3-bcrypt
+	sudo apt install --yes ansible python3-jmespath python3-passlib python3-bcrypt
