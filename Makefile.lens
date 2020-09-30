@@ -1,0 +1,5 @@
+.DEFAULT_GOAL := install
+
+.PHONY: install
+install:
+	sudo snap install kontena-lens --classic
