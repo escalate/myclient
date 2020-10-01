@@ -16,6 +16,10 @@ update: key
 install: update
 	sudo apt install --yes docker-ce
 
+.PHONY: python
+python:
+	pip3 install --upgrade docker
+
 .PHONY: proxy
 proxy:
 	sudo mkdir --parents /etc/systemd/system/docker.service.d/
@@ -28,4 +32,4 @@ usermod:
 	sudo usermod --append --groups docker $(USER)
 
 .PHONY: all
-all: install proxy usermod
+all: install python proxy usermod
