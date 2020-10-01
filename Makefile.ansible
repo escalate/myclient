@@ -1,13 +1,4 @@
-.DEFAULT_GOAL := install
-
-.PHONY: repository
-repository:
-	sudo add-apt-repository --yes ppa:ansible/ansible
-
-.PHONY: update
-update: repository
-	sudo apt update
-
 .PHONY: install
-install: update
-	sudo apt install --yes ansible python3-jmespath python3-passlib python3-bcrypt
+install:
+	pip3 install --upgrade ansible molecule
+	sudo apt install --yes python3-jmespath python3-passlib python3-bcrypt
