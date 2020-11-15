@@ -1,4 +1,4 @@
 .PHONY: install
 install:
 	pip3 install --upgrade ansible molecule ansible-lint
-	sudo apt install --yes python3-jmespath python3-passlib python3-bcrypt
+	sudo apt install --yes sshpass python3-jmespath python3-passlib python3-bcrypt
