@@ -34,6 +34,7 @@ all:
 	$(MAKE) --file Makefile.nerdfonts
 	$(MAKE) --file Makefile.ohmyzsh
 	$(MAKE) --file Makefile.papirus
+	$(MAKE) --file Makefile.poetry
 	$(MAKE) --file Makefile.pyenv
 	$(MAKE) --file Makefile.rvm
 	$(MAKE) --file Makefile.terraform
