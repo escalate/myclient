@@ -1,11 +1,19 @@
-.DEFAULT_GOAL := clone
+.DEFAULT_GOAL := plugins
 
 .PHONY: clean
 clean:
 	rm --recursive --force "$(HOME)/.oh-my-zsh/"
 
-.PHONY: clone
-clone: clean
+.PHONY: install
+install: clean
 	git clone https://github.com/robbyrussell/oh-my-zsh.git "$(HOME)/.oh-my-zsh"
+
+.PHONY: themes
+themes: install
 	git clone https://github.com/bhilburn/powerlevel9k.git "$(HOME)/.oh-my-zsh/custom/themes/powerlevel9k"
+
+.PHONY: plugins
+plugins: themes
 	git clone https://github.com/escalate/oh-my-zsh-proxy-plugin.git "$(HOME)/.oh-my-zsh/custom/plugins/proxy"
+	mkdir "$(HOME)/.oh-my-zsh/custom/plugins/poetry"
+	poetry completions zsh > "$(HOME)/.oh-my-zsh/custom/plugins/poetry/_poetry"
