@@ -4,6 +4,28 @@
 clean:
 	rm --recursive --force "$(HOME)/.pyenv/"
 
+.PHONY: dependencies
+dependencies:
+	sudo apt install --yes \
+		libssl-dev \
+		zlib1g-dev \
+		libbz2-dev \
+		libreadline-dev \
+		libsqlite3-dev \
+		llvm \
+		libncurses5-dev \
+		libncursesw5-dev \
+		xz-utils \
+		tk-dev \
+		libffi-dev \
+		liblzma-dev \
+		python-openssl \
+		#wget \
+		#curl \
+		#make \
+		#build-essential \
+		#git
+
 .PHONY: clone
 clone: clean
 	git clone https://github.com/pyenv/pyenv.git "$(HOME)/.pyenv"
