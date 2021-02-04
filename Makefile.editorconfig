@@ -1,0 +1,18 @@
+.DEFAULT_GOAL := install
+
+latest_version := $(shell curl --silent "https://api.github.com/repos/editorconfig-checker/editorconfig-checker/releases/latest" | jq --raw-output '.assets[] | select(.name | test("ec-linux-amd64")).browser_download_url')
+
+.PHONY: clean
+clean:
+	rm --force /tmp/ec-linux-amd64.tar.gz
+	sudo rm --force /usr/local/bin/ec
+
+.PHONY: download
+download: clean
+	wget --quiet --no-clobber --directory-prefix /tmp --content-disposition "$(latest_version)"
+
+.PHONY: install
+install: download
+	tar xzf /tmp/ec-linux-amd64.tar.gz -C /tmp
+	sudo cp /tmp/bin/ec-linux-amd64 /usr/local/bin/ec
+	sudo chmod +x /usr/local/bin/ec

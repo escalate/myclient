@@ -17,6 +17,7 @@ all:
 	$(MAKE) --file Makefile.docker_compose
 	$(MAKE) --file Makefile.hadolint
 	$(MAKE) --file Makefile.hcloudcli
+	$(MAKE) --file Makefile.editorconfig
 	$(MAKE) --file Makefile.etcher
 	$(MAKE) --file Makefile.git
 	$(MAKE) --file Makefile.golang
