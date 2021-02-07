@@ -1,0 +1,3 @@
+.PHONY: install
+install:
+	sudo snap install --channel=edge shellcheck
