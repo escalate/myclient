@@ -1,0 +1,15 @@
+.DEFAULT_GOAL := all
+
+.PHONY: install
+install:
+	pip3 install --upgrade pre-commit
+
+.PHONY: config
+config: install
+	pre-commit init-templatedir --config $(HOME)/.pre-commit-config/private.yaml --hook-type pre-commit $(HOME)/.pre-commit-private
+	pre-commit init-templatedir --config $(HOME)/.pre-commit-config/private.yaml --hook-type commit-msg $(HOME)/.pre-commit-private
+	pre-commit init-templatedir --config $(HOME)/.pre-commit-config/work.yaml --hook-type pre-commit $(HOME)/.pre-commit-work
+	pre-commit init-templatedir --config $(HOME)/.pre-commit-config/work.yaml --hook-type commit-msg $(HOME)/.pre-commit-work
+
+.PHONY: all
+all: config

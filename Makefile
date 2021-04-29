@@ -35,6 +35,7 @@ all:
 	$(MAKE) --file Makefile.ohmyzsh
 	$(MAKE) --file Makefile.papirus
 	$(MAKE) --file Makefile.poetry
+	$(MAKE) --file Makefile.pre_commit
 	$(MAKE) --file Makefile.pyenv
 	$(MAKE) --file Makefile.rvm
 	$(MAKE) --file Makefile.shellcheck
