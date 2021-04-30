@@ -1,4 +1,4 @@
-dotfiles = $(shell find "$(HOME)/dotfiles" -maxdepth 1 -type f -name ".*" -printf '%f\n')
+dotfiles = $(shell find "$(HOME)/dotfiles" -maxdepth 1 -name ".*" -not -name .git -not -name .github -printf '%f\n')
 
 .PHONY: symlink
 symlink:
