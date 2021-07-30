@@ -2,7 +2,7 @@
 
 .PHONY: install
 install:
-	pip3 install --upgrade pre-commit
+	pip3 install --disable-pip-version-check --upgrade pre-commit
 
 .PHONY: config
 config: install
