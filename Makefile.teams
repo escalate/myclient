@@ -1,0 +1,17 @@
+.DEFAULT_GOAL := install
+
+.PHONY: repository
+repository:
+	sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/ms-teams stable main" > /etc/apt/sources.list.d/teams.list'
+
+.PHONY: key
+key: repository
+	wget --quiet --output-document - https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+
+.PHONY: update
+update: key
+	sudo apt update
+
+.PHONY: install
+install: update
+	sudo apt install --yes teams

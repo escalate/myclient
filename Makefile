@@ -40,6 +40,7 @@ all:
 	$(MAKE) --file Makefile.pyenv
 	$(MAKE) --file Makefile.rvm
 	$(MAKE) --file Makefile.shellcheck
+	$(MAKE) --file Makefile.teams
 	$(MAKE) --file Makefile.terraform
 	$(MAKE) --file Makefile.tmux_plugins
 	$(MAKE) --file Makefile.virtualbox
