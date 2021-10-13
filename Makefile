@@ -32,6 +32,7 @@ all:
 	$(MAKE) --file Makefile.kubernetes
 	$(MAKE) --file Makefile.minikube
 	$(MAKE) --file Makefile.lens
+	$(MAKE) --file Makefile.logcli
 	$(MAKE) --file Makefile.nerdfonts
 	$(MAKE) --file Makefile.ohmyzsh
 	$(MAKE) --file Makefile.papirus

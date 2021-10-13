@@ -1,0 +1,18 @@
+.DEFAULT_GOAL := install
+
+latest_version := $(shell curl --silent "https://api.github.com/repos/grafana/loki/releases/latest" | jq --raw-output '.assets[] | select(.name | test("logcli-linux-amd64*")).browser_download_url')
+
+.PHONY: clean
+clean:
+	rm --force /tmp/logcli-*.zip
+	sudo rm --force /usr/local/bin/logcli
+
+.PHONY: download
+download: clean
+	wget --quiet --no-clobber --directory-prefix /tmp --content-disposition "$(latest_version)"
+
+.PHONY: install
+install: download
+	sudo unzip /tmp/logcli-*.zip -d /tmp
+	sudo mv /tmp/logcli-linux-amd64 /usr/local/bin/logcli
+	sudo chmod +x /usr/local/bin/logcli
