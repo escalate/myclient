@@ -4,6 +4,7 @@ latest_version := $(shell curl --silent "https://checkpoint-api.hashicorp.com/v1
 
 .PHONY: clean
 clean:
+	rm --force /tmp/terraform_*.zip
 	sudo rm --force /usr/local/bin/terraform
 
 .PHONY: download
@@ -12,5 +13,6 @@ download: clean
 
 .PHONY: install
 install: download
-	sudo unzip /tmp/terraform_*.zip -d /usr/local/bin
-
+	sudo unzip /tmp/terraform_*.zip -d /tmp
+	sudo mv /tmp/terraform /usr/local/bin/terraform
+	sudo chmod +x /usr/local/bin/terraform
