@@ -1,5 +1,15 @@
 .DEFAULT_GOAL := install
 
+latest_version := $(shell curl --silent "https://api.k8slens.dev/binaries/latest.json" | jq --raw-output '.version')
+
+.PHONY: clean
+clean:
+	rm --force /tmp/Lens*.deb
+
+.PHONY: download
+download: clean
+	wget --quiet --no-clobber --directory-prefix /tmp --content-disposition "https://api.k8slens.dev/binaries/Lens-$(latest_version).amd64.deb"
+
 .PHONY: install
-install:
-	sudo snap install kontena-lens --classic
+install: download
+	sudo apt install --yes /tmp/Lens*.deb
