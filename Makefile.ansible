@@ -2,4 +2,4 @@
 install:
 	# lint = ansible-lint, flake8, yamllint
 	pip3 install --disable-pip-version-check --upgrade ansible molecule[docker,lint,test]
-	sudo apt install --yes sshpass python3-jmespath python3-passlib python3-bcrypt
+	sudo apt install --yes sshpass python3-jmespath python3-passlib python3-bcrypt python3-junit.xml
