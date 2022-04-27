@@ -11,6 +11,8 @@ settings: install
 	gsettings set "org.gnome.desktop.interface" "clock-show-date" "true"
 	gsettings set "org.gnome.desktop.interface" "show-battery-percentage" "true"
 	gsettings set "org.gnome.desktop.notifications" "show-in-lock-screen" "false"
+	gsettings set "org.gnome.desktop.peripherals.mouse" "natural-scroll" "false"
+	gsettings set "org.gnome.desktop.peripherals.mouse" "accel-profile" "flat"
 	gsettings set "org.gnome.desktop.peripherals.touchpad" "natural-scroll" "false"
 	gsettings set "org.gnome.desktop.peripherals.touchpad" "tap-to-click" "false"
 	gsettings set "org.gnome.desktop.screensaver" "picture-uri" "file:///usr/share/backgrounds/adapta/tri-fadeno.jpg"
@@ -21,9 +23,8 @@ settings: install
 	gsettings set "org.gnome.nautilus.preferences" "default-folder-viewer" "list-view"
 	gsettings set "org.gnome.nautilus.preferences" "default-sort-order" "type"
 	gsettings set "org.gnome.nautilus.list-view" "default-visible-columns" "['name', 'size', 'type', 'date_modified']"
-	gsettings set "org.gnome.shell" "favorite-apps" "['org.gnome.Nautilus.desktop', 'org.gnome.Terminal.desktop', 'google-chrome.desktop', 'virtualbox.desktop', 'org.gnome.gedit.desktop', 'code.desktop', 'pidgin.desktop', 'keeweb.desktop', 'org.gnome.Calculator.desktop']"
 	gsettings set "org.gtk.Settings.FileChooser" "show-hidden" "true"
-	gsettings set "org.gnome.desktop.peripherals.mouse" "accel-profile" "flat"
+	gsettings set "org.gnome.shell" "favorite-apps" "['org.gnome.Nautilus.desktop', 'google-chrome.desktop', 'org.gnome.Terminal.desktop', 'virtualbox.desktop', 'code.desktop', 'org.gnome.gedit.desktop', 'keeweb.desktop', 'org.gnome.Calculator.desktop', 'slack_slack.desktop', 'teams.desktop', 'hamster-indicator.desktop']"
 
 .PHONY: dump
 dump:
