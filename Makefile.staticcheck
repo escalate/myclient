@@ -1,0 +1,18 @@
+.DEFAULT_GOAL := install
+
+latest_version := $(shell curl --silent "https://api.github.com/repos/dominikh/go-tools/releases/latest" | jq --raw-output '.assets[] | select(.name | test(".*_linux_amd64.tar.gz$$")).browser_download_url')
+
+.PHONY: clean
+clean:
+	rm --force /tmp/staticcheck_linux_amd64.tar.gz
+	sudo rm --force /usr/local/bin/staticcheck
+
+.PHONY: download
+download: clean
+	wget --quiet --no-clobber --directory-prefix /tmp --content-disposition "$(latest_version)"
+
+.PHONY: install
+install: download
+	tar xzf /tmp/staticcheck_linux_amd64.tar.gz -C /tmp
+	sudo cp /tmp/staticcheck/staticcheck /usr/local/bin/staticcheck
+	sudo chmod +x /usr/local/bin/staticcheck
