@@ -1,0 +1,17 @@
+.DEFAULT_GOAL := install
+
+.PHONY: repository
+repository:
+	sudo sh -c 'echo "deb https://packages.cloud.google.com/apt cloud-sdk-bionic main" > /etc/apt/sources.list.d/google-cloud-sdk.list'
+
+.PHONY: key
+key: repository
+	wget --quiet --output-document - https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+
+.PHONY: update
+update: key
+	sudo apt update
+
+.PHONY: install
+install: update
+	sudo apt install --yes google-cloud-cli google-cloud-cli-gke-gcloud-auth-plugin
