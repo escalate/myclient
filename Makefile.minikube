@@ -1,6 +1,6 @@
-.DEFAULT_GOAL := hypervisor
+.DEFAULT_GOAL := install
 
-latest_version := $(shell curl --silent "https://api.github.com/repos/kubernetes/minikube/releases/latest" | jq --raw-output '.assets[] | select(.name | test(".*.deb")).browser_download_url')
+latest_version := $(shell curl --silent "https://api.github.com/repos/kubernetes/minikube/releases/latest" | jq --raw-output '.assets[] | select(.name | test("minikube_.*_amd64.deb")).browser_download_url')
 
 .PHONY: clean
 clean:
@@ -13,7 +13,3 @@ download: clean
 .PHONY: install
 install: download
 	sudo apt install --yes /tmp/minikube*.deb
-
-.PHONY: hypervisor
-hypervisor: install
-	minikube config set vm-driver virtualbox
