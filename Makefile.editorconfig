@@ -1,6 +1,6 @@
 .DEFAULT_GOAL := install
 
-latest_version := $(shell curl --silent "https://api.github.com/repos/editorconfig-checker/editorconfig-checker/releases/latest" | jq --raw-output '.assets[] | select(.name | test("ec-linux-amd64")).browser_download_url')
+latest_version := $(shell curl --silent "https://api.github.com/repos/editorconfig-checker/editorconfig-checker/releases/latest" | jq --raw-output '.assets[] | select(.name | test(".*-linux-amd64.tar.gz")).browser_download_url')
 
 .PHONY: clean
 clean:
