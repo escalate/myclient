@@ -2,7 +2,7 @@
 
 .PHONY: repository
 repository:
-	sudo sh -c 'echo "deb [arch=amd64] http://download.virtualbox.org/virtualbox/debian $(shell lsb_release -cs) contrib" > /etc/apt/sources.list.d/oracle-virtualbox.list'
+	sudo sh -c 'echo "deb [arch=$(shell dpkg --print-architecture)] http://download.virtualbox.org/virtualbox/debian $(shell lsb_release -cs) contrib" > /etc/apt/sources.list.d/oracle-virtualbox.list'
 
 .PHONY: key
 key: repository

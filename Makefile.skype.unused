@@ -2,7 +2,7 @@
 
 .PHONY: repository
 repository:
-	sudo sh -c 'echo "deb [arch=amd64] https://repo.skype.com/deb stable main" > /etc/apt/sources.list.d/skype-stable.list'
+	sudo sh -c 'echo "deb [arch=$(shell dpkg --print-architecture)] https://repo.skype.com/deb stable main" > /etc/apt/sources.list.d/skype-stable.list'
 
 .PHONY: key
 key: repository

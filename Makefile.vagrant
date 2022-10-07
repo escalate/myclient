@@ -2,7 +2,7 @@
 
 .PHONY: repository
 repository:
-	sudo sh -c 'echo "deb [arch=amd64] https://apt.releases.hashicorp.com $(shell lsb_release -cs) main" > /etc/apt/sources.list.d/hashicorp-vagrant.list'
+	sudo sh -c 'echo "deb [arch=$(shell dpkg --print-architecture)] https://apt.releases.hashicorp.com $(shell lsb_release -cs) main" > /etc/apt/sources.list.d/hashicorp-vagrant.list'
 
 .PHONY: key
 key: repository
