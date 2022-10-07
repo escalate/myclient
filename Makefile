@@ -8,7 +8,6 @@ all:
 	$(MAKE) --file Makefile.timezone
 	$(MAKE) --file Makefile.pkg_install
 	$(MAKE) --file Makefile.pkg_erase
-	$(MAKE) --file Makefile.adapta
 	$(MAKE) --file Makefile.adr_tools
 	$(MAKE) --file Makefile.ansible
 	$(MAKE) --file Makefile.chrome
