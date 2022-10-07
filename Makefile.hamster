@@ -1,13 +1,3 @@
-.DEFAULT_GOAL := install
-
-.PHONY: repository
-repository:
-	sudo add-apt-repository --yes ppa:tomtomtom/hamster
-
-.PHONY: update
-update: repository
-	sudo apt-get update
-
 .PHONY: install
 install: update
-	sudo apt-get install --yes hamster-applet
+	sudo apt-get install --yes hamster-time-tracker
