@@ -16,6 +16,7 @@ all:
 	$(MAKE) --file Makefile.docker
 	$(MAKE) --file Makefile.docker_compose
 	$(MAKE) --file Makefile.hadolint
+	$(MAKE) --file Makefile.azure-cli
 	$(MAKE) --file Makefile.hcloudcli
 	$(MAKE) --file Makefile.google-cloud-sdk
 	$(MAKE) --file Makefile.editorconfig
