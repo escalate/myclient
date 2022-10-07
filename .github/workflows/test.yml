@@ -1,0 +1,20 @@
+name: Test
+'on':
+  - push
+  - pull_request
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: Create test dependencies
+        run: |
+          mkdir -p $HOME/.network/
+          touch $HOME/.network/dummy
+
+      - name: Run Makefiles
+        run: |
+          ./bootstrap.sh
