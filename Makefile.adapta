@@ -6,7 +6,7 @@ repository:
 
 .PHONY: update
 update: repository
-	sudo apt update
+	sudo apt-get update
 
 .PHONY: install
 install: update

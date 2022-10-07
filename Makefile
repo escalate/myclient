@@ -30,7 +30,7 @@ all:
 	$(MAKE) --file Makefile.hugo
 	$(MAKE) --file Makefile.java
 	$(MAKE) --file Makefile.keeweb
-	$(MAKE) --file Makefile.kubernetes
+	$(MAKE) --file Makefile.kubectl
 	$(MAKE) --file Makefile.minikube
 	$(MAKE) --file Makefile.lens
 	$(MAKE) --file Makefile.logcli

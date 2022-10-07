@@ -11,7 +11,7 @@ key: repository
 
 .PHONY: update
 update: key
-	sudo apt update
+	sudo apt-get update
 
 .PHONY: install
 install: update
