@@ -1,5 +1,5 @@
-.PHONY: all
-all:
+.PHONY: default
+default:
 	$(MAKE) --file Makefile.workspace
 	$(MAKE) --file Makefile.dotfiles
 	$(MAKE) --file Makefile.secrets
@@ -52,3 +52,7 @@ all:
 	$(MAKE) --file Makefile.vscode
 	$(MAKE) --file Makefile.gsettings
 	$(MAKE) --file Makefile.dconf
+
+.PHONY: optional
+optional:
+	$(MAKE) --file Makefile.barracudavpn
