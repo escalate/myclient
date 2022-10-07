@@ -14,7 +14,6 @@ all:
 	$(MAKE) --file Makefile.cookiecutter
 	$(MAKE) --file Makefile.dircolors
 	$(MAKE) --file Makefile.docker
-	$(MAKE) --file Makefile.docker_compose
 	$(MAKE) --file Makefile.hadolint
 	$(MAKE) --file Makefile.azure-cli
 	$(MAKE) --file Makefile.hcloudcli
@@ -28,7 +27,6 @@ all:
 	$(MAKE) --file Makefile.hamster
 	$(MAKE) --file Makefile.helm
 	$(MAKE) --file Makefile.hugo
-	$(MAKE) --file Makefile.java
 	$(MAKE) --file Makefile.keeweb
 	$(MAKE) --file Makefile.kubectl
 	$(MAKE) --file Makefile.minikube
@@ -43,6 +41,7 @@ all:
 	$(MAKE) --file Makefile.rvm
 	$(MAKE) --file Makefile.shellcheck
 	$(MAKE) --file Makefile.staticcheck
+	$(MAKE) --file Makefile.slack
 	$(MAKE) --file Makefile.teams
 	$(MAKE) --file Makefile.terraform
 	$(MAKE) --file Makefile.tmux_plugins
