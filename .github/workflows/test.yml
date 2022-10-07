@@ -14,6 +14,7 @@ jobs:
         run: |
           mkdir -p $HOME/.network/
           touch $HOME/.network/dummy
+          sudo apt-get remove --yes google-cloud-sdk
 
       - name: Run Makefiles
         run: |
