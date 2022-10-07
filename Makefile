@@ -22,7 +22,6 @@ default:
 	$(MAKE) --file Makefile.etcher
 	$(MAKE) --file Makefile.git
 	$(MAKE) --file Makefile.golang
-	$(MAKE) --file Makefile.devspace
 	$(MAKE) --file Makefile.gnometerminal
 	$(MAKE) --file Makefile.hamster
 	$(MAKE) --file Makefile.helm
