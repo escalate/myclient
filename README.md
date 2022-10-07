@@ -10,11 +10,12 @@
 
 ## Secrets
 
-* Ensure ~/secrets directory exists
+* All secrets or stored in a separate directory named `~/secrets/`
+* Make sure `~/secrets/` directory exists
 
 ## Bootstrap
 
-* Run bootstrap shell script
+* To bootstrap a blank Ubuntu system just run shell script
 ```bash
 curl --silent --show-error --location https://raw.githubusercontent.com/escalate/myclient/master/bootstrap.sh | bash
 ```
