@@ -15,7 +15,7 @@ update: key
 
 .PHONY: install
 install: update
-	sudo apt install --yes virtualbox-6.1 dkms
+	sudo apt-get install --yes virtualbox-6.1 dkms
 
 .PHONY: vboxconfig
 vboxconfig: install

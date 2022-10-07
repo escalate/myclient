@@ -15,4 +15,4 @@ update: key
 
 .PHONY: install
 install: update
-	sudo apt install --yes kubectl
+	sudo apt-get install --yes kubectl

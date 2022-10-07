@@ -2,7 +2,7 @@
 
 .PHONY: install
 install:
-	sudo apt install --yes apt-transport-https
+	sudo apt-get install --yes apt-transport-https
 
 .PHONY: timeout
 timeout:

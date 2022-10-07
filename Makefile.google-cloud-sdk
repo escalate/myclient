@@ -14,4 +14,4 @@ update: key
 
 .PHONY: install
 install: update
-	sudo apt install --yes google-cloud-cli google-cloud-cli-gke-gcloud-auth-plugin
+	sudo apt-get install --yes google-cloud-cli google-cloud-cli-gke-gcloud-auth-plugin

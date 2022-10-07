@@ -4,7 +4,7 @@ tz = Europe/Berlin
 
 .PHONY: install
 install:
-	sudo apt install --yes tzdata
+	sudo apt-get install --yes tzdata
 
 .PHONY: timezone
 timezone: install

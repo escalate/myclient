@@ -6,7 +6,7 @@ clean:
 
 .PHONY: dependencies
 dependencies:
-	sudo apt install --yes \
+	sudo apt-get install --yes \
 		libssl-dev \
 		zlib1g-dev \
 		libbz2-dev \

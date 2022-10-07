@@ -10,4 +10,4 @@ update: repository
 
 .PHONY: install
 install: update
-	sudo apt install --yes golang-go
+	sudo apt-get install --yes golang-go

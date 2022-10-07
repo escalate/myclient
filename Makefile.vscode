@@ -14,4 +14,4 @@ update: key
 
 .PHONY: install
 install: update
-	sudo apt install --yes code
+	sudo apt-get install --yes code

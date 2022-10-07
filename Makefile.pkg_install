@@ -29,4 +29,4 @@ update:
 
 .PHONY: install
 install: update
-	sudo apt install --yes $(packages)
+	sudo apt-get install --yes $(packages)

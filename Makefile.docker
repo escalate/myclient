@@ -14,7 +14,7 @@ update: key
 
 .PHONY: install
 install: update
-	sudo apt install --yes docker-ce
+	sudo apt-get install --yes docker-ce
 
 .PHONY: python
 python:
