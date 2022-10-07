@@ -15,7 +15,7 @@
 
 ## Bootstrap
 
-* To bootstrap a blank Ubuntu system just run shell script
+* To bootstrap a blank system just run the following command
 ```bash
 curl --silent --show-error --location https://raw.githubusercontent.com/escalate/myclient/master/bootstrap.sh | bash
 ```
@@ -36,20 +36,22 @@ cd [RESTOREDIR]/Dokumente
 mv * ~/Dokumente/
 ```
 
-## VirtualBox
+## Manual settings
 
-### Extension Pack
+### VirtualBox
+
+#### Extension Pack
 
 * Download [Extension Pack](https://www.virtualbox.org/wiki/Downloads)
 * Import .vbox-extpack file
   * File -> Preferences... -> Extensions
 
-### Restore VMs
+#### Restore VMs
 
 * Machine -> Add...
 * Open .vbox file
 
-## Gnome Shell Extensions
+### Gnome Shell extensions
 
 * Open Google Chrome
   * Install [GNOME Shell-Integration](https://chrome.google.com/webstore/detail/gnome-shell-integration/gphhapmejobijbbhgpjhcjognlahblep) addon
@@ -62,19 +64,13 @@ mv * ~/Dokumente/
     * Panel OSD
     * Refresh Wifi Connections
 
-## Sound
+### Sound
 
 * Open Settings
   * Sound -> Sound Effects -> Alert volume off
 
-## Location Bookmarks
+### Location bookmarks
 
 * Open Files
   * Other Locations -> smb://...
   * Right click -> Add Bookmark
-
-## Optional: Barracuda VPN
-
-```
-make -f Makefile.barracudavpn
-```
