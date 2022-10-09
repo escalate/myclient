@@ -2,7 +2,7 @@
 
 .PHONY: key
 key:
-	curl --silent --show-error --location https://rvm.io/mpapis.asc | gpg --import -
+	curl --silent --show-error --location https://rvm.io/mpapis.asc | gpg2 --import -
 
 .PHONY: install
 install: key
