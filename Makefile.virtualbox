@@ -2,12 +2,11 @@
 
 .PHONY: repository
 repository:
-	sudo sh -c 'echo "deb [arch=$(shell dpkg --print-architecture)] http://download.virtualbox.org/virtualbox/debian $(shell lsb_release -cs) contrib" > /etc/apt/sources.list.d/oracle-virtualbox.list'
+	sudo sh -c 'echo "deb [arch=$(shell dpkg --print-architecture) signed-by=/usr/share/keyrings/virtualbox.gpg] https://download.virtualbox.org/virtualbox/debian $(shell lsb_release -cs) contrib" > /etc/apt/sources.list.d/oracle-virtualbox.list'
 
 .PHONY: key
 key: repository
-	wget --quiet --output-document - https://www.virtualbox.org/download/oracle_vbox_2016.asc | sudo apt-key add -
-	wget --quiet --output-document - https://www.virtualbox.org/download/oracle_vbox.asc | sudo apt-key add -
+	wget --quiet --output-document - https://www.virtualbox.org/download/oracle_vbox_2016.asc | sudo gpg --dearmor --output /usr/share/keyrings/virtualbox.gpg
 
 .PHONY: update
 update: key

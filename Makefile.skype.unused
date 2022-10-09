@@ -2,11 +2,11 @@
 
 .PHONY: repository
 repository:
-	sudo sh -c 'echo "deb [arch=$(shell dpkg --print-architecture)] https://repo.skype.com/deb stable main" > /etc/apt/sources.list.d/skype-stable.list'
+	sudo sh -c 'echo "deb [arch=$(shell dpkg --print-architecture) signed-by=/usr/share/keyrings/skype.gpg] https://repo.skype.com/deb stable main" > /etc/apt/sources.list.d/skype-stable.list'
 
 .PHONY: key
 key: repository
-	wget --quiet --output-document - https://repo.skype.com/data/SKYPE-GPG-KEY | sudo apt-key add -
+	wget --quiet --output-document - https://repo.skype.com/data/SKYPE-GPG-KEY | sudo gpg --dearmor --output /usr/share/keyrings/skype.gpg
 
 .PHONY: update
 update: key
