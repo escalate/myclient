@@ -1,9 +1,20 @@
-.DEFAULT_GOAL := install
+.DEFAULT_GOAL := all
 
-.PHONY: key
-key:
-	curl --silent --show-error --location https://rvm.io/mpapis.asc | gpg2 --import -
+.PHONY: repository
+repository:
+	sudo add-apt-repository --yes ppa:rael-gc/rvm
+
+.PHONY: update
+update: repository
+	sudo apt-get update
 
 .PHONY: install
-install: key
-	curl --silent --show-error --location https://get.rvm.io | bash -s stable
+install: update
+	sudo apt-get install --yes rvm
+
+.PHONY: usermod
+usermod:
+	sudo usermod --append --groups rvm $(USER)
+
+.PHONY: all
+all: install usermod
