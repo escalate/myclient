@@ -8,7 +8,7 @@ clean:
 
 .PHONY: download
 download: clean
-	wget --quiet --no-clobber --directory-prefix /tmp --content-disposition "$(latest_version)"
+	wget --no-clobber --directory-prefix /tmp --content-disposition "$(latest_version)"
 
 .PHONY: install
 install: download

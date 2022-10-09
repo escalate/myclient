@@ -2,7 +2,7 @@
 
 .PHONY: download
 download:
-	wget --quiet --no-clobber --directory-prefix /tmp --content-disposition "https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.ansi-dark"
+	wget --no-clobber --directory-prefix /tmp --content-disposition "https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.ansi-dark"
 
 .PHONY: install
 install: download

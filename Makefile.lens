@@ -8,7 +8,7 @@ clean:
 
 .PHONY: download
 download: clean
-	wget --quiet --no-clobber --directory-prefix /tmp --content-disposition "https://api.k8slens.dev/binaries/Lens-$(latest_version).amd64.deb"
+	wget --no-clobber --directory-prefix /tmp --content-disposition "https://api.k8slens.dev/binaries/Lens-$(latest_version).amd64.deb"
 
 .PHONY: install
 install: download

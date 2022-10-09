@@ -9,7 +9,7 @@ clean:
 
 .PHONY: download
 download: clean
-	wget --quiet --no-clobber --directory-prefix /tmp --content-disposition "https://get.helm.sh/helm-$(latest_version)-linux-amd64.tar.gz"
+	wget --no-clobber --directory-prefix /tmp --content-disposition "https://get.helm.sh/helm-$(latest_version)-linux-amd64.tar.gz"
 
 .PHONY: install
 install: download

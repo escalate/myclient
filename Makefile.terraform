@@ -9,7 +9,7 @@ clean:
 
 .PHONY: download
 download: clean
-	wget --quiet --no-clobber --directory-prefix /tmp --content-disposition "https://releases.hashicorp.com/terraform/$(latest_version)/terraform_$(latest_version)_linux_amd64.zip"
+	wget --no-clobber --directory-prefix /tmp --content-disposition "https://releases.hashicorp.com/terraform/$(latest_version)/terraform_$(latest_version)_linux_amd64.zip"
 
 .PHONY: install
 install: download

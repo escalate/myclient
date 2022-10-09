@@ -6,7 +6,7 @@ repository:
 
 .PHONY: key
 key: repository
-	wget --quiet --output-document - https://repo.skype.com/data/SKYPE-GPG-KEY | sudo gpg --dearmor --yes --output /usr/share/keyrings/skype.gpg
+	wget --output-document - https://repo.skype.com/data/SKYPE-GPG-KEY | sudo gpg --dearmor --yes --output /usr/share/keyrings/skype.gpg
 
 .PHONY: update
 update: key

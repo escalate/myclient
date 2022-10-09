@@ -8,7 +8,7 @@ clean:
 
 .PHONY: download
 download: clean
-	sudo wget --quiet --no-clobber --output-document /usr/local/bin/hadolint "$(latest_version)"
+	sudo wget --no-clobber --output-document /usr/local/bin/hadolint "$(latest_version)"
 
 .PHONY: install
 install: download
