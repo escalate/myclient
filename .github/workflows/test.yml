@@ -18,10 +18,12 @@ jobs:
       - name: Install linter
         run: |
           python -m pip install --disable-pip-version-check editorconfig-checker
+          sudo snap install --channel=edge shellcheck
 
       - name: Run linter
         run: |
-          ec
+          make version
+          make lint
   test:
     name: Test
     runs-on: ubuntu-22.04

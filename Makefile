@@ -54,3 +54,13 @@ default:
 .PHONY: optional
 optional:
 	$(MAKE) --file Makefile.barracudavpn
+
+.PHONY: lint
+lint:
+	ec
+	find . -name "*.sh" -exec shellcheck {} \;
+
+.PHONY: version
+version:
+	ec --version
+	shellcheck --version
