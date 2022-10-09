@@ -21,6 +21,7 @@ default:
 	$(MAKE) --file Makefile.editorconfig
 	$(MAKE) --file Makefile.etcher
 	$(MAKE) --file Makefile.git
+	$(MAKE) --file Makefile.pre_commit
 	$(MAKE) --file Makefile.golang
 	$(MAKE) --file Makefile.gnometerminal
 	$(MAKE) --file Makefile.hamster
@@ -33,10 +34,9 @@ default:
 	$(MAKE) --file Makefile.logcli
 	$(MAKE) --file Makefile.nerdfonts
 	$(MAKE) --file Makefile.poetry
+	$(MAKE) --file Makefile.pyenv
 	$(MAKE) --file Makefile.ohmyzsh
 	$(MAKE) --file Makefile.papirus
-	$(MAKE) --file Makefile.pre_commit
-	$(MAKE) --file Makefile.pyenv
 	$(MAKE) --file Makefile.shellcheck
 	$(MAKE) --file Makefile.staticcheck
 	$(MAKE) --file Makefile.slack
