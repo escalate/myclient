@@ -6,7 +6,7 @@ repository:
 
 .PHONY: key
 key: repository
-	wget --quiet --output-document - https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor --output /usr/share/keyrings/microsoft.gpg
+	wget --quiet --output-document - https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor --yes --output /usr/share/keyrings/microsoft.gpg
 
 .PHONY: update
 update: key

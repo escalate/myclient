@@ -6,7 +6,7 @@ repository:
 
 .PHONY: key
 key: repository
-	wget --quiet --output-document - https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor --output /usr/share/keyrings/hashicorp.gpg
+	wget --quiet --output-document - https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor --yes --output /usr/share/keyrings/hashicorp.gpg
 
 .PHONY: update
 update: key

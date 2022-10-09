@@ -6,7 +6,7 @@ repository:
 
 .PHONY: key
 key: repository
-	wget --quiet --output-document - https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor --output /usr/share/keyrings/docker.gpg
+	wget --quiet --output-document - https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor --yes --output /usr/share/keyrings/docker.gpg
 
 .PHONY: update
 update: key

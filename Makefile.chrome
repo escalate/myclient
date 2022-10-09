@@ -6,7 +6,7 @@ repository:
 
 .PHONY: key
 key: repository
-	wget --quiet --output-document - https://dl.google.com/linux/linux_signing_key.pub | sudo gpg --dearmor --output /usr/share/keyrings/dl.google.gpg
+	wget --quiet --output-document - https://dl.google.com/linux/linux_signing_key.pub | sudo gpg --dearmor --yes --output /usr/share/keyrings/dl.google.gpg
 
 .PHONY: update
 update: key
