@@ -38,4 +38,4 @@ jobs:
           sudo apt-get remove --yes google-cloud-sdk
 
       - name: Run Makefiles
-        run: ./bootstrap.sh
+        run: ./scripts/bootstrap.sh

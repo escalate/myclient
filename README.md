@@ -17,7 +17,7 @@
 
 * To bootstrap a blank system just run the following command
 ```bash
-curl --silent --show-error --location https://raw.githubusercontent.com/escalate/myclient/master/bootstrap.sh | bash
+curl --silent --show-error --location https://raw.githubusercontent.com/escalate/myclient/master/scripts/bootstrap.sh | bash
 ```
 
 ## Home directory
