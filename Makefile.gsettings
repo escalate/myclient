@@ -19,7 +19,7 @@ settings: install
 	gsettings set "org.gnome.desktop.screensaver" "lock-enabled" "true"
 	gsettings set "org.gnome.gedit.preferences.editor" "insert-spaces" "true"
 	gsettings set "org.gnome.gedit.preferences.editor" "tabs-size" "uint32 4"
-	gsettings set "org.gnome.nautilus.desktop" "trash-icon-visible" "false"
+	# gsettings set "org.gnome.nautilus.desktop" "trash-icon-visible" "false"
 	gsettings set "org.gnome.nautilus.preferences" "default-folder-viewer" "list-view"
 	gsettings set "org.gnome.nautilus.preferences" "default-sort-order" "type"
 	gsettings set "org.gnome.nautilus.list-view" "default-visible-columns" "['name', 'size', 'type', 'date_modified']"
