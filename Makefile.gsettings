@@ -19,10 +19,10 @@ settings: install
 	gsettings set "org.gnome.desktop.screensaver" "lock-enabled" "true"
 	gsettings set "org.gnome.gedit.preferences.editor" "insert-spaces" "true"
 	gsettings set "org.gnome.gedit.preferences.editor" "tabs-size" "uint32 4"
-	# gsettings set "org.gnome.nautilus.desktop" "trash-icon-visible" "false"
-	# gsettings set "org.gnome.nautilus.preferences" "default-folder-viewer" "list-view"
-	# gsettings set "org.gnome.nautilus.preferences" "default-sort-order" "type"
-	gsettings set "org.gnome.nautilus.list-view" "default-visible-columns" "['name', 'size', 'type', 'date_modified']"
+	gsettings set "org.gnome.nautilus.desktop" "trash-icon-visible" "false" || exit 0
+	gsettings set "org.gnome.nautilus.preferences" "default-folder-viewer" "list-view" || exit 0
+	gsettings set "org.gnome.nautilus.preferences" "default-sort-order" "type" || exit 0
+	gsettings set "org.gnome.nautilus.list-view" "default-visible-columns" "['name', 'size', 'type', 'date_modified']" || exit 0
 	gsettings set "org.gtk.Settings.FileChooser" "show-hidden" "true"
 	gsettings set "org.gnome.shell" "favorite-apps" "['org.gnome.Nautilus.desktop', 'google-chrome.desktop', 'org.gnome.Terminal.desktop', 'virtualbox.desktop', 'code.desktop', 'org.gnome.gedit.desktop', 'keeweb.desktop', 'org.gnome.Calculator.desktop', 'slack_slack.desktop', 'teams.desktop', 'hamster-indicator.desktop']"
 
