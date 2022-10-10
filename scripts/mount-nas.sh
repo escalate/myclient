@@ -29,5 +29,5 @@ if grep -qs ${MOUNT_PATH} /proc/mounts; then
     ${ROOT_CMD} umount ${MOUNT_PATH}
 else
     echo "INFO: Mount //${SMB_SERVER}${SMB_PATH} to ${MOUNT_PATH} ..."
-    ${ROOT_CMD} mount -t cifs -o credentials=${SMB_CREDENTIAL_FILE} //${SMB_SERVER}${SMB_PATH} ${MOUNT_PATH}
+    ${ROOT_CMD} mount -t cifs -o credentials="${SMB_CREDENTIAL_FILE}" "//${SMB_SERVER}${SMB_PATH}" "${MOUNT_PATH}"
 fi

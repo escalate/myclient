@@ -58,7 +58,7 @@ optional:
 .PHONY: lint
 lint:
 	ec
-	find . -name "*.sh" -exec shellcheck {} \;
+	find scripts/ -name "*.sh" -exec shellcheck {} \;
 
 .PHONY: version
 version:

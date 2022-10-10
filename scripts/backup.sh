@@ -17,7 +17,7 @@ for d in "${DIRS_TO_TAR[@]}"; do
     if [ ! -f "${LOCAL_BACKUP_PATH}/${BACKUP_FILE}" ]; then
         echo "INFO: Create backup archive \"${LOCAL_BACKUP_PATH}/${BACKUP_FILE}\" for directory \"${d}\""
         sudo tar -cjf "${LOCAL_BACKUP_PATH}/${BACKUP_FILE}" "${d}"
-        sudo chown ${USER}:${USER} "${LOCAL_BACKUP_PATH}/${BACKUP_FILE}"
+        sudo chown "${USER}":"${USER}" "${LOCAL_BACKUP_PATH}/${BACKUP_FILE}"
     else
         echo "INFO: Backup archive \"${LOCAL_BACKUP_PATH}/${BACKUP_FILE}\" for directory \"${d}\" already created"
     fi
@@ -32,7 +32,7 @@ fi
 if grep -qs ${MOUNT_PATH} /proc/mounts; then
     echo "INFO: Transfer local backup ${LOCAL_BACKUP_PATH} to NAS ${REMOTE_BACKUP_PATH}"
     sudo rsync -r -v --progress -z --size-only "${LOCAL_BACKUP_PATH}" "${REMOTE_BACKUP_PATH}"
-    DIR_BASE=$(basename $LOCAL_BACKUP_PATH)
+    DIR_BASE=$(basename ${LOCAL_BACKUP_PATH})
     echo "INFO: Check integrity of ${DIR_BASE} after transfer"
     diff -rq "${LOCAL_BACKUP_PATH}" "${REMOTE_BACKUP_PATH}/${DIR_BASE}"
 
