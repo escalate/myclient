@@ -24,8 +24,8 @@ jobs:
         run: |
           make version
           make lint
-  test:
-    name: Test
+  bootstrap:
+    name: Bootstrap
     runs-on: ubuntu-22.04
     steps:
       - name: Check out repository
@@ -37,5 +37,5 @@ jobs:
           touch $HOME/.network/dummy
           sudo apt-get remove --yes google-cloud-sdk
 
-      - name: Run Makefiles
+      - name: Run Bootstrap script
         run: ./scripts/bootstrap.sh
