@@ -1,15 +1,15 @@
 .DEFAULT_GOAL := install
 
-latest_version := $(shell curl --silent "https://api.k8slens.dev/binaries/latest.json" | jq --raw-output '.version')
+latest_version := $(shell curl --silent "https://api.github.com/repos/MuhammedKalkan/OpenLens/releases/latest" | jq --raw-output '.assets[] | select(.name | test(".*amd64.deb$$")).browser_download_url')
 
 .PHONY: clean
 clean:
-	rm --force /tmp/Lens*.deb
+	rm --force /tmp/OpenLens*.deb
 
 .PHONY: download
 download: clean
-	wget --no-clobber --directory-prefix /tmp --content-disposition "https://api.k8slens.dev/binaries/Lens-$(latest_version).amd64.deb"
+	wget --no-clobber --directory-prefix /tmp --content-disposition "$(latest_version)"
 
 .PHONY: install
 install: download
-	sudo apt install --yes /tmp/Lens*.deb
+	sudo apt install --yes /tmp/OpenLens*.deb
