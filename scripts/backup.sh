@@ -13,10 +13,10 @@ if [ ! -d "${LOCAL_BACKUP_PATH}" ]; then
 fi
 
 for d in "${DIRS_TO_TAR[@]}"; do
-    BACKUP_FILE="backup_$(basename ${d})_${DATE}.tar.bz2"
+    BACKUP_FILE="backup_$(basename ${d})_${DATE}.tar"
     if [ ! -f "${LOCAL_BACKUP_PATH}/${BACKUP_FILE}" ]; then
         echo "INFO: Create backup archive \"${LOCAL_BACKUP_PATH}/${BACKUP_FILE}\" for directory \"${d}\""
-        sudo tar -cjf "${LOCAL_BACKUP_PATH}/${BACKUP_FILE}" "${d}"
+        sudo tar -cvf "${LOCAL_BACKUP_PATH}/${BACKUP_FILE}" "${d}"
         sudo chown "${USER}":"${USER}" "${LOCAL_BACKUP_PATH}/${BACKUP_FILE}"
     else
         echo "INFO: Backup archive \"${LOCAL_BACKUP_PATH}/${BACKUP_FILE}\" for directory \"${d}\" already created"
