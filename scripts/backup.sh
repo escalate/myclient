@@ -32,18 +32,12 @@ fi
 if grep -qs ${MOUNT_PATH} /proc/mounts; then
     echo "INFO: Transfer local backup ${LOCAL_BACKUP_PATH} to NAS ${REMOTE_BACKUP_PATH}"
     sudo rsync -r -v --progress -z --size-only "${LOCAL_BACKUP_PATH}" "${REMOTE_BACKUP_PATH}"
-    DIR_BASE=$(basename ${LOCAL_BACKUP_PATH})
-    echo "INFO: Check integrity of ${DIR_BASE} after transfer"
-    diff -rq "${LOCAL_BACKUP_PATH}" "${REMOTE_BACKUP_PATH}/${DIR_BASE}"
 
     echo "INFO: Attention! Don't forget to delete local backups ${LOCAL_BACKUP_PATH} to save diskspace"
 
     for d in "${DIRS_TO_RSYNC[@]}"; do
         echo "INFO: Backup directory ${d} to ${REMOTE_BACKUP_PATH}"
         sudo rsync -r -v --progress -z --size-only "${d}" "${REMOTE_BACKUP_PATH}"
-        DIR_BASE=$(basename "${d}")
-        echo "INFO: Check integrity of ${DIR_BASE} after transfer"
-        diff -rq "${d}" "${REMOTE_BACKUP_PATH}/${DIR_BASE}"
     done
 fi
 
