@@ -27,13 +27,13 @@ curl --silent --show-error --location https://raw.githubusercontent.com/escalate
 * Extract all backup archives
 ```bash
 cd [RESTOREDIR]
-find . -name "*.tar.bz2" -type f -exec tar xvjf {} \;
+find . -name "*.tar" -type f -exec tar xvf {} \;
 ```
 
-* Move content of extracted archives to corresponding home directory equivalents e.g. ~/Dokumente
+* Move content of extracted archives to corresponding home directory equivalents e.g. ~/Documents
 ```bash
-cd [RESTOREDIR]/Dokumente
-mv * ~/Dokumente/
+cd [RESTOREDIR]/Documents
+mv * ~/Documents/
 ```
 
 ## Manual settings
