@@ -25,6 +25,7 @@ settings: install
 	gsettings set "org.gnome.desktop.background" "secondary-color" "#333333"
 	# Settings - Screensaver
 	gsettings set "org.gnome.desktop.screensaver" "lock-enabled" "true"
+	gsettings set "org.gnome.desktop.screensaver" "ubuntu-lock-on-suspend" "true"
 	gsettings set "org.gnome.desktop.screensaver" "picture-uri" "file:///usr/share/backgrounds/ubuntu-default-greyscale-wallpaper.png"
 	gsettings set "org.gnome.desktop.screensaver" "primary-color" "#333333"
 	gsettings set "org.gnome.desktop.screensaver" "secondary-color" "#333333"
