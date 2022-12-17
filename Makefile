@@ -34,7 +34,6 @@ default:
 	$(MAKE) --file Makefile.logcli
 	$(MAKE) --file Makefile.nerdfonts
 	$(MAKE) --file Makefile.poetry
-	$(MAKE) --file Makefile.pyenv
 	$(MAKE) --file Makefile.ohmyzsh
 	$(MAKE) --file Makefile.papirus
 	$(MAKE) --file Makefile.shellcheck
