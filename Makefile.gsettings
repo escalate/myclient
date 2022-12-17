@@ -4,31 +4,57 @@
 install:
 	sudo apt-get install --yes libglib2.0-bin
 
+.PHONY: dump
+dump: install
+	sudo cp --force "$(CURDIR)/scripts/gsettings-dump" /usr/local/bin/gsettings-dump
+	/usr/local/bin/gsettings-dump > /tmp/gsettings.txt
+
 .PHONY: settings
 settings: install
-	gsettings set "org.gnome.desktop.background" "picture-uri" "file:///usr/share/backgrounds/adapta/tri-fadeno.jpg"
-	gsettings set "org.gnome.desktop.calendar" "show-weekdate" "true"
-	gsettings set "org.gnome.desktop.interface" "clock-show-date" "true"
-	gsettings set "org.gnome.desktop.interface" "show-battery-percentage" "true"
+	# Settings - Appearance
+	gsettings set "org.gnome.shell.extensions.ding" "start-corner" "top-left"
+	gsettings set "org.gnome.shell.extensions.ding" "show-home" "false"
+	gsettings set "org.gnome.shell.extensions.dash-to-dock" "dash-max-icon-size" "38"
+	gsettings set "org.gnome.shell.extensions.dash-to-dock" "show-mounts-network" "false"
+	gsettings set "org.gnome.shell.extensions.dash-to-dock" "show-mounts-only-mounted" "true"
+	gsettings set "org.gnome.shell.extensions.dash-to-dock" "show-trash" "false"
+	# Settings - Background
+	gsettings set "org.gnome.desktop.background" "picture-uri" "file:///usr/share/backgrounds/ubuntu-default-greyscale-wallpaper.png"
+	gsettings set "org.gnome.desktop.background" "picture-uri-dark" "file:///usr/share/backgrounds/ubuntu-default-greyscale-wallpaper.png"
+	gsettings set "org.gnome.desktop.background" "primary-color" "#333333"
+	gsettings set "org.gnome.desktop.background" "secondary-color" "#333333"
+	# Settings - Screensaver
+	gsettings set "org.gnome.desktop.screensaver" "lock-enabled" "true"
+	gsettings set "org.gnome.desktop.screensaver" "picture-uri" "file:///usr/share/backgrounds/ubuntu-default-greyscale-wallpaper.png"
+	gsettings set "org.gnome.desktop.screensaver" "primary-color" "#333333"
+	gsettings set "org.gnome.desktop.screensaver" "secondary-color" "#333333"
+	# Settings - Notifications
 	gsettings set "org.gnome.desktop.notifications" "show-in-lock-screen" "false"
+	# Settings - Power
+	gsettings set "org.gnome.desktop.interface" "show-battery-percentage" "true"
+	# Settings - Mouse and Touchpad
 	gsettings set "org.gnome.desktop.peripherals.mouse" "natural-scroll" "false"
 	gsettings set "org.gnome.desktop.peripherals.mouse" "accel-profile" "flat"
 	gsettings set "org.gnome.desktop.peripherals.touchpad" "natural-scroll" "false"
 	gsettings set "org.gnome.desktop.peripherals.touchpad" "tap-to-click" "false"
-	gsettings set "org.gnome.desktop.screensaver" "picture-uri" "file:///usr/share/backgrounds/adapta/tri-fadeno.jpg"
-	gsettings set "org.gnome.desktop.screensaver" "lock-enabled" "true"
-	gsettings set "org.gnome.gedit.preferences.editor" "insert-spaces" "true"
+	# Tweaks - Appearance
+	gsettings set "org.gnome.desktop.interface" "gtk-theme" "Yaru-dark"
+	gsettings set "org.gnome.desktop.interface" "icon-theme" "Papirus-Dark"
+	# Tweaks - Top Bar
+	gsettings set "org.gnome.desktop.interface" "clock-show-weekday" "true"
+	gsettings set "org.gnome.desktop.interface" "clock-show-date" "true"
+	gsettings set "org.gnome.desktop.calendar" "show-weekdate" "true"
+	# Gedit
+	gsettings set "org.gnome.gedit.preferences.editor" "display-line-numbers" "false"
 	gsettings set "org.gnome.gedit.preferences.editor" "tabs-size" "uint32 4"
-	gsettings set "org.gnome.nautilus.desktop" "trash-icon-visible" "false" || exit 0
-	gsettings set "org.gnome.nautilus.preferences" "default-folder-viewer" "list-view" || exit 0
-	gsettings set "org.gnome.nautilus.preferences" "default-sort-order" "type" || exit 0
-	gsettings set "org.gnome.nautilus.list-view" "default-visible-columns" "['name', 'size', 'type', 'date_modified']" || exit 0
+	gsettings set "org.gnome.gedit.preferences.editor" "insert-spaces" "true"
+	# Files
+	gsettings set "org.gnome.nautilus.preferences" "default-folder-viewer" "list-view"
+	gsettings set "org.gnome.nautilus.preferences" "default-sort-order" "type"
+	gsettings set "org.gnome.nautilus.list-view" "default-visible-columns" "['name', 'size', 'type', 'date_modified', 'starred']"
 	gsettings set "org.gtk.Settings.FileChooser" "show-hidden" "true"
-	gsettings set "org.gnome.shell" "favorite-apps" "['org.gnome.Nautilus.desktop', 'google-chrome.desktop', 'org.gnome.Terminal.desktop', 'virtualbox.desktop', 'code.desktop', 'org.gnome.gedit.desktop', 'keeweb.desktop', 'org.gnome.Calculator.desktop', 'slack_slack.desktop', 'teams.desktop', 'hamster-indicator.desktop']"
-
-.PHONY: dump
-dump:
-	sudo cp --force "$(CURDIR)/scripts/gsettings-dump" /usr/local/bin/gsettings-dump
+	# Favorites
+	gsettings set "org.gnome.shell" "favorite-apps" "['org.gnome.Nautilus.desktop', 'google-chrome.desktop', 'org.gnome.Terminal.desktop', 'virtualbox.desktop', 'code.desktop', 'org.gnome.gedit.desktop', 'keeweb.desktop', 'org.gnome.Calculator.desktop', 'slack_slack.desktop', 'chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Default.desktop', 'org.gnome.Hamster.GUI.desktop']"
 
 .PHONY: all
-all: settings dump
+all: dump settings
