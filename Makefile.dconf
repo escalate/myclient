@@ -1,13 +1,6 @@
 .PHONY: settings
 settings:
-	dconf write "/org/gnome/desktop/interface/gtk-theme" "'Adapta-Nokto'"
-	dconf write "/org/gnome/desktop/interface/icon-theme" "'Papirus'"
 	dconf write "/org/gnome/desktop/interface/monospace-font-name" "'UbuntuMono Nerd Font Mono 13'"
-	dconf write "/org/gnome/shell/extensions/dash-to-dock/dock-fixed" "true"
-	dconf write "/org/gnome/shell/extensions/dash-to-dock/dash-max-icon-size" "32"
-	dconf write "/org/gnome/shell/extensions/dash-to-dock/extend-height" "true"
-	dconf write "/org/gnome/shell/extensions/dash-to-dock/icon-size-fixed" "true"
-	dconf write "/org/gnome/shell/extensions/dash-to-dock/preferred-monitor" "0"
 	dconf write "/org/gnome/shell/extensions/openweather/city" "'52.550231,13.6411944316808>Hoppegarten, Märkisch-Oderland, Brandenburg, 15366, Deutschland >-1'"
 	dconf write "/org/gnome/shell/extensions/openweather/position-in-panel" "'right'"
 	dconf write "/org/gnome/shell/extensions/openweather/pressure-unit" "'hPa'"

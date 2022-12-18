@@ -14,7 +14,7 @@ settings: install
 	# Settings - Appearance
 	gsettings set "org.gnome.shell.extensions.ding" "start-corner" "top-left"
 	gsettings set "org.gnome.shell.extensions.ding" "show-home" "false"
-	gsettings set "org.gnome.shell.extensions.dash-to-dock" "dash-max-icon-size" "38"
+	gsettings set "org.gnome.shell.extensions.dash-to-dock" "dash-max-icon-size" "32"
 	gsettings set "org.gnome.shell.extensions.dash-to-dock" "show-mounts-network" "false"
 	gsettings set "org.gnome.shell.extensions.dash-to-dock" "show-mounts-only-mounted" "true"
 	gsettings set "org.gnome.shell.extensions.dash-to-dock" "show-trash" "false"
