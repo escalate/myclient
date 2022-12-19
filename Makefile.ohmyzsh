@@ -10,7 +10,7 @@ install: clean
 
 .PHONY: themes
 themes: install
-	git clone https://github.com/bhilburn/powerlevel9k.git "$(HOME)/.oh-my-zsh/custom/themes/powerlevel9k"
+	git clone https://github.com/romkatv/powerlevel10k.git "$(HOME)/.oh-my-zsh/custom/themes/powerlevel10k"
 
 .PHONY: plugins
 plugins: themes
