@@ -5,7 +5,8 @@ latest_version := $(shell curl --silent "https://api.github.com/repos/ryanoasis/
 .PHONY: clean
 clean:
 	rm --force /tmp/UbuntuMono.zip
-	sudo rm --force /usr/local/share/fonts/*
+	rm --recursive --force "$(HOME)/.local/share/fonts"
+	mkdir --parents "$(HOME)/.local/share/fonts"
 
 .PHONY: download
 download: clean
@@ -13,5 +14,5 @@ download: clean
 
 .PHONY: install
 install: download
-	sudo unzip /tmp/UbuntuMono.zip -d /usr/local/share/fonts/
-	sudo fc-cache -vf /usr/local/share/fonts/
+	unzip /tmp/UbuntuMono.zip -d "$(HOME)/.local/share/fonts"
+	sudo fc-cache -vf "$(HOME)/.local/share/fonts"
