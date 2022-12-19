@@ -1,3 +1,15 @@
+.DEFAULT_GOAL := install
+
+latest_version := $(shell curl --silent "https://slack.com/intl/de-de/downloads/instructions/ubuntu" | grep -Eo "https://downloads.slack-edge.com.*amd64\.deb")
+
+.PHONY: clean
+clean:
+	rm --force /tmp/slack-desktop*.deb
+
+.PHONY: download
+download: clean
+	wget --no-clobber --directory-prefix /tmp --content-disposition "$(latest_version)"
+
 .PHONY: install
-install:
-	sudo snap install slack --classic
+install: download
+	sudo apt install --yes /tmp/slack-desktop*.deb
