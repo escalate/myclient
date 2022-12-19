@@ -1,4 +1,4 @@
-.DEFAULT_GOAL := install
+.DEFAULT_GOAL := all
 
 latest_version := $(shell curl --silent "https://slack.com/intl/de-de/downloads/instructions/ubuntu" | grep -Eo "https://downloads.slack-edge.com.*amd64\.deb")
 
@@ -13,3 +13,10 @@ download: clean
 .PHONY: install
 install: download
 	sudo apt install --yes /tmp/slack-desktop*.deb
+
+.PHONY: fix
+fix:
+	sudo sed --in-place "s/^Exec=.*$$/Exec=\/usr\/bin\/slack --enable-features=WebRTCPipeWireCapturer %U/g" /usr/share/applications/slack.desktop
+
+.PHONY: all
+all: install fix
