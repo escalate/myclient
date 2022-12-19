@@ -56,13 +56,9 @@ mv * ~/Documents/
 * Open Google Chrome
   * Install [GNOME Shell-Integration](https://chrome.google.com/webstore/detail/gnome-shell-integration/gphhapmejobijbbhgpjhcjognlahblep) addon
   * Install [GNOME Extensions](https://extensions.gnome.org)
-    * Caffeine
-    * Dash to Dock
-    * Extension Update Notifier
-    * Frippery Move Clock
-    * OpenWeather
-    * Panel OSD
-    * Refresh Wifi Connections
+    * [Caffeine](https://extensions.gnome.org/extension/517/caffeine/)
+    * [Frippery Move Clock](https://extensions.gnome.org/extension/2/move-clock/)
+    * [Refresh Wifi Connections](https://extensions.gnome.org/extension/905/refresh-wifi-connections/)
 
 ### Sound
 
