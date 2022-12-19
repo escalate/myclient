@@ -48,7 +48,6 @@ default:
 	$(MAKE) --file Makefile.vim_plugins
 	$(MAKE) --file Makefile.vscode
 	$(MAKE) --file Makefile.gsettings
-	$(MAKE) --file Makefile.dconf
 
 .PHONY: optional
 optional:
