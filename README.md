@@ -44,7 +44,7 @@ mv * ~/Documents/
 
 * Download [Extension Pack](https://www.virtualbox.org/wiki/Downloads)
 * Import .vbox-extpack file
-  * File -> Preferences... -> Extensions
+  * File -> Tools -> Extension Pack Manager
 
 #### Restore VMs
 
