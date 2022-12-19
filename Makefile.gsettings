@@ -12,52 +12,52 @@ dump: install
 .PHONY: settings
 settings: install
 	# Settings - Appearance
-	gsettings set "org.gnome.shell.extensions.ding" "start-corner" "top-left"
-	gsettings set "org.gnome.shell.extensions.ding" "show-home" "false"
-	gsettings set "org.gnome.shell.extensions.dash-to-dock" "dash-max-icon-size" "32"
-	gsettings set "org.gnome.shell.extensions.dash-to-dock" "show-mounts-network" "false"
-	gsettings set "org.gnome.shell.extensions.dash-to-dock" "show-mounts-only-mounted" "true"
-	gsettings set "org.gnome.shell.extensions.dash-to-dock" "show-trash" "false"
+	gsettings set "org.gnome.shell.extensions.ding" "start-corner" "top-left" || exit 0
+	gsettings set "org.gnome.shell.extensions.ding" "show-home" "false" || exit 0
+	gsettings set "org.gnome.shell.extensions.dash-to-dock" "dash-max-icon-size" "32" || exit 0
+	gsettings set "org.gnome.shell.extensions.dash-to-dock" "show-mounts-network" "false" || exit 0
+	gsettings set "org.gnome.shell.extensions.dash-to-dock" "show-mounts-only-mounted" "true" || exit 0
+	gsettings set "org.gnome.shell.extensions.dash-to-dock" "show-trash" "false" || exit 0
 	# Settings - Background
-	gsettings set "org.gnome.desktop.background" "picture-uri" "file:///usr/share/backgrounds/ubuntu-default-greyscale-wallpaper.png"
-	gsettings set "org.gnome.desktop.background" "picture-uri-dark" "file:///usr/share/backgrounds/ubuntu-default-greyscale-wallpaper.png"
-	gsettings set "org.gnome.desktop.background" "primary-color" "#333333"
-	gsettings set "org.gnome.desktop.background" "secondary-color" "#333333"
+	gsettings set "org.gnome.desktop.background" "picture-uri" "file:///usr/share/backgrounds/ubuntu-default-greyscale-wallpaper.png" || exit 0
+	gsettings set "org.gnome.desktop.background" "picture-uri-dark" "file:///usr/share/backgrounds/ubuntu-default-greyscale-wallpaper.png" || exit 0
+	gsettings set "org.gnome.desktop.background" "primary-color" "#333333" || exit 0
+	gsettings set "org.gnome.desktop.background" "secondary-color" "#333333" || exit 0
 	# Settings - Screensaver
-	gsettings set "org.gnome.desktop.screensaver" "lock-enabled" "true"
-	gsettings set "org.gnome.desktop.screensaver" "ubuntu-lock-on-suspend" "true"
-	gsettings set "org.gnome.desktop.screensaver" "picture-uri" "file:///usr/share/backgrounds/ubuntu-default-greyscale-wallpaper.png"
-	gsettings set "org.gnome.desktop.screensaver" "primary-color" "#333333"
-	gsettings set "org.gnome.desktop.screensaver" "secondary-color" "#333333"
+	gsettings set "org.gnome.desktop.screensaver" "lock-enabled" "true" || exit 0
+	gsettings set "org.gnome.desktop.screensaver" "ubuntu-lock-on-suspend" "true" || exit 0
+	gsettings set "org.gnome.desktop.screensaver" "picture-uri" "file:///usr/share/backgrounds/ubuntu-default-greyscale-wallpaper.png" || exit 0
+	gsettings set "org.gnome.desktop.screensaver" "primary-color" "#333333" || exit 0
+	gsettings set "org.gnome.desktop.screensaver" "secondary-color" "#333333" || exit 0
 	# Settings - Notifications
-	gsettings set "org.gnome.desktop.notifications" "show-in-lock-screen" "false"
+	gsettings set "org.gnome.desktop.notifications" "show-in-lock-screen" "false" || exit 0
 	# Settings - Power
-	gsettings set "org.gnome.desktop.interface" "show-battery-percentage" "true"
+	gsettings set "org.gnome.desktop.interface" "show-battery-percentage" "true" || exit 0
 	# Settings - Mouse and Touchpad
-	gsettings set "org.gnome.desktop.peripherals.mouse" "natural-scroll" "false"
-	gsettings set "org.gnome.desktop.peripherals.mouse" "accel-profile" "flat"
-	gsettings set "org.gnome.desktop.peripherals.touchpad" "natural-scroll" "false"
-	gsettings set "org.gnome.desktop.peripherals.touchpad" "tap-to-click" "false"
+	gsettings set "org.gnome.desktop.peripherals.mouse" "natural-scroll" "false" || exit 0
+	gsettings set "org.gnome.desktop.peripherals.mouse" "accel-profile" "flat" || exit 0
+	gsettings set "org.gnome.desktop.peripherals.touchpad" "natural-scroll" "false" || exit 0
+	gsettings set "org.gnome.desktop.peripherals.touchpad" "tap-to-click" "false" || exit 0
 	# Tweaks - Appearance
-	gsettings set "org.gnome.desktop.interface" "gtk-theme" "Yaru-dark"
-	gsettings set "org.gnome.desktop.interface" "icon-theme" "Papirus-Dark"
+	gsettings set "org.gnome.desktop.interface" "gtk-theme" "Yaru-dark" || exit 0
+	gsettings set "org.gnome.desktop.interface" "icon-theme" "Papirus-Dark" || exit 0
 	# Tweaks - Fonts
-	gsettings set "org.gnome.desktop.interface" "monospace-font-name" "UbuntuMono Nerd Font 13"
+	gsettings set "org.gnome.desktop.interface" "monospace-font-name" "UbuntuMono Nerd Font 13" || exit 0
 	# Tweaks - Top Bar
-	gsettings set "org.gnome.desktop.interface" "clock-show-weekday" "true"
-	gsettings set "org.gnome.desktop.interface" "clock-show-date" "true"
-	gsettings set "org.gnome.desktop.calendar" "show-weekdate" "true"
+	gsettings set "org.gnome.desktop.interface" "clock-show-weekday" "true" || exit 0
+	gsettings set "org.gnome.desktop.interface" "clock-show-date" "true" || exit 0
+	gsettings set "org.gnome.desktop.calendar" "show-weekdate" "true" || exit 0
 	# Gedit
-	gsettings set "org.gnome.gedit.preferences.editor" "display-line-numbers" "false"
-	gsettings set "org.gnome.gedit.preferences.editor" "tabs-size" "uint32 4"
-	gsettings set "org.gnome.gedit.preferences.editor" "insert-spaces" "true"
+	gsettings set "org.gnome.gedit.preferences.editor" "display-line-numbers" "false" || exit 0
+	gsettings set "org.gnome.gedit.preferences.editor" "tabs-size" "uint32 4" || exit 0
+	gsettings set "org.gnome.gedit.preferences.editor" "insert-spaces" "true" || exit 0
 	# Files
-	gsettings set "org.gnome.nautilus.preferences" "default-folder-viewer" "list-view"
-	gsettings set "org.gnome.nautilus.preferences" "default-sort-order" "type"
-	gsettings set "org.gnome.nautilus.list-view" "default-visible-columns" "['name', 'size', 'type', 'date_modified', 'starred']"
-	gsettings set "org.gtk.Settings.FileChooser" "show-hidden" "true"
+	gsettings set "org.gnome.nautilus.preferences" "default-folder-viewer" "list-view" || exit 0
+	gsettings set "org.gnome.nautilus.preferences" "default-sort-order" "type" || exit 0
+	gsettings set "org.gnome.nautilus.list-view" "default-visible-columns" "['name', 'size', 'type', 'date_modified', 'starred']" || exit 0
+	gsettings set "org.gtk.Settings.FileChooser" "show-hidden" "true" || exit 0
 	# Favorites
-	gsettings set "org.gnome.shell" "favorite-apps" "['org.gnome.Nautilus.desktop', 'google-chrome.desktop', 'org.gnome.Terminal.desktop', 'virtualbox.desktop', 'code.desktop', 'org.gnome.gedit.desktop', 'keeweb.desktop', 'org.gnome.Calculator.desktop', 'slack_slack.desktop', 'chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Default.desktop', 'org.gnome.Hamster.GUI.desktop']"
+	gsettings set "org.gnome.shell" "favorite-apps" "['org.gnome.Nautilus.desktop', 'google-chrome.desktop', 'org.gnome.Terminal.desktop', 'virtualbox.desktop', 'code.desktop', 'org.gnome.gedit.desktop', 'keeweb.desktop', 'org.gnome.Calculator.desktop', 'slack_slack.desktop', 'chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Default.desktop', 'org.gnome.Hamster.GUI.desktop']" || exit 0
 
 .PHONY: all
 all: dump settings
