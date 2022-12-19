@@ -41,6 +41,8 @@ settings: install
 	# Tweaks - Appearance
 	gsettings set "org.gnome.desktop.interface" "gtk-theme" "Yaru-dark"
 	gsettings set "org.gnome.desktop.interface" "icon-theme" "Papirus-Dark"
+	# Tweaks - Fonts
+	gsettings set "org.gnome.desktop.interface" "monospace-font-name" "UbuntuMono Nerd Font 13"
 	# Tweaks - Top Bar
 	gsettings set "org.gnome.desktop.interface" "clock-show-weekday" "true"
 	gsettings set "org.gnome.desktop.interface" "clock-show-date" "true"
