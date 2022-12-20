@@ -32,6 +32,7 @@ settings: install
 	# Settings - Notifications
 	gsettings set "org.gnome.desktop.notifications" "show-in-lock-screen" "false" || exit 0
 	# Settings - Power
+	gsettings set "org.gnome.settings-daemon.plugins.power" "power-button-action" "suspend" || exit 0
 	gsettings set "org.gnome.desktop.interface" "show-battery-percentage" "true" || exit 0
 	# Settings - Mouse and Touchpad
 	gsettings set "org.gnome.desktop.peripherals.mouse" "natural-scroll" "false" || exit 0
