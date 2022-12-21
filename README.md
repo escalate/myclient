@@ -78,4 +78,5 @@ mv * ~/Documents/
   * Open Extensions tab
     * [Ansible](https://marketplace.visualstudio.com/items?itemName=redhat.ansible)
     * [Ansible-vault](https://marketplace.visualstudio.com/items?itemName=dhoeric.ansible-vault)
+    * [EditorConfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
     * [Gitlab Workflow](https://marketplace.visualstudio.com/items?itemName=GitLab.gitlab-workflow)
