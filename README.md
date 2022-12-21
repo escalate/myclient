@@ -71,3 +71,11 @@ mv * ~/Documents/
 * Open Files
   * Other Locations -> smb://...
   * Right click -> Add Bookmark
+
+### Visual Studio Code extensions
+
+* Open VSCode
+  * Open Extensions tab
+    * [Ansible](https://marketplace.visualstudio.com/items?itemName=redhat.ansible)
+    * [Ansible-vault](https://marketplace.visualstudio.com/items?itemName=dhoeric.ansible-vault)
+    * [Gitlab Workflow](https://marketplace.visualstudio.com/items?itemName=GitLab.gitlab-workflow)
