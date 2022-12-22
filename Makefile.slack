@@ -1,18 +1,21 @@
 .DEFAULT_GOAL := all
 
-latest_version := $(shell curl --silent "https://slack.com/intl/de-de/downloads/instructions/ubuntu" | grep -Eo "https://downloads.slack-edge.com.*amd64\.deb")
+.PHONY: repository
+repository:
+	# at the moment there is no jammy package available. jessie is the default
+	sudo sh -c 'echo "deb [signed-by=/usr/share/keyrings/slack.gpg] https://packagecloud.io/slacktechnologies/slack/debian/ jessie main" > /etc/apt/sources.list.d/slack.list'
 
-.PHONY: clean
-clean:
-	rm --force /tmp/slack-desktop*.deb
+.PHONY: key
+key: repository
+	wget --output-document - https://packagecloud.io/slacktechnologies/slack/gpgkey | sudo gpg --dearmor --yes --output /usr/share/keyrings/slack.gpg
 
-.PHONY: download
-download: clean
-	wget --no-clobber --directory-prefix /tmp --content-disposition "$(latest_version)"
+.PHONY: update
+update: key
+	sudo apt-get update
 
 .PHONY: install
-install: download
-	sudo apt install --yes /tmp/slack-desktop*.deb
+install: update
+	sudo apt-get install --yes slack-desktop
 
 .PHONY: fix
 fix:
