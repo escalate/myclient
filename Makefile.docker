@@ -31,5 +31,10 @@ proxy:
 usermod:
 	sudo usermod --append --groups docker $(USER)
 
+.PHONY: cgroupv1
+cgroupv1:
+	sudo sed --in-place "s/^GRUB_CMDLINE_LINUX=.*$$/GRUB_CMDLINE_LINUX=\"systemd.unified_cgroup_hierarchy=false\"/g" /etc/default/grub
+	sudo update-grub
+
 .PHONY: all
-all: install python proxy usermod
+all: install python proxy usermod cgroupv1
