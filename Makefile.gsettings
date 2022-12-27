@@ -44,6 +44,8 @@ settings: install
 	gsettings set "org.gnome.desktop.interface" "icon-theme" "Papirus-Dark" || exit 0
 	# Tweaks - Fonts
 	gsettings set "org.gnome.desktop.interface" "monospace-font-name" "UbuntuMono Nerd Font 13" || exit 0
+	# Tweaks - Keyboard and Mouse
+	gsettings set "org.gnome.desktop.peripherals.touchpad" "click-method" "fingers" || exit 0
 	# Tweaks - Top Bar
 	gsettings set "org.gnome.desktop.interface" "clock-show-weekday" "true" || exit 0
 	gsettings set "org.gnome.desktop.interface" "clock-show-date" "true" || exit 0
