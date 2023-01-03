@@ -38,6 +38,34 @@ mv * ~/Documents/
 
 ## Manual settings
 
+### Chrome - Additional CAs
+
+* Open Chrome
+  * URL: chrome://settings/certificates
+  * Tab: Authorities
+  * Button: Import
+
+### Files - Location bookmarks
+
+* Open Files
+  * Other Locations -> smb://...
+  * Right click -> Add Bookmark
+
+### Gnome Shell - Extensions
+
+* Open Google Chrome
+  * Install [GNOME Shell-Integration](https://chrome.google.com/webstore/detail/gnome-shell-integration/gphhapmejobijbbhgpjhcjognlahblep) addon
+  * Install [GNOME Extensions](https://extensions.gnome.org)
+    * [Caffeine](https://extensions.gnome.org/extension/517/caffeine/)
+    * [Frippery Move Clock](https://extensions.gnome.org/extension/2/move-clock/)
+    * [Notification Banner Position](https://extensions.gnome.org/extension/4105/notification-banner-position/)
+    * [Refresh Wifi Connections](https://extensions.gnome.org/extension/905/refresh-wifi-connections/)
+
+### Settings - Sound
+
+* Open Settings
+  * Sound -> Sound Effects -> Alert volume off
+
 ### VirtualBox
 
 #### Extension Pack
@@ -51,28 +79,7 @@ mv * ~/Documents/
 * Machine -> Add...
 * Open .vbox file
 
-### Gnome Shell extensions
-
-* Open Google Chrome
-  * Install [GNOME Shell-Integration](https://chrome.google.com/webstore/detail/gnome-shell-integration/gphhapmejobijbbhgpjhcjognlahblep) addon
-  * Install [GNOME Extensions](https://extensions.gnome.org)
-    * [Caffeine](https://extensions.gnome.org/extension/517/caffeine/)
-    * [Frippery Move Clock](https://extensions.gnome.org/extension/2/move-clock/)
-    * [Notification Banner Position](https://extensions.gnome.org/extension/4105/notification-banner-position/)
-    * [Refresh Wifi Connections](https://extensions.gnome.org/extension/905/refresh-wifi-connections/)
-
-### Sound
-
-* Open Settings
-  * Sound -> Sound Effects -> Alert volume off
-
-### Location bookmarks
-
-* Open Files
-  * Other Locations -> smb://...
-  * Right click -> Add Bookmark
-
-### Visual Studio Code extensions
+### Visual Studio Code - Extensions
 
 * Open VSCode
   * Open Extensions tab
