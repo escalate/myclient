@@ -3,6 +3,7 @@ default:
 	$(MAKE) --file Makefile.workspace
 	$(MAKE) --file Makefile.dotfiles
 	$(MAKE) --file Makefile.secrets
+	$(MAKE) --file Makefile.truststore
 	$(MAKE) --file Makefile.local
 	$(MAKE) --file Makefile.apt
 	$(MAKE) --file Makefile.network

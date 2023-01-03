@@ -1,0 +1,15 @@
+.DEFAULT_GOAL := truststore
+
+.PHONY: update
+update:
+	sudo apt-get update
+
+.PHONY: install
+install: update
+	sudo apt-get install --yes ca-certificates
+
+.PHONY: truststore
+truststore: install
+	sudo rm --recursive --force /usr/local/share/ca-certificates/*.crt
+	sudo cp $(HOME)/secrets/.truststore/*.crt "/usr/local/share/ca-certificates/"
+	sudo update-ca-certificates
