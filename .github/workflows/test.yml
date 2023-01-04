@@ -33,8 +33,9 @@ jobs:
 
       - name: Create test dependencies
         run: |
-          mkdir -p $HOME/.network/
+          mkdir --parents $HOME/.network/
           touch $HOME/.network/dummy
+          mkdir --parents $HOME/secrets/.truststore/
           sudo apt-get remove --yes google-cloud-sdk
 
       - name: Run Bootstrap script
