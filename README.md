@@ -61,6 +61,12 @@ mv * ~/Documents/
     * [Notification Banner Position](https://extensions.gnome.org/extension/4105/notification-banner-position/)
     * [Refresh Wifi Connections](https://extensions.gnome.org/extension/905/refresh-wifi-connections/)
 
+### Lens - Extensions
+
+* Open Lens
+  * File -> Extensions
+    * [@alebcay/openlens-node-pod-menu](https://github.com/alebcay/openlens-node-pod-menu)
+
 ### Settings - Sound
 
 * Open Settings
