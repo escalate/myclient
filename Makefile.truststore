@@ -11,5 +11,5 @@ install: update
 .PHONY: truststore
 truststore: install
 	sudo rm --recursive --force /usr/local/share/ca-certificates/*.crt
-	sudo cp $(HOME)/secrets/.truststore/*.crt "/usr/local/share/ca-certificates/"
+	sudo cp --force $(HOME)/secrets/.truststore/*.crt "/usr/local/share/ca-certificates/"
 	sudo update-ca-certificates
