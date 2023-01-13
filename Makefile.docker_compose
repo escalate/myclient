@@ -1,0 +1,15 @@
+.DEFAULT_GOAL := install
+
+latest_version := $(shell curl --silent "https://api.github.com/repos/docker/compose/releases/latest" | jq --raw-output '.assets[] | select(.name | test("docker-compose-linux-x86_64$$")).browser_download_url')
+
+.PHONY: clean
+clean:
+	sudo rm --force /usr/local/bin/docker-compose
+
+.PHONY: download
+download: clean
+	sudo wget --quiet --no-clobber --output-document /usr/local/bin/docker-compose "$(latest_version)"
+
+.PHONY: install
+install: download
+	sudo chmod +x /usr/local/bin/docker-compose
