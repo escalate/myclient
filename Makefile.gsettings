@@ -60,7 +60,7 @@ settings: install
 	gsettings set "org.gnome.nautilus.list-view" "default-visible-columns" "['name', 'size', 'type', 'date_modified', 'starred']" || exit 0
 	gsettings set "org.gtk.Settings.FileChooser" "show-hidden" "true" || exit 0
 	# Favorites
-	gsettings set "org.gnome.shell" "favorite-apps" "['org.gnome.Nautilus.desktop', 'google-chrome.desktop', 'org.gnome.Terminal.desktop', 'virtualbox.desktop', 'code.desktop', 'org.gnome.gedit.desktop', 'keeweb.desktop', 'org.gnome.Calculator.desktop', 'slack.desktop', 'chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Default.desktop', 'org.gnome.Hamster.GUI.desktop']" || exit 0
+	gsettings set "org.gnome.shell" "favorite-apps" "['google-chrome.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Terminal.desktop', 'open-lens.desktop', 'virtualbox.desktop', 'code.desktop', 'org.gnome.gedit.desktop', 'keeweb.desktop', 'org.gnome.Calculator.desktop', 'slack.desktop', 'msedge-cifhbcnohmdccbgoicgdjpfamggdegmo-Default.desktop', 'org.gnome.Hamster.GUI.desktop']" || exit 0
 
 .PHONY: all
 all: dump settings
