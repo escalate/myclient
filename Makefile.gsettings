@@ -39,6 +39,8 @@ settings: install
 	gsettings set "org.gnome.desktop.peripherals.mouse" "accel-profile" "flat" || exit 0
 	gsettings set "org.gnome.desktop.peripherals.touchpad" "natural-scroll" "false" || exit 0
 	gsettings set "org.gnome.desktop.peripherals.touchpad" "tap-to-click" "false" || exit 0
+	# Settings - Sound
+	gsettings set "org.gnome.desktop.sound" "allow-volume-above-100-percent" "true" || exit 0
 	# Tweaks - Appearance
 	gsettings set "org.gnome.desktop.interface" "gtk-theme" "Yaru-dark" || exit 0
 	gsettings set "org.gnome.desktop.interface" "icon-theme" "Papirus-Dark" || exit 0
