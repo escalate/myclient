@@ -1,0 +1,14 @@
+.DEFAULT_GOAL := install
+
+
+.PHONY: clean
+clean:
+	rm --force /tmp/teamviewer*.deb
+
+.PHONY: download
+download: clean
+	wget --no-clobber --directory-prefix /tmp --content-disposition "https://download.teamviewer.com/download/linux/teamviewer_amd64.deb"
+
+.PHONY: install
+install: download
+	sudo apt install --yes /tmp/teamviewer*.deb
