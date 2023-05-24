@@ -51,6 +51,7 @@ default:
 	$(MAKE) --file Makefile.vagrant_plugins
 	$(MAKE) --file Makefile.vim_plugins
 	$(MAKE) --file Makefile.vscode
+	$(MAKE) --file Makefile.yq
 	$(MAKE) --file Makefile.gsettings
 
 .PHONY: optional

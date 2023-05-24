@@ -1,0 +1,15 @@
+.DEFAULT_GOAL := install
+
+latest_version := $(shell curl --silent "https://api.github.com/repos/mikefarah/yq/releases/latest" | jq --raw-output '.assets[] | select(.name | test("yq_linux_amd64$$")).browser_download_url')
+
+.PHONY: clean
+clean:
+	sudo rm --force /usr/local/bin/yq
+
+.PHONY: download
+download: clean
+	sudo wget --quiet --no-clobber --output-document /usr/local/bin/yq "$(latest_version)"
+
+.PHONY: install
+install: download
+	sudo chmod +x /usr/local/bin/yq
