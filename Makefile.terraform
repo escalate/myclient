@@ -1,18 +1,17 @@
 .DEFAULT_GOAL := install
 
-latest_version := $(shell curl --silent "https://checkpoint-api.hashicorp.com/v1/check/terraform" | jq --raw-output '.current_version')
+.PHONY: repository
+repository:
+	sudo sh -c 'echo "deb [arch=$(shell dpkg --print-architecture) signed-by=/usr/share/keyrings/hashicorp.gpg] https://apt.releases.hashicorp.com $(shell lsb_release -cs) main" > /etc/apt/sources.list.d/hashicorp.list'
 
-.PHONY: clean
-clean:
-	rm --force /tmp/terraform_*.zip
-	sudo rm --force /usr/local/bin/terraform
+.PHONY: key
+key: repository
+	wget --output-document - https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor --yes --output /usr/share/keyrings/hashicorp.gpg
 
-.PHONY: download
-download: clean
-	wget --no-clobber --directory-prefix /tmp --content-disposition "https://releases.hashicorp.com/terraform/$(latest_version)/terraform_$(latest_version)_linux_amd64.zip"
+.PHONY: update
+update: key
+	sudo apt-get update
 
 .PHONY: install
-install: download
-	sudo unzip /tmp/terraform_*.zip -d /tmp
-	sudo mv /tmp/terraform /usr/local/bin/terraform
-	sudo chmod +x /usr/local/bin/terraform
+install: update
+	sudo apt-get install --yes terraform
