@@ -6,7 +6,7 @@ repository:
 
 .PHONY: key
 key: repository
-	sudo wget --output-document /usr/share/keyrings/cloud.google.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
+	wget --output-document - https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo gpg --dearmor --yes --output /usr/share/keyrings/cloud.google.gpg
 
 .PHONY: update
 update: key
