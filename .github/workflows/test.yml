@@ -33,6 +33,7 @@ jobs:
 
       - name: Create test dependencies
         run: |
+          dpkg -l
           mkdir --parents $HOME/.network/
           touch $HOME/.network/dummy.nmconnection
           mkdir --parents $HOME/secrets/.truststore/
