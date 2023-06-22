@@ -42,7 +42,6 @@ default:
 	$(MAKE) --file Makefile.papirus
 	$(MAKE) --file Makefile.shellcheck
 	$(MAKE) --file Makefile.staticcheck
-	$(MAKE) --file Makefile.slack
 	$(MAKE) --file Makefile.teamviewer
 	$(MAKE) --file Makefile.terraform
 	$(MAKE) --file Makefile.tmux_plugins
