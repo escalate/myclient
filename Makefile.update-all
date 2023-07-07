@@ -1,0 +1,37 @@
+.DEFAULT_GOAL := update-all
+
+.PHONY: update-system
+update-system:
+	sudo apt-get update
+	sudo apt-get upgrade --yes
+	sudo apt-get autoremove --yes
+
+.PHONY: update-3rd-party
+update-3rd-party:
+	$(MAKE) --file Makefile.ansible
+	$(MAKE) --file Makefile.cookiecutter
+	$(MAKE) --file Makefile.docker_compose
+	$(MAKE) --file Makefile.hadolint
+	$(MAKE) --file Makefile.azure-cli
+	$(MAKE) --file Makefile.hcloudcli
+	$(MAKE) --file Makefile.editorconfig-checker
+	$(MAKE) --file Makefile.etcher
+	$(MAKE) --file Makefile.pre_commit install
+	$(MAKE) --file Makefile.golang
+	$(MAKE) --file Makefile.helm
+	$(MAKE) --file Makefile.hugo
+	$(MAKE) --file Makefile.keeweb
+	$(MAKE) --file Makefile.minikube
+	$(MAKE) --file Makefile.lens
+	$(MAKE) --file Makefile.logcli
+	$(MAKE) --file Makefile.poetry
+	#$(MAKE) --file Makefile.ohmyzsh
+	$(MAKE) --file Makefile.shellcheck
+	$(MAKE) --file Makefile.staticcheck
+	$(MAKE) --file Makefile.tmux_plugins
+	$(MAKE) --file Makefile.vagrant_plugins
+	$(MAKE) --file Makefile.vim_plugins
+	$(MAKE) --file Makefile.yq
+
+.PHONY: update-all
+update-all: | update-system update-3rd-party
