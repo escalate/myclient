@@ -8,15 +8,15 @@ default:
 	$(MAKE) --file Makefile.apt
 	$(MAKE) --file Makefile.network
 	$(MAKE) --file Makefile.timezone
-	$(MAKE) --file Makefile.pkg_install
-	$(MAKE) --file Makefile.pkg_erase
-	$(MAKE) --file Makefile.adr_tools
+	$(MAKE) --file Makefile.pkg-install
+	$(MAKE) --file Makefile.pkg-erase
+	$(MAKE) --file Makefile.adr-tools
 	$(MAKE) --file Makefile.ansible
 	$(MAKE) --file Makefile.chrome
 	$(MAKE) --file Makefile.cookiecutter
 	$(MAKE) --file Makefile.dircolors
 	$(MAKE) --file Makefile.docker
-	$(MAKE) --file Makefile.docker_compose
+	$(MAKE) --file Makefile.docker-compose
 	$(MAKE) --file Makefile.hadolint
 	$(MAKE) --file Makefile.azure-cli
 	$(MAKE) --file Makefile.hcloudcli
@@ -44,11 +44,11 @@ default:
 	$(MAKE) --file Makefile.staticcheck
 	$(MAKE) --file Makefile.teamviewer
 	$(MAKE) --file Makefile.terraform
-	$(MAKE) --file Makefile.tmux_plugins
+	$(MAKE) --file Makefile.tmux-plugins
 	$(MAKE) --file Makefile.virtualbox
 	$(MAKE) --file Makefile.vagrant
-	$(MAKE) --file Makefile.vagrant_plugins
-	$(MAKE) --file Makefile.vim_plugins
+	$(MAKE) --file Makefile.vagrant-plugins
+	$(MAKE) --file Makefile.vim-plugins
 	$(MAKE) --file Makefile.vscode
 	$(MAKE) --file Makefile.yq
 	$(MAKE) --file Makefile.gsettings

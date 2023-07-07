@@ -10,7 +10,7 @@ update-system:
 update-3rd-party:
 	$(MAKE) --file Makefile.ansible
 	$(MAKE) --file Makefile.cookiecutter
-	$(MAKE) --file Makefile.docker_compose
+	$(MAKE) --file Makefile.docker-compose
 	$(MAKE) --file Makefile.hadolint
 	$(MAKE) --file Makefile.azure-cli
 	$(MAKE) --file Makefile.hcloudcli
@@ -28,9 +28,9 @@ update-3rd-party:
 	#$(MAKE) --file Makefile.ohmyzsh
 	$(MAKE) --file Makefile.shellcheck
 	$(MAKE) --file Makefile.staticcheck
-	$(MAKE) --file Makefile.tmux_plugins
-	$(MAKE) --file Makefile.vagrant_plugins
-	$(MAKE) --file Makefile.vim_plugins
+	$(MAKE) --file Makefile.tmux-plugins
+	$(MAKE) --file Makefile.vagrant-plugins
+	$(MAKE) --file Makefile.vim-plugins
 	$(MAKE) --file Makefile.yq
 
 .PHONY: update-all

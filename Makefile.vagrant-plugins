@@ -9,4 +9,3 @@ install:
 .PHONY: update
 update: install
 	vagrant plugin update $(plugins)
-
