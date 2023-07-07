@@ -22,7 +22,7 @@ default:
 	$(MAKE) --file Makefile.hcloudcli
 	$(MAKE) --file Makefile.google-cloud-sdk
 	$(MAKE) --file Makefile.edge
-	$(MAKE) --file Makefile.editorconfig
+	$(MAKE) --file Makefile.editorconfig-checker
 	$(MAKE) --file Makefile.etcher
 	$(MAKE) --file Makefile.git
 	$(MAKE) --file Makefile.pre_commit
