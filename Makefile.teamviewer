@@ -1,5 +1,4 @@
-.DEFAULT_GOAL := install
-
+.DEFAULT_GOAL := repository
 
 .PHONY: clean
 clean:
@@ -12,3 +11,7 @@ download: clean
 .PHONY: install
 install: download
 	sudo apt install --yes /tmp/teamviewer*.deb
+
+.PHONY: repository
+repository: install
+	sudo teamviewer repo default
