@@ -20,7 +20,6 @@ update-3rd-party:
 	$(MAKE) --file Makefile.golang
 	$(MAKE) --file Makefile.helm
 	$(MAKE) --file Makefile.hugo
-	$(MAKE) --file Makefile.keeweb
 	$(MAKE) --file Makefile.minikube
 	$(MAKE) --file Makefile.lens
 	$(MAKE) --file Makefile.logcli

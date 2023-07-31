@@ -31,7 +31,7 @@ default:
 	$(MAKE) --file Makefile.hamster
 	$(MAKE) --file Makefile.helm
 	$(MAKE) --file Makefile.hugo
-	$(MAKE) --file Makefile.keeweb
+	$(MAKE) --file Makefile.keepassxc
 	$(MAKE) --file Makefile.kubectl
 	$(MAKE) --file Makefile.minikube
 	$(MAKE) --file Makefile.lens
