@@ -102,4 +102,5 @@ mv * ~/Documents/
     * [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
     * [Python: flake8](https://marketplace.visualstudio.com/items?itemName=ms-python.flake8)
     * [Python: isort](https://marketplace.visualstudio.com/items?itemName=ms-python.isort)
+    * [ShellCheck](https://marketplace.visualstudio.com/items?itemName=timonwong.shellcheck)
     * [YAML](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml)
