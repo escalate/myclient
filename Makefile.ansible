@@ -1,4 +1,4 @@
 .PHONY: install
 install:
-	pip3 install --disable-pip-version-check --upgrade ansible molecule molecule-plugins[docker] ansible-lint==6.13.0 pytest-testinfra flake8 yamllint
+	pip3 install --disable-pip-version-check --upgrade ansible molecule molecule-plugins[docker] ansible-lint pytest-testinfra flake8 yamllint
 	sudo apt-get install --yes sshpass python3-jmespath python3-passlib python3-bcrypt
