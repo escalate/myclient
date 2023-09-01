@@ -1,6 +1,6 @@
 .DEFAULT_GOAL := install
 
-anti_virus = clamav clamav-freshclam clamav-daemon clamtk
+anti_virus = clamav clamav-freshclam clamav-daemon clamtk clamtk-gnome
 archive_manager = rar unrar
 browser = firefox
 common = expect jq ldap-utils tree
