@@ -1,0 +1,39 @@
+.DEFAULT_GOAL := install
+
+SWEETHOME3D_VERSION := 7.1
+3DMODELS_VERSION := 1.9
+TEXTURES_VERSION := 1.3
+
+.PHONY: clean
+clean:
+	sudo rm --recursive --force /usr/local/bin/SweetHome3D*
+
+.PHONY: download
+download: clean
+	wget --no-clobber --directory-prefix /tmp --content-disposition "https://sourceforge.net/projects/sweethome3d/files/SweetHome3D/SweetHome3D-$(SWEETHOME3D_VERSION)/SweetHome3D-$(SWEETHOME3D_VERSION)-linux-x64.tgz/download"
+	wget --no-clobber --directory-prefix /tmp --content-disposition "https://sourceforge.net/projects/sweethome3d/files/SweetHome3D-models/3DModels-$(3DMODELS_VERSION)/3DModels-BlendSwap-CC-0-$(3DMODELS_VERSION).zip/download"
+	wget --no-clobber --directory-prefix /tmp --content-disposition "https://sourceforge.net/projects/sweethome3d/files/SweetHome3D-models/3DModels-$(3DMODELS_VERSION)/3DModels-Contributions-$(3DMODELS_VERSION).zip/download"
+	wget --no-clobber --directory-prefix /tmp --content-disposition "https://sourceforge.net/projects/sweethome3d/files/SweetHome3D-models/3DModels-$(3DMODELS_VERSION)/3DModels-KatorLegaz-$(3DMODELS_VERSION).zip/download"
+	wget --no-clobber --directory-prefix /tmp --content-disposition "https://sourceforge.net/projects/sweethome3d/files/SweetHome3D-models/3DModels-$(3DMODELS_VERSION)/3DModels-LucaPresidente-$(3DMODELS_VERSION).zip/download"
+	wget --no-clobber --directory-prefix /tmp --content-disposition "https://sourceforge.net/projects/sweethome3d/files/SweetHome3D-models/3DModels-$(3DMODELS_VERSION)/3DModels-Reallusion-$(3DMODELS_VERSION).zip/download"
+	wget --no-clobber --directory-prefix /tmp --content-disposition "https://sourceforge.net/projects/sweethome3d/files/SweetHome3D-models/3DModels-$(3DMODELS_VERSION)/3DModels-Scopia-$(3DMODELS_VERSION).zip/download"
+	wget --no-clobber --directory-prefix /tmp --content-disposition "https://sourceforge.net/projects/sweethome3d/files/SweetHome3D-models/3DModels-$(3DMODELS_VERSION)/3DModels-Trees-$(3DMODELS_VERSION).zip/download"
+	wget --no-clobber --directory-prefix /tmp --content-disposition "https://sourceforge.net/projects/sweethome3d/files/SweetHome3D-textures/Textures-$(TEXTURES_VERSION)/Textures-Contributions-$(TEXTURES_VERSION).zip/download"
+	wget --no-clobber --directory-prefix /tmp --content-disposition "https://sourceforge.net/projects/sweethome3d/files/SweetHome3D-textures/Textures-$(TEXTURES_VERSION)/Textures-eTeksScopia-$(TEXTURES_VERSION).zip/download"
+
+.PHONY: install
+install: download
+	tar xzf /tmp/SweetHome3D-$(SWEETHOME3D_VERSION)-linux-x64.tgz -C /tmp
+	mkdir --parents /tmp/SweetHome3D-$(SWEETHOME3D_VERSION)/3DModels
+	unzip -uo /tmp/3DModels-BlendSwap-CC-0-$(3DMODELS_VERSION).zip -d /tmp/SweetHome3D-$(SWEETHOME3D_VERSION)/3DModels
+	unzip -uo /tmp/3DModels-Contributions-$(3DMODELS_VERSION).zip -d /tmp/SweetHome3D-$(SWEETHOME3D_VERSION)/3DModels
+	unzip -uo /tmp/3DModels-KatorLegaz-$(3DMODELS_VERSION).zip -d /tmp/SweetHome3D-$(SWEETHOME3D_VERSION)/3DModels
+	unzip -uo /tmp/3DModels-LucaPresidente-$(3DMODELS_VERSION).zip -d /tmp/SweetHome3D-$(SWEETHOME3D_VERSION)/3DModels
+	unzip -uo /tmp/3DModels-Reallusion-$(3DMODELS_VERSION).zip -d /tmp/SweetHome3D-$(SWEETHOME3D_VERSION)/3DModels
+	unzip -uo /tmp/3DModels-Scopia-$(3DMODELS_VERSION).zip -d /tmp/SweetHome3D-$(SWEETHOME3D_VERSION)/3DModels
+	unzip -uo /tmp/3DModels-Trees-$(3DMODELS_VERSION).zip -d /tmp/SweetHome3D-$(SWEETHOME3D_VERSION)/3DModels
+	mkdir --parents /tmp/SweetHome3D-$(SWEETHOME3D_VERSION)/Textures
+	unzip -uo /tmp/Textures-Contributions-$(TEXTURES_VERSION).zip -d /tmp/SweetHome3D-$(SWEETHOME3D_VERSION)/Textures
+	unzip -uo /tmp/Textures-eTeksScopia-$(TEXTURES_VERSION).zip -d /tmp/SweetHome3D-$(SWEETHOME3D_VERSION)/Textures
+	sudo mv /tmp/SweetHome3D-$(SWEETHOME3D_VERSION) /usr/local/bin/
+	sudo ln --symbolic --force /usr/local/bin/SweetHome3D-$(SWEETHOME3D_VERSION)/SweetHome3D /usr/local/bin/SweetHome3D
