@@ -1,0 +1,17 @@
+.DEFAULT_GOAL := install
+
+.PHONY: repository
+repository:
+	sudo sh -c 'echo "deb [arch=$(shell dpkg --print-architecture) signed-by=/usr/share/keyrings/nodejs.gpg] https://deb.nodesource.com/node_20.x nodistro main" > /etc/apt/sources.list.d/nodejs.list'
+
+.PHONY: key
+key: repository
+	wget --output-document - https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor --yes --output /usr/share/keyrings/nodejs.gpg
+
+.PHONY: update
+update: key
+	sudo apt-get update
+
+.PHONY: install
+install: update
+	sudo apt-get install --yes nodejs

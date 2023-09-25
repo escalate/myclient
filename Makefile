@@ -34,6 +34,7 @@ default:
 	$(MAKE) --file Makefile.keepassxc
 	$(MAKE) --file Makefile.kubectl
 	$(MAKE) --file Makefile.minikube
+	$(MAKE) --file Makefile.nodejs
 	$(MAKE) --file Makefile.lens
 	$(MAKE) --file Makefile.logcli
 	$(MAKE) --file Makefile.nerdfonts
