@@ -38,7 +38,6 @@ jobs:
           touch $HOME/.network/dummy.nmconnection
           mkdir --parents $HOME/secrets/.truststore/
           touch $HOME/secrets/.truststore/cert.crt
-          sudo apt-get remove --yes google-cloud-sdk
 
       - name: Run Bootstrap script
         run: ./scripts/bootstrap.sh
