@@ -33,5 +33,9 @@ update-3rd-party:
 	$(MAKE) --file Makefile.vim-plugins
 	$(MAKE) --file Makefile.yq
 
+.PHONY: reboot
+reboot:
+	shutdown --reboot 30 "Reboot to apply updates"
+
 .PHONY: update-all
-update-all: | update-system update-3rd-party
+update-all: | update-system update-3rd-party reboot
