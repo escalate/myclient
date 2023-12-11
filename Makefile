@@ -8,6 +8,7 @@ default:
 	$(MAKE) --file Makefile.apt
 	$(MAKE) --file Makefile.network
 	$(MAKE) --file Makefile.timezone
+	$(MAKE) --file Makefile.needrestart
 	$(MAKE) --file Makefile.pkg-install
 	$(MAKE) --file Makefile.pkg-erase
 	$(MAKE) --file Makefile.adr-tools

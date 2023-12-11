@@ -1,0 +1,9 @@
+.DEFAULT_GOAL := automatic
+
+.PHONY: install
+install:
+	sudo apt-get install --yes needrestart
+
+.PHONY: automatic
+automatic: install
+	sudo sh -c 'echo "\$$nrconf{restart} = \"a\";" > /etc/needrestart/conf.d/auto_restart.conf'
