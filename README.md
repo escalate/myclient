@@ -1,4 +1,4 @@
-[![Test](https://github.com/escalate/myclient/actions/workflows/test.yml/badge.svg?branch=master&event=push)](https://github.com/escalate/myclient/actions/workflows/test.yml)
+[![Tests](https://github.com/escalate/myclient/actions/workflows/tests.yml/badge.svg?branch=master&event=push)](https://github.com/escalate/myclient/actions/workflows/tests.yml)
 
 # My Client
 
