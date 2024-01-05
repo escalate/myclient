@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e
 
-SMB_SERVER="$(cat ${HOME}/.smb/nas_server)"
-SMB_PATH="$(cat ${HOME}/.smb/nas_path)"
+SMB_SERVER="$(cat "${HOME}/.smb/nas_server")"
+SMB_PATH="$(cat "${HOME}/.smb/nas_path")"
 SMB_CREDENTIAL_FILE="${HOME}/.smb/nas_credential"
 MOUNT_PATH="/mnt/nas"
 
