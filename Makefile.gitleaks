@@ -1,0 +1,18 @@
+.DEFAULT_GOAL := install
+
+latest_version := $(shell curl --silent "https://api.github.com/repos/gitleaks/gitleaks/releases/latest" | jq --raw-output '.assets[] | select(.name | test(".*_linux_x64.tar.gz")).browser_download_url')
+
+.PHONY: clean
+clean:
+	rm --force /tmp/gitleaks_*_linux_x64.tar.gz
+	sudo rm --force /usr/local/bin/gitleaks
+
+.PHONY: download
+download: clean
+	wget --no-clobber --directory-prefix /tmp --content-disposition "$(latest_version)"
+
+.PHONY: install
+install: download
+	tar xzf /tmp/gitleaks_*_linux_x64.tar.gz -C /tmp
+	sudo cp /tmp/gitleaks /usr/local/bin/gitleaks
+	sudo chmod +x /usr/local/bin/gitleaks

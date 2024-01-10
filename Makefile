@@ -27,6 +27,7 @@ default:
 	$(MAKE) --file Makefile.etcher
 	$(MAKE) --file Makefile.git
 	$(MAKE) --file Makefile.pre_commit
+	$(MAKE) --file Makefile.gitleaks
 	$(MAKE) --file Makefile.golang
 	$(MAKE) --file Makefile.gnometerminal
 	$(MAKE) --file Makefile.hamster
