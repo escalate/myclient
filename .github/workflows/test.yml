@@ -1,13 +1,13 @@
-name: Tests
+name: Test
 'on':
   push:
     branches:
       - master
   pull_request:
 jobs:
-  tests:
-    name: Tests
-    uses: escalate/github-actions-workflows/.github/workflows/tests.yml@master
+  test:
+    name: Test
+    uses: escalate/github-actions-workflows/.github/workflows/test.yml@master
 
   bootstrap:
     name: Bootstrap
