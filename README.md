@@ -104,3 +104,7 @@ mv * ~/Documents/
     * [Python: isort](https://marketplace.visualstudio.com/items?itemName=ms-python.isort)
     * [ShellCheck](https://marketplace.visualstudio.com/items?itemName=timonwong.shellcheck)
     * [YAML](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml)
+
+## License
+
+MIT
