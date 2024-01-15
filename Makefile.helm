@@ -21,4 +21,5 @@ install: download
 plugins: install
 	helm plugin uninstall diff || true
 	helm plugin install https://github.com/databus23/helm-diff
+	helm plugin uninstall unittest || true
 	helm plugin install https://github.com/helm-unittest/helm-unittest
