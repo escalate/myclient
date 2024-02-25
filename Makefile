@@ -3,7 +3,6 @@ default:
 	$(MAKE) --file Makefile.workspace
 	$(MAKE) --file Makefile.dotfiles
 	$(MAKE) --file Makefile.secrets
-	$(MAKE) --file Makefile.truststore
 	$(MAKE) --file Makefile.local
 	$(MAKE) --file Makefile.apt
 	$(MAKE) --file Makefile.network
@@ -48,6 +47,7 @@ default:
 	$(MAKE) --file Makefile.sweethome3d
 	$(MAKE) --file Makefile.teamviewer
 	$(MAKE) --file Makefile.terraform
+	$(MAKE) --file Makefile.truststore
 	$(MAKE) --file Makefile.tmux-plugins
 	$(MAKE) --file Makefile.virtualbox
 	$(MAKE) --file Makefile.vagrant
