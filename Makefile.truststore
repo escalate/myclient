@@ -18,9 +18,11 @@ os-truststore: install
 
 .PHONY: chrome-truststore
 chrome-truststore: os-truststore
-	for file in $(certificates); do \
-		echo "Certificate: $$file"; \
-		certutil -d sql:$(HOME)/.pki/nssdb -D -n "$$file"; \
-		certutil -d sql:${HOME}/.pki/nssdb -A -t "CT,C,C" -i "$(HOME)/secrets/.truststore/$$file" -n "$$file"; \
-		certutil -d sql:$(HOME)/.pki/nssdb -L -n "$$file"; \
-	done
+	if [ -f "$(HOME)/.pki/nssdb/cert9.db" ]; then \
+		for file in $(certificates); do \
+			echo "Certificate: $$file"; \
+			certutil -d sql:$(HOME)/.pki/nssdb -D -n "$$file"; \
+			certutil -d sql:${HOME}/.pki/nssdb -A -t "CT,C,C" -i "$(HOME)/secrets/.truststore/$$file" -n "$$file"; \
+			certutil -d sql:$(HOME)/.pki/nssdb -L -n "$$file"; \
+		done \
+	fi
