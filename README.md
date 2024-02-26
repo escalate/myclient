@@ -61,12 +61,6 @@ mv * ~/Documents/
     * [Notification Banner Position](https://extensions.gnome.org/extension/4105/notification-banner-position/)
     * [Refresh Wifi Connections](https://extensions.gnome.org/extension/905/refresh-wifi-connections/)
 
-### Lens - Extensions
-
-* Open Lens
-  * File -> Extensions
-    * [@alebcay/openlens-node-pod-menu](https://github.com/alebcay/openlens-node-pod-menu)
-
 ### Settings - Sound
 
 * Open Settings
@@ -91,18 +85,21 @@ mv * ~/Documents/
   * Open Extensions tab
     * [Ansible](https://marketplace.visualstudio.com/items?itemName=redhat.ansible)
     * [Ansible-vault](https://marketplace.visualstudio.com/items?itemName=dhoeric.ansible-vault)
+    * [Black Formatter](https://marketplace.visualstudio.com/items?itemName=ms-python.black-formatter)
     * [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
     * [Docker](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)
     * [EditorConfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
+    * [Flake8](https://marketplace.visualstudio.com/items?itemName=ms-python.flake8)
     * [GitHub Actions](https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-github-actions)
+    * [GitHub Copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot)
     * [GitLab Workflow](https://marketplace.visualstudio.com/items?itemName=GitLab.gitlab-workflow)
     * [HashiCorp Terraform](https://marketplace.visualstudio.com/items?itemName=HashiCorp.terraform)
+    * [isort](https://marketplace.visualstudio.com/items?itemName=ms-python.isort)
     * [Make support and task provider](https://marketplace.visualstudio.com/items?itemName=carlos-algms.make-task-provider)
     * [Makefile Tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.makefile-tools)
     * [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
-    * [Python: flake8](https://marketplace.visualstudio.com/items?itemName=ms-python.flake8)
-    * [Python: isort](https://marketplace.visualstudio.com/items?itemName=ms-python.isort)
     * [ShellCheck](https://marketplace.visualstudio.com/items?itemName=timonwong.shellcheck)
+    * [SonarLint](https://marketplace.visualstudio.com/items?itemName=SonarSource.sonarlint-vscode)
     * [YAML](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml)
 
 ## License
