@@ -10,14 +10,14 @@ update:
 install: update
 	sudo apt-get install --yes ca-certificates libnss3-tools
 
-.PHONY: truststore
-truststore: install
+.PHONY: os-truststore
+os-truststore: install
 	sudo rm --recursive --force /usr/local/share/ca-certificates/*.crt
 	sudo cp --force $(HOME)/secrets/.truststore/*.crt "/usr/local/share/ca-certificates/"
 	sudo update-ca-certificates
 
 .PHONY: chrome-truststore
-chrome-truststore:
+chrome-truststore: os-truststore
 	for file in $(certificates); do \
 		echo "Certificate: $$file"; \
 		certutil -d sql:$(HOME)/.pki/nssdb -D -n "$$file"; \
