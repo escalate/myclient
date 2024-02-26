@@ -10,7 +10,6 @@ default:
 	$(MAKE) --file Makefile.needrestart
 	$(MAKE) --file Makefile.pkg-install
 	$(MAKE) --file Makefile.pkg-erase
-	$(MAKE) --file Makefile.adr-tools
 	$(MAKE) --file Makefile.ansible
 	$(MAKE) --file Makefile.chrome
 	$(MAKE) --file Makefile.cookiecutter
