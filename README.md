@@ -38,13 +38,6 @@ mv * ~/Documents/
 
 ## Manual settings
 
-### Chrome - Additional CAs
-
-* Open Chrome
-  * URL: chrome://settings/certificates
-  * Tab: Authorities
-  * Button: Import
-
 ### Files - Location bookmarks
 
 * Open Files
