@@ -54,6 +54,7 @@ default:
 	$(MAKE) --file Makefile.vim-plugins
 	$(MAKE) --file Makefile.vscode
 	$(MAKE) --file Makefile.yq
+	$(MAKE) --file Makefile.yt-dlp
 	$(MAKE) --file Makefile.gsettings
 
 .PHONY: optional
