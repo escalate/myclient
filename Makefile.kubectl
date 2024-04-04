@@ -1,13 +1,14 @@
 .DEFAULT_GOAL := install
 
+used_version := 1.26
+
 .PHONY: repository
 repository:
-	# At the moment there is no release for other Ubuntu versions available
-	sudo sh -c 'echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" > /etc/apt/sources.list.d/kubernetes.list'
+	sudo sh -c 'echo "deb [signed-by=/usr/share/keyrings/kubernetes.gpg] https://pkgs.k8s.io/core:/stable:/v$(used_version)/deb/ /" > /etc/apt/sources.list.d/kubernetes.list'
 
 .PHONY: key
 key: repository
-	wget --output-document - https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo gpg --dearmor --yes --output /usr/share/keyrings/cloud.google.gpg
+	wget --output-document - https://pkgs.k8s.io/core:/stable:/v$(used_version)/deb/Release.key | sudo gpg --dearmor --yes --output /usr/share/keyrings/kubernetes.gpg
 
 .PHONY: update
 update: key
