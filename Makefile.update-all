@@ -17,7 +17,7 @@ update-3rd-party:
 	$(MAKE) --file Makefile.hcloudcli
 	$(MAKE) --file Makefile.editorconfig-checker
 	$(MAKE) --file Makefile.etcher
-	$(MAKE) --file Makefile.pre_commit install
+	$(MAKE) --file Makefile.pre_commit install update
 	$(MAKE) --file Makefile.gitleaks
 	$(MAKE) --file Makefile.golang
 	$(MAKE) --file Makefile.helm
