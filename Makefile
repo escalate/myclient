@@ -15,6 +15,7 @@ default:
 	$(MAKE) --file Makefile.cookiecutter
 	$(MAKE) --file Makefile.dircolors
 	$(MAKE) --file Makefile.docker
+	$(MAKE) --file Makefile.docker-compose
 	$(MAKE) --file Makefile.hadolint
 	$(MAKE) --file Makefile.azure-cli
 	$(MAKE) --file Makefile.hcloudcli
