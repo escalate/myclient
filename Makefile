@@ -24,6 +24,7 @@ default:
 	$(MAKE) --file Makefile.editorconfig-checker
 	$(MAKE) --file Makefile.etcher
 	$(MAKE) --file Makefile.git
+	$(MAKE) --file Makefile.prettier
 	$(MAKE) --file Makefile.pre_commit
 	$(MAKE) --file Makefile.gitleaks
 	$(MAKE) --file Makefile.golang

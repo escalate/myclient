@@ -1,0 +1,3 @@
+.PHONY: install
+install:
+	sudo npm install --global prettier
