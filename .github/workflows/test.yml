@@ -11,7 +11,7 @@ jobs:
 
   bootstrap:
     name: Bootstrap
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -20,6 +20,7 @@ jobs:
         run: |
           dpkg -l
           mkdir --parents $HOME/.network/
+          mkdir --parents $HOME/.local/share/
           touch $HOME/.network/dummy.nmconnection
           mkdir --parents $HOME/secrets/.truststore/
           touch $HOME/secrets/.truststore/cert.crt
