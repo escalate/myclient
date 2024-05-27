@@ -1,3 +1,3 @@
 .PHONY: install
 install:
-	pip3 install --disable-pip-version-check --upgrade cookiecutter
+	pip3 install --break-system-packages --disable-pip-version-check --upgrade cookiecutter

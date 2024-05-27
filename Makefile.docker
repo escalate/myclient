@@ -18,7 +18,7 @@ install: update
 
 .PHONY: python
 python:
-	pip3 install --disable-pip-version-check --upgrade docker
+	pip3 install --break-system-packages --disable-pip-version-check --upgrade docker
 
 .PHONY: proxy
 proxy:

@@ -4,7 +4,7 @@ config = $(shell find "$(HOME)/.pre-commit-config/" -maxdepth 1 -name "*.yaml" -
 
 .PHONY: install
 install:
-	pip3 install --disable-pip-version-check --upgrade pre-commit
+	pip3 install --break-system-packages --disable-pip-version-check --upgrade pre-commit
 
 .PHONY: config
 config: install
