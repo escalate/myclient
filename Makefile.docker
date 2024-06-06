@@ -37,4 +37,4 @@ cgroupv1:
 	sudo update-grub
 
 .PHONY: all
-all: install python proxy usermod cgroupv1
+all: install python proxy usermod
