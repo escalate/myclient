@@ -1,0 +1,15 @@
+.DEFAULT_GOAL := install
+
+latest_version := $(shell curl --silent "https://api.github.com/repos/mvdan/sh/releases/latest" | jq --raw-output '.assets[] | select(.name | test(".*_linux_amd64$$")).browser_download_url')
+
+.PHONY: clean
+clean:
+	sudo rm --force /usr/local/bin/shfmt
+
+.PHONY: download
+download: clean
+	sudo wget --no-clobber --output-document /usr/local/bin/shfmt "$(latest_version)"
+
+.PHONY: install
+install: download
+	sudo chmod +x /usr/local/bin/shfmt
