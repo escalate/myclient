@@ -79,6 +79,7 @@ mv * ~/Documents/
     * [Ansible](https://marketplace.visualstudio.com/items?itemName=redhat.ansible)
     * [Ansible-vault](https://marketplace.visualstudio.com/items?itemName=dhoeric.ansible-vault)
     * [Black Formatter](https://marketplace.visualstudio.com/items?itemName=ms-python.black-formatter)
+    * [Checkov](https://marketplace.visualstudio.com/items?itemName=Bridgecrew.checkov)
     * [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
     * [Docker](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)
     * [EditorConfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
