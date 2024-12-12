@@ -14,6 +14,7 @@ default:
 	$(MAKE) --file Makefile.chrome
 	$(MAKE) --file Makefile.cookiecutter
 	$(MAKE) --file Makefile.dircolors
+	$(MAKE) --file Makefile.dbeaver
 	$(MAKE) --file Makefile.docker
 	$(MAKE) --file Makefile.docker-compose
 	$(MAKE) --file Makefile.hadolint
