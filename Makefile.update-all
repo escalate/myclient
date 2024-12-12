@@ -11,6 +11,7 @@ update-system:
 update-3rd-party:
 	$(MAKE) --file Makefile.ansible
 	$(MAKE) --file Makefile.cookiecutter
+	$(MAKE) --file Makefile.dbeaver
 	$(MAKE) --file Makefile.docker-compose
 	$(MAKE) --file Makefile.hadolint
 	$(MAKE) --file Makefile.azure-cli
