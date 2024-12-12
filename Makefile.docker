@@ -1,5 +1,18 @@
 .DEFAULT_GOAL := all
 
+define CONFIGURATION
+{
+  "default-address-pools": [
+    {
+      "base": "10.252.0.0/14",
+      "size": 22
+    }
+  ],
+  "live-restore": true
+}
+endef
+export CONFIGURATION
+
 .PHONY: repository
 repository:
 	sudo sh -c 'echo "deb [arch=$(shell dpkg --print-architecture) signed-by=/usr/share/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(shell lsb_release -cs) stable" > /etc/apt/sources.list.d/docker.list'
@@ -15,6 +28,11 @@ update: key
 .PHONY: install
 install: update
 	sudo apt-get install --yes docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+.PHONY: config
+config:
+	sudo echo "$$CONFIGURATION" | sudo tee /etc/docker/daemon.json > /dev/null
+	sudo systemctl restart docker
 
 .PHONY: python
 python:
@@ -37,4 +55,4 @@ cgroupv1:
 	sudo update-grub
 
 .PHONY: all
-all: install python proxy usermod
+all: install config python proxy usermod
