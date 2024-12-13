@@ -1,6 +1,6 @@
 .DEFAULT_GOAL := install
 
-used_version := 1.26
+used_version := 1.28
 
 .PHONY: repository
 repository:
