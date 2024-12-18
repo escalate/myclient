@@ -2,6 +2,8 @@
 
 define CONFIGURATION
 {
+  "bip": "10.252.0.1/22",
+  "fixed-cidr": "10.252.0.0/22",
   "default-address-pools": [
     {
       "base": "10.252.0.0/14",
