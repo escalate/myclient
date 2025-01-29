@@ -1,6 +1,6 @@
 .DEFAULT_GOAL := install
 
-latest_version := $(shell curl --silent "https://api.github.com/repos/kubernetes/minikube/releases/latest" | jq --raw-output '.assets[] | select(.name | test("minikube_.*_amd64.deb")).browser_download_url')
+latest_version := $(shell curl --silent "https://api.github.com/repos/kubernetes/minikube/releases/latest" | jq --raw-output '.assets[] | select(.name | test("minikube_latest_amd64.deb")).browser_download_url')
 
 .PHONY: clean
 clean:
