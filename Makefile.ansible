@@ -5,5 +5,5 @@ endif
 
 .PHONY: install
 install:
-	pip3 install --disable-pip-version-check --upgrade $(PIP_OPTS) ansible molecule molecule-plugins[docker] ansible-lint pytest-testinfra flake8 yamllint
+	pip3 install --disable-pip-version-check --upgrade $(PIP_OPTS) ansible molecule molecule-plugins[docker] ansible-lint pytest-testinfra ansible-dev-tools flake8 yamllint
 	sudo apt-get install --yes sshpass python3-jmespath python3-passlib python3-bcrypt
