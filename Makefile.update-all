@@ -24,6 +24,7 @@ update-3rd-party:
 	$(MAKE) --file Makefile.helm
 	$(MAKE) --file Makefile.hugo
 	$(MAKE) --file Makefile.minikube
+	$(MAKE) --file Makefile.multi-gitter
 	$(MAKE) --file Makefile.lens
 	$(MAKE) --file Makefile.logcli
 	$(MAKE) --file Makefile.poetry

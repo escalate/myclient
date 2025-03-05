@@ -36,6 +36,7 @@ default:
 	$(MAKE) --file Makefile.keepassxc
 	$(MAKE) --file Makefile.kubectl
 	$(MAKE) --file Makefile.minikube
+	$(MAKE) --file Makefile.multi-gitter
 	$(MAKE) --file Makefile.nodejs
 	$(MAKE) --file Makefile.lens
 	$(MAKE) --file Makefile.logcli

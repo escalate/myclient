@@ -1,0 +1,15 @@
+.DEFAULT_GOAL := install
+
+latest_version := $(shell curl --silent "https://api.github.com/repos/lindell/multi-gitter/releases/latest" | jq --raw-output '.assets[] | select(.name | test(".*amd64.deb")).browser_download_url')
+
+.PHONY: clean
+clean:
+	rm --force /tmp/multi-gitter_*_amd64.deb
+
+.PHONY: download
+download: clean
+	wget --no-clobber --directory-prefix /tmp --content-disposition "$(latest_version)"
+
+.PHONY: install
+install: download
+	sudo apt install --yes /tmp/multi-gitter_*_amd64.deb
