@@ -3,7 +3,7 @@
 anti_virus = clamav clamav-freshclam clamav-daemon clamtk clamtk-gnome
 archive_manager = rar unrar
 browser = firefox
-common = expect jq ldap-utils tree
+common = dos2unix expect jq ldap-utils tree
 database = mysql-client
 dev_tools = build-essential make
 desktop = chrome-gnome-shell debconf debconf-utils gnome-tweaks gnome-shell-extension-prefs xclip
