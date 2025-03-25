@@ -15,6 +15,11 @@ define CONFIGURATION
 endef
 export CONFIGURATION
 
+LSB_RELEASE := $(shell lsb_release -r -s)
+ifneq ($(LSB_RELEASE),22.04)
+	PIP_OPTS = --break-system-packages
+endif
+
 .PHONY: repository
 repository:
 	sudo sh -c 'echo "deb [arch=$(shell dpkg --print-architecture) signed-by=/usr/share/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(shell lsb_release -cs) stable" > /etc/apt/sources.list.d/docker.list'
@@ -38,7 +43,7 @@ config:
 
 .PHONY: python
 python:
-	pip3 install --break-system-packages --disable-pip-version-check --upgrade docker
+	pip3 install --disable-pip-version-check --upgrade $(PIP_OPTS) docker
 
 .PHONY: proxy
 proxy:
