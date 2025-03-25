@@ -1,4 +1,9 @@
-.DEFAULT_GOAL := install
+.DEFAULT_GOAL := all
+
+LSB_RELEASE := $(shell lsb_release -r -s)
+ifneq ($(LSB_RELEASE),22.04)
+	PIP_OPTS = --break-system-packages
+endif
 
 latest_version := $(shell curl --silent "https://api.github.com/repos/yt-dlp/yt-dlp/releases/latest" | jq --raw-output '.assets[] | select(.name | test("yt-dlp_linux$$")).browser_download_url')
 
@@ -13,3 +18,10 @@ download: clean
 .PHONY: install
 install: download
 	sudo chmod +x /usr/local/bin/yt-dlp
+
+.PHONY: po-token
+po-token:
+	pip3 install --disable-pip-version-check --upgrade $(PIP_OPTS) yt-dlp-getpot-wpc
+
+.PHONY: all
+all: install po-token
