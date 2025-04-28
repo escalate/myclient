@@ -1,0 +1,16 @@
+.DEFAULT_GOAL := install
+
+.PHONY: clean
+clean:
+	rm --force /tmp/rustypipe-botguard-*.tar.xz
+	sudo rm --force /usr/local/bin/rustypipe-botguard
+
+.PHONY: download
+download: clean
+	wget --no-clobber --directory-prefix /tmp --content-disposition "https://codeberg.org/ThetaDev/rustypipe-botguard/releases/download/v0.1.1/rustypipe-botguard-v0.1.1-x86_64-unknown-linux-gnu.tar.xz"
+
+.PHONY: install
+install: download
+	tar xJf /tmp/rustypipe-botguard-*.tar.xz -C /tmp
+	sudo cp /tmp/rustypipe-botguard /usr/local/bin/rustypipe-botguard
+	sudo chmod +x /usr/local/bin/rustypipe-botguard

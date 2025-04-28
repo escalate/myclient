@@ -29,6 +29,7 @@ update-3rd-party:
 	$(MAKE) --file Makefile.logcli
 	$(MAKE) --file Makefile.poetry
 	#$(MAKE) --file Makefile.ohmyzsh
+	$(MAKE) --file Makefile.rustypipe-botguard
 	$(MAKE) --file Makefile.shellcheck
 	$(MAKE) --file Makefile.staticcheck
 	$(MAKE) --file Makefile.tmux-plugins

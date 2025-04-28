@@ -44,6 +44,7 @@ default:
 	$(MAKE) --file Makefile.poetry
 	$(MAKE) --file Makefile.ohmyzsh
 	$(MAKE) --file Makefile.papirus
+	$(MAKE) --file Makefile.rustypipe-botguard
 	$(MAKE) --file Makefile.shellcheck
 	$(MAKE) --file Makefile.shfmt
 	$(MAKE) --file Makefile.staticcheck
