@@ -20,7 +20,7 @@ install: download
 	sudo chmod +x /usr/local/bin/yt-dlp
 
 .PHONY: po-token
-po-token: rustypipe-botguard
+po-token:
 	pip3 install --disable-pip-version-check --upgrade $(PIP_OPTS) yt-dlp-get-pot-rustypipe
 
 .PHONY: all
