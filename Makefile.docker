@@ -56,5 +56,13 @@ proxy:
 usermod:
 	sudo usermod --append --groups docker $(USER)
 
+.PHONY: cleanup-container
+cleanup-container:
+	docker rm --volumes --force $(shell docker ps --quiet --all)
+
+.PHONY: cleanup-images
+cleanup-images:
+	docker rmi --force $(shell docker images --quiet --all)
+
 .PHONY: all
 all: install config python proxy usermod
