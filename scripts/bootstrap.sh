@@ -2,7 +2,7 @@
 set -e -E -u -C -o pipefail
 
 echo "Install base packages"
-sudo apt-get install --yes git make
+sudo apt-get install --yes git make bzip2
 
 echo "Clone dotfiles repository"
 git clone https://github.com/escalate/dotfiles.git "${HOME}/dotfiles"
