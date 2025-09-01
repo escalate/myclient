@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+set -e -E -u -C -o pipefail
 
 DATE=$(date +%Y_%m_%d)
 DIRS_TO_TAR=("${HOME}/Desktop" "${HOME}/Documents" "${HOME}/Downloads" "${HOME}/Music" "${HOME}/Pictures" "${HOME}/.config" "${HOME}/.local/share" "${HOME}/secrets")
@@ -16,7 +16,7 @@ for d in "${DIRS_TO_TAR[@]}"; do
   BACKUP_FILE="backup_$(basename "${d}")_${DATE}.tar"
   if [ ! -f "${LOCAL_BACKUP_PATH}/${BACKUP_FILE}" ]; then
     echo "INFO: Create backup archive \"${LOCAL_BACKUP_PATH}/${BACKUP_FILE}\" for directory \"${d}\""
-    sudo tar -cvf "${LOCAL_BACKUP_PATH}/${BACKUP_FILE}" "${d}"
+    sudo tar --create --checkpoint=100 --file "${LOCAL_BACKUP_PATH}/${BACKUP_FILE}" "${d}"
     sudo chown "${USER}":"${USER}" "${LOCAL_BACKUP_PATH}/${BACKUP_FILE}"
   else
     echo "INFO: Backup archive \"${LOCAL_BACKUP_PATH}/${BACKUP_FILE}\" for directory \"${d}\" already created"
@@ -31,13 +31,13 @@ fi
 
 if grep -qs ${MOUNT_PATH} /proc/mounts; then
   echo "INFO: Transfer local backup ${LOCAL_BACKUP_PATH} to NAS ${REMOTE_BACKUP_PATH}"
-  sudo rsync -r -v --progress -z --size-only "${LOCAL_BACKUP_PATH}" "${REMOTE_BACKUP_PATH}"
+  sudo rsync --recursive --verbose --progress --compress --size-only "${LOCAL_BACKUP_PATH}" "${REMOTE_BACKUP_PATH}"
 
   echo "INFO: Attention! Don't forget to delete local backups ${LOCAL_BACKUP_PATH} to save diskspace"
 
   for d in "${DIRS_TO_RSYNC[@]}"; do
     echo "INFO: Backup directory ${d} to ${REMOTE_BACKUP_PATH}"
-    sudo rsync -r -v --progress -z --size-only "${d}" "${REMOTE_BACKUP_PATH}"
+    sudo rsync --recursive --verbose --progress --compress --size-only "${d}" "${REMOTE_BACKUP_PATH}"
   done
 fi
 

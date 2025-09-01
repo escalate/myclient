@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e -E -u -C -o pipefail
 
 echo "Install base packages"
 sudo apt-get install --yes git make

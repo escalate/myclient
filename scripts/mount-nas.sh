@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+set -e -E -u -C -o pipefail
 
 SMB_SERVER="$(cat "${HOME}/.smb/nas_server")"
 SMB_PATH="$(cat "${HOME}/.smb/nas_path")"
