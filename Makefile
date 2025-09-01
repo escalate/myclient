@@ -10,6 +10,7 @@ default:
 	$(MAKE) --file Makefile.needrestart
 	$(MAKE) --file Makefile.pkg-install
 	$(MAKE) --file Makefile.pkg-erase
+	$(MAKE) --file Makefile.nodejs
 	$(MAKE) --file Makefile.ansible
 	$(MAKE) --file Makefile.chrome
 	$(MAKE) --file Makefile.cookiecutter
@@ -37,7 +38,6 @@ default:
 	$(MAKE) --file Makefile.kubectl
 	$(MAKE) --file Makefile.minikube
 	$(MAKE) --file Makefile.multi-gitter
-	$(MAKE) --file Makefile.nodejs
 	$(MAKE) --file Makefile.lens
 	$(MAKE) --file Makefile.logcli
 	$(MAKE) --file Makefile.nerdfonts
