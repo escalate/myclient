@@ -18,9 +18,21 @@ for d in "${DIRS_TO_TAR[@]}"; do
     echo "INFO: Create backup archive \"${LOCAL_BACKUP_PATH}/${BACKUP_FILE}\" for directory \"${d}\""
     sudo tar --create --checkpoint=100 --file "${LOCAL_BACKUP_PATH}/${BACKUP_FILE}" "${d}"
     sudo chown "${USER}":"${USER}" "${LOCAL_BACKUP_PATH}/${BACKUP_FILE}"
+    echo "INFO: Create sha256 checksum for file \"${LOCAL_BACKUP_PATH}/${BACKUP_FILE}\""
+    sha256sum "${LOCAL_BACKUP_PATH}/${BACKUP_FILE}" >> "${LOCAL_BACKUP_PATH}/sha256sums.txt"
+    sed --in-place "s#${LOCAL_BACKUP_PATH}/##g" "${LOCAL_BACKUP_PATH}/sha256sums.txt"
   else
     echo "INFO: Backup archive \"${LOCAL_BACKUP_PATH}/${BACKUP_FILE}\" for directory \"${d}\" already created"
   fi
+done
+
+while true; do
+  read -p "Do you want to transfer backup to NAS? (y/n) " answer
+  case ${answer} in
+    [Yy]* ) break;;
+    [Nn]* ) exit;;
+    * ) echo "Please answer (y)es or (n)o.";;
+  esac
 done
 
 if grep -qs ${MOUNT_PATH} /proc/mounts; then
