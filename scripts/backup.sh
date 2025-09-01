@@ -2,7 +2,7 @@
 set -e -E -u -C -o pipefail
 
 DATE=$(date +%Y_%m_%d)
-DIRS_TO_TAR=("${HOME}/Desktop" "${HOME}/Documents" "${HOME}/Downloads" "${HOME}/Music" "${HOME}/Pictures" "${HOME}/.config" "${HOME}/.local/share" "${HOME}/secrets")
+DIRS_TO_TAR=("${HOME}/Desktop" "${HOME}/Documents" "${HOME}/Downloads" "${HOME}/Music" "${HOME}/Pictures" "${HOME}/.local/share" "${HOME}/secrets")
 DIRS_TO_RSYNC=("${HOME}/VirtualBox VMs")
 LOCAL_BACKUP_PATH="/tmp/backup_${DATE}"
 MOUNT_PATH="/mnt/nas"
@@ -13,10 +13,10 @@ if [ ! -d "${LOCAL_BACKUP_PATH}" ]; then
 fi
 
 for d in "${DIRS_TO_TAR[@]}"; do
-  BACKUP_FILE="backup_$(basename "${d}")_${DATE}.tar"
+  BACKUP_FILE="backup_$(basename "${d}")_${DATE}.tar.bz2"
   if [ ! -f "${LOCAL_BACKUP_PATH}/${BACKUP_FILE}" ]; then
     echo "INFO: Create backup archive \"${LOCAL_BACKUP_PATH}/${BACKUP_FILE}\" for directory \"${d}\""
-    sudo tar --create --checkpoint=100 --file "${LOCAL_BACKUP_PATH}/${BACKUP_FILE}" "${d}"
+    sudo tar --create --bzip2 --checkpoint=100 --file "${LOCAL_BACKUP_PATH}/${BACKUP_FILE}" "${d}"
     sudo chown "${USER}":"${USER}" "${LOCAL_BACKUP_PATH}/${BACKUP_FILE}"
     echo "INFO: Create sha256 checksum for file \"${LOCAL_BACKUP_PATH}/${BACKUP_FILE}\""
     sha256sum "${LOCAL_BACKUP_PATH}/${BACKUP_FILE}" >> "${LOCAL_BACKUP_PATH}/sha256sums.txt"
