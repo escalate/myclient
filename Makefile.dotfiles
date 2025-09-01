@@ -2,6 +2,7 @@ dotfiles = $(shell find "$(HOME)/dotfiles" -maxdepth 1 -name ".*" -not -name .gi
 
 .PHONY: symlink
 symlink:
+	test -d "$(HOME)/dotfiles"
 	for file in $(dotfiles); do \
 		if [ ! -e "$(HOME)/$$file" ]; then \
 			ln --symbolic --force "$(HOME)/dotfiles/$$file" "$(HOME)/$$file"; \
