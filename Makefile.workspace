@@ -1,9 +1,3 @@
-.DEFAULT_GOAL := symlink
-
-.PHONY: directories
-directories:
-	mkdir --parents "$(HOME)/Documents/workspace/private" "$(HOME)/Documents/workspace/work"
-
-.PHONY: symlink
-symlink: directories
-	ln --symbolic --force "$(HOME)/Documents/workspace" "$(HOME)/workspace"
+.PHONY: directory
+directory:
+	mkdir --parents "$(HOME)/workspace"
