@@ -29,9 +29,9 @@ done
 while true; do
   read -rp "Do you want to transfer backup to NAS? (y/n) " answer
   case ${answer} in
-    [Yy]* ) break ;;
-    [Nn]* ) exit ;;
-    * ) echo "Please answer (y)es or (n)o." ;;
+    [Yy]*) break ;;
+    [Nn]*) exit ;;
+    *) echo "Please answer (y)es or (n)o." ;;
   esac
 done
 
