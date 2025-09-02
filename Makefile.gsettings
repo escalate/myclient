@@ -11,58 +11,67 @@ dump: install
 
 .PHONY: settings
 settings: install
-	# Settings - Appearance
-	gsettings set "org.gnome.shell.extensions.ding" "start-corner" "top-left" || exit 0
-	gsettings set "org.gnome.shell.extensions.ding" "show-home" "false" || exit 0
-	gsettings set "org.gnome.shell.extensions.dash-to-dock" "dash-max-icon-size" "32" || exit 0
-	gsettings set "org.gnome.shell.extensions.dash-to-dock" "show-mounts-network" "false" || exit 0
-	gsettings set "org.gnome.shell.extensions.dash-to-dock" "show-mounts-only-mounted" "true" || exit 0
-	gsettings set "org.gnome.shell.extensions.dash-to-dock" "show-trash" "false" || exit 0
-	# Settings - Background
-	gsettings set "org.gnome.desktop.background" "picture-uri" "file:///usr/share/backgrounds/ubuntu-default-greyscale-wallpaper.png" || exit 0
-	gsettings set "org.gnome.desktop.background" "picture-uri-dark" "file:///usr/share/backgrounds/ubuntu-default-greyscale-wallpaper.png" || exit 0
-	gsettings set "org.gnome.desktop.background" "primary-color" "#333333" || exit 0
-	gsettings set "org.gnome.desktop.background" "secondary-color" "#333333" || exit 0
+	# Settings - Sound
+	gsettings set "org.gnome.desktop.sound" "allow-volume-above-100-percent" "true" || exit 0
+	gsettings set "org.gnome.desktop.sound" "event-sounds" "false" || exit 0
 	# Settings - Power
 	gsettings set "org.gnome.settings-daemon.plugins.power" "power-button-action" "suspend" || exit 0
 	gsettings set "org.gnome.desktop.interface" "show-battery-percentage" "true" || exit 0
-	# Settings - Privacy - Screen
+	# Settings - Appearence
+	gsettings set "org.gnome.desktop.interface" "color-scheme" "prefer-dark" || exit 0
+	gsettings set "org.gnome.desktop.interface" "gtk-theme" "Yaru-dark" || exit 0
+	gsettings set "org.gnome.desktop.background" "picture-uri" "file:///usr/share/backgrounds/ubuntu-wallpaper-d.png" || exit 0
+	gsettings set "org.gnome.desktop.background" "picture-uri-dark" "file:///usr/share/backgrounds/ubuntu-wallpaper-d.png" || exit 0
+	gsettings set "org.gnome.desktop.background" "primary-color" "#2c001e" || exit 0
+	gsettings set "org.gnome.desktop.background" "secondary-color" "#2c001e" || exit 0
+	gsettings set "org.gnome.desktop.screensaver" "picture-uri" "file:///usr/share/backgrounds/ubuntu-wallpaper-d.png" || exit 0
+	gsettings set "org.gnome.desktop.screensaver" "primary-color" "#2c001e" || exit 0
+	gsettings set "org.gnome.desktop.screensaver" "secondary-color" "#2c001e" || exit 0
+	# Settings - Ubuntu Desktop
+	gsettings set "org.gnome.shell.extensions.ding" "start-corner" "top-left" || exit 0
+	gsettings set "org.gnome.shell.extensions.ding" "show-home" "false" || exit 0
+	gsettings set "org.gnome.shell.extensions.dash-to-dock" "dash-max-icon-size" "48" || exit 0
+	gsettings set "org.gnome.shell.extensions.dash-to-dock" "show-mounts-network" "false" || exit 0
+	gsettings set "org.gnome.shell.extensions.dash-to-dock" "show-mounts-only-mounted" "true" || exit 0
+	gsettings set "org.gnome.shell.extensions.dash-to-dock" "show-trash" "false" || exit 0
+	# Settings - Mouse and Touchpad
+	gsettings set "org.gnome.desktop.peripherals.mouse" "natural-scroll" "false" || exit 0
+	gsettings set "org.gnome.desktop.peripherals.mouse" "accel-profile" "flat" || exit 0
+	gsettings set "org.gnome.desktop.peripherals.touchpad" "click-method" "fingers" || exit 0
+	gsettings set "org.gnome.desktop.peripherals.touchpad" "tap-to-click" "false" || exit 0
+	gsettings set "org.gnome.desktop.peripherals.touchpad" "natural-scroll" "false" || exit 0
+	# Settings - Privacy & Security - Screen Lock
 	gsettings set "org.gnome.desktop.session" "idle-delay" "uint32 300" || exit 0
 	gsettings set "org.gnome.desktop.screensaver" "lock-enabled" "true" || exit 0
 	gsettings set "org.gnome.desktop.screensaver" "ubuntu-lock-on-suspend" "true" || exit 0
 	gsettings set "org.gnome.desktop.notifications" "show-in-lock-screen" "false" || exit 0
-	# Settings - Mouse and Touchpad
-	gsettings set "org.gnome.desktop.peripherals.mouse" "natural-scroll" "false" || exit 0
-	gsettings set "org.gnome.desktop.peripherals.mouse" "accel-profile" "flat" || exit 0
-	gsettings set "org.gnome.desktop.peripherals.touchpad" "natural-scroll" "false" || exit 0
-	gsettings set "org.gnome.desktop.peripherals.touchpad" "tap-to-click" "false" || exit 0
-	# Settings - Sound
-	gsettings set "org.gnome.desktop.sound" "allow-volume-above-100-percent" "true" || exit 0
-	# Tweaks - Appearance
-	gsettings set "org.gnome.desktop.interface" "gtk-theme" "Yaru-dark" || exit 0
-	gsettings set "org.gnome.desktop.interface" "icon-theme" "Papirus-Dark" || exit 0
-	gsettings set "org.gnome.desktop.screensaver" "picture-uri" "file:///usr/share/backgrounds/ubuntu-default-greyscale-wallpaper.png" || exit 0
-	gsettings set "org.gnome.desktop.screensaver" "primary-color" "#333333" || exit 0
-	gsettings set "org.gnome.desktop.screensaver" "secondary-color" "#333333" || exit 0
-	# Tweaks - Fonts
-	gsettings set "org.gnome.desktop.interface" "monospace-font-name" "UbuntuMono Nerd Font 13" || exit 0
-	# Tweaks - Keyboard and Mouse
-	gsettings set "org.gnome.desktop.peripherals.touchpad" "click-method" "fingers" || exit 0
-	# Tweaks - Top Bar
+	# Settings - Privacy & Security - File History & Trash
+	gsettings set "org.gnome.desktop.privacy" "remember-recent-files" "true" || exit 0
+	gsettings set "org.gnome.desktop.privacy" "remove-old-trash-files" "true" || exit 0
+	gsettings set "org.gnome.desktop.privacy" "remove-old-temp-files" "true" || exit 0
+	gsettings set "org.gnome.desktop.privacy" "old-files-age" "uint32 30" || exit 0
+	# Settings - System - Region & Language
+	gsettings set "org.gnome.system.locale" "region" "de_DE.UTF-8" || exit 0
+	# System - Date & Time
 	gsettings set "org.gnome.desktop.interface" "clock-show-weekday" "true" || exit 0
 	gsettings set "org.gnome.desktop.interface" "clock-show-date" "true" || exit 0
 	gsettings set "org.gnome.desktop.calendar" "show-weekdate" "true" || exit 0
-	# Gedit
-	gsettings set "org.gnome.gedit.preferences.editor" "display-line-numbers" "false" || exit 0
-	gsettings set "org.gnome.gedit.preferences.editor" "tabs-size" "uint32 4" || exit 0
-	gsettings set "org.gnome.gedit.preferences.editor" "insert-spaces" "true" || exit 0
+	# Tweaks - Fonts
+	gsettings set "org.gnome.desktop.interface" "monospace-font-name" "UbuntuMono Nerd Font Mono 13" || exit 0
+	# Tweaks - Appearance
+	gsettings set "org.gnome.desktop.interface" "icon-theme" "Papirus-Dark" || exit 0
+	# Text Editor
+	gsettings set "org.gnome.TextEditor" "indent-style" "space" || exit 0
+	gsettings set "org.gnome.TextEditor" "tab-width" "uint32 4" || exit 0
+	gsettings set "org.gnome.TextEditor" "show-line-numbers" "true" || exit 0
+	gsettings set "org.gnome.TextEditor" "wrap-text" "false" || exit 0
 	# Files
 	gsettings set "org.gnome.nautilus.preferences" "default-folder-viewer" "list-view" || exit 0
 	gsettings set "org.gnome.nautilus.preferences" "default-sort-order" "type" || exit 0
-	gsettings set "org.gnome.nautilus.list-view" "default-visible-columns" "['name', 'size', 'type', 'date_modified', 'starred']" || exit 0
+	gsettings set "org.gnome.nautilus.list-view" "default-visible-columns" "['name', 'size', 'type', 'date_modified']" || exit 0
 	gsettings set "org.gtk.Settings.FileChooser" "show-hidden" "true" || exit 0
 	# Favorites
-	gsettings set "org.gnome.shell" "favorite-apps" "['google-chrome.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Terminal.desktop', 'lens-desktop.desktop', 'virtualbox.desktop', 'code.desktop', 'org.gnome.gedit.desktop', 'org.keepassxc.KeePassXC.desktop', 'org.gnome.Calculator.desktop', 'msedge-gbdcefcgcoknbjfhopkollefgcnenbcl-Default.desktop', 'msedge-cifhbcnohmdccbgoicgdjpfamggdegmo-Default.desktop', 'org.gnome.Hamster.GUI.desktop']" || exit 0
+	gsettings set "org.gnome.shell" "favorite-apps" "['google-chrome.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Terminal.desktop', 'lens-desktop.desktop', 'virtualbox.desktop', 'code.desktop', 'org.gnome.TextEditor.desktop', 'org.keepassxc.KeePassXC.desktop', 'org.gnome.Calculator.desktop', 'msedge-gbdcefcgcoknbjfhopkollefgcnenbcl-Default.desktop', 'msedge-cifhbcnohmdccbgoicgdjpfamggdegmo-Default.desktop', 'org.gnome.Hamster.GUI.desktop']" || exit 0
 
 .PHONY: all
 all: dump settings
