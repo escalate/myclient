@@ -1,4 +1,4 @@
-.DEFAULT_GOAL := connections
+.DEFAULT_GOAL := apply
 
 .PHONY: install
 install:
@@ -6,4 +6,8 @@ install:
 
 .PHONY: connections
 connections: install
-	sudo cp --force $(HOME)/.network/* /etc/NetworkManager/system-connections/
+	sudo cp --preserve=mode,ownership --force $(HOME)/.network/* /etc/netplan/
+
+.PHONY: apply
+apply: connections
+	sudo netplan apply
