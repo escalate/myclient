@@ -11,7 +11,7 @@
 ## Secrets
 
 - All secrets or stored in a separate directory named `~/secrets/`
-- Make sure `~/secrets/` directory exists
+- Make sure `~/secrets/` directory exists before bootstrapping the system
 
 ## Bootstrap
 
@@ -29,14 +29,14 @@ curl --silent --show-error --location https://raw.githubusercontent.com/escalate
 
 ```bash
 cd [RESTOREDIR]
-find . -name "*.tar" -type f -exec tar xvf {} \;
+find . -name "*.tar.bz2" -type f -exec tar xvjf {} \;
 ```
 
 - Move content of extracted archives to corresponding home directory equivalents e.g. ~/Documents
 
 ```bash
-cd [RESTOREDIR]/Documents
-mv * ~/Documents/
+rm -rf ~/Documents/
+mv [RESTOREDIR]/Documents ~/Documents/
 ```
 
 ## Manual settings
@@ -56,11 +56,6 @@ mv * ~/Documents/
     - [Frippery Move Clock](https://extensions.gnome.org/extension/2/move-clock/)
     - [Notification Banner Position](https://extensions.gnome.org/extension/4105/notification-banner-position/)
     - [Refresh Wifi Connections](https://extensions.gnome.org/extension/905/refresh-wifi-connections/)
-
-### Settings - Sound
-
-- Open Settings
-  - Sound -> Sound Effects -> Alert volume off
 
 ### VirtualBox
 
