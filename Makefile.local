@@ -1,4 +1,6 @@
 .PHONY: symlink
 symlink:
-	ln --symbolic --force "$(HOME)/secrets/.remmina" "$(HOME)/.local/share/remmina"
-	ln --symbolic --force "$(HOME)/secrets/.hamster" "$(HOME)/.local/share/hamster"
+	test -d "$(HOME)/.remmina/"
+	ln --symbolic --force "$(HOME)/.remmina" "$(HOME)/.local/share/remmina"
+	test -d "$(HOME)/.hamster/"
+	ln --symbolic --force "$(HOME)/.hamster" "$(HOME)/.local/share/hamster"

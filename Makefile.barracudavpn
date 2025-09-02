@@ -7,6 +7,7 @@ install:
 
 .PHONY: configure
 configure: install
-	sudo cp "$(HOME)/secrets/.barracudavpn/barracudavpn.conf" "/etc/barracudavpn/"
+	test -d "$(HOME)/.barracudavpn/"
+	sudo cp "$(HOME)/.barracudavpn/barracudavpn.conf" "/etc/barracudavpn/"
 	sudo chown root:root "/etc/barracudavpn/barracudavpn.conf"
 	sudo chmod 600 "/etc/barracudavpn/barracudavpn.conf"

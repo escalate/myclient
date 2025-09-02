@@ -24,6 +24,8 @@ jobs:
           touch $HOME/secrets/.network/dummy.yaml
           mkdir --parents $HOME/secrets/.truststore/
           touch $HOME/secrets/.truststore/cert.crt
+          mkdir --parents $HOME/secrets/.remmina/
+          mkdir --parents $HOME/secrets/.hamster/
           mkdir --parents $HOME/.local/share/
 
       - name: Run Bootstrap script

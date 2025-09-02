@@ -1,6 +1,6 @@
 .DEFAULT_GOAL := chrome-truststore
 
-certificates = $(shell find "$(HOME)/secrets/.truststore" -maxdepth 1 -name "*.crt" -printf '%f\n')
+certificates = $(shell find "$(HOME)/.truststore" -maxdepth 1 -name "*.crt" -printf '%f\n')
 
 .PHONY: update
 update:
@@ -12,8 +12,9 @@ install: update
 
 .PHONY: os-truststore
 os-truststore: install
+	test -d "$(HOME)/.truststore/"
 	sudo rm --recursive --force /usr/local/share/ca-certificates/*.crt
-	sudo cp --force $(HOME)/secrets/.truststore/*.crt "/usr/local/share/ca-certificates/"
+	sudo cp --force $(HOME)/.truststore/*.crt "/usr/local/share/ca-certificates/"
 	sudo update-ca-certificates
 
 .PHONY: chrome-truststore
@@ -22,7 +23,7 @@ chrome-truststore: os-truststore
 		for file in $(certificates); do \
 			echo "Certificate: $$file"; \
 			certutil -d sql:$(HOME)/.pki/nssdb -D -n "$$file"; \
-			certutil -d sql:${HOME}/.pki/nssdb -A -t "CT,C,C" -i "$(HOME)/secrets/.truststore/$$file" -n "$$file"; \
+			certutil -d sql:${HOME}/.pki/nssdb -A -t "CT,C,C" -i "$(HOME)/.truststore/$$file" -n "$$file"; \
 			certutil -d sql:$(HOME)/.pki/nssdb -L -n "$$file"; \
 		done \
 	fi
