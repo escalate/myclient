@@ -51,10 +51,10 @@ default:
 	$(MAKE) --file Makefile.sweethome3d
 	# Binary
 	$(MAKE) --file Makefile.docker-compose
-	$(MAKE) --file Makefile.hadolint
-	$(MAKE) --file Makefile.hcloudcli
 	$(MAKE) --file Makefile.editorconfig-checker
 	$(MAKE) --file Makefile.gitleaks
+	$(MAKE) --file Makefile.hadolint
+	$(MAKE) --file Makefile.hcloudcli
 	$(MAKE) --file Makefile.helm
 	$(MAKE) --file Makefile.logcli
 	$(MAKE) --file Makefile.rustypipe-botguard
