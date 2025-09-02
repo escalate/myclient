@@ -55,7 +55,6 @@ mv [RESTOREDIR]/Documents ~/Documents/
     - [Caffeine](https://extensions.gnome.org/extension/517/caffeine/)
     - [Frippery Move Clock](https://extensions.gnome.org/extension/2/move-clock/)
     - [Notification Banner Position](https://extensions.gnome.org/extension/4105/notification-banner-position/)
-    - [Refresh Wifi Connections](https://extensions.gnome.org/extension/905/refresh-wifi-connections/)
 
 ### VirtualBox
 
