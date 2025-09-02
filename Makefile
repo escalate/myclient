@@ -9,6 +9,7 @@ default:
 	$(MAKE) --file Makefile.timezone
 	$(MAKE) --file Makefile.needrestart
 	$(MAKE) --file Makefile.pkg-install
+	$(MAKE) --file Makefile.language
 	$(MAKE) --file Makefile.pkg-erase
 	$(MAKE) --file Makefile.nodejs
 	$(MAKE) --file Makefile.ansible

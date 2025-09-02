@@ -1,0 +1,3 @@
+.PHONY: install
+install:
+	sudo apt-get install --yes language-pack-de language-pack-de-base language-pack-gnome-de language-pack-gnome-de-base language-pack-en language-pack-en-base language-pack-gnome-en language-pack-gnome-en-base $(shell check-language-support --language=de) $(shell check-language-support --language=en)
