@@ -4,8 +4,12 @@
 clean:
 	rm --recursive --force "$(HOME)/.pyenv/"
 
+.PHONY: update
+update:
+	sudo apt-get update
+
 .PHONY: dependencies
-dependencies:
+dependencies: update
 	sudo apt-get install --yes \
 		libssl-dev \
 		zlib1g-dev \

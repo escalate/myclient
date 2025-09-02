@@ -1,3 +1,9 @@
+.DEFAULT_GOAL := install
+
+.PHONY: update
+update:
+	sudo apt-get update
+
 .PHONY: install
-install:
+install: update
 	sudo apt-get install --yes hamster-time-tracker

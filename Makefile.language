@@ -1,3 +1,9 @@
+.DEFAULT_GOAL := install
+
+.PHONY: update
+update:
+	sudo apt-get update
+
 .PHONY: install
-install:
+install: update
 	sudo apt-get install --yes language-pack-de language-pack-de-base language-pack-gnome-de language-pack-gnome-de-base language-pack-en language-pack-en-base language-pack-gnome-en language-pack-gnome-en-base $(shell check-language-support --language=de) $(shell check-language-support --language=en)

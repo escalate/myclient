@@ -1,7 +1,11 @@
 .DEFAULT_GOAL := all
 
+.PHONY: update
+update:
+	sudo apt-get update
+
 .PHONY: install
-install:
+install: update
 	sudo apt-get install --yes apt-transport-https software-properties-common
 
 .PHONY: timeout

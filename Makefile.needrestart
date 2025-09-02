@@ -1,7 +1,11 @@
 .DEFAULT_GOAL := automatic
 
+.PHONY: update
+update:
+	sudo apt-get update
+
 .PHONY: install
-install:
+install: update
 	sudo apt-get install --yes needrestart
 
 .PHONY: automatic
