@@ -6,6 +6,7 @@ install:
 
 .PHONY: connections
 connections: install
+	test -d "$(HOME)/.network/"
 	sudo cp --preserve=mode,ownership --force $(HOME)/.network/* /etc/netplan/
 
 .PHONY: apply

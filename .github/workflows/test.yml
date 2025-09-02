@@ -19,11 +19,11 @@ jobs:
       - name: Create test dependencies
         run: |
           dpkg -l
-          mkdir --parents $HOME/.network/
-          mkdir --parents $HOME/.local/share/
-          touch $HOME/.network/dummy.nmconnection
+          mkdir --parents $HOME/secrets/.network/
+          touch $HOME/secrets/.network/dummy.yaml
           mkdir --parents $HOME/secrets/.truststore/
           touch $HOME/secrets/.truststore/cert.crt
+          mkdir --parents $HOME/.local/share/
 
       - name: Run Bootstrap script
         run: ./scripts/bootstrap.sh
