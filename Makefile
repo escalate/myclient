@@ -1,5 +1,6 @@
 .PHONY: default
 default:
+	# Common
 	$(MAKE) --file Makefile.workspace
 	$(MAKE) --file Makefile.dotfiles
 	$(MAKE) --file Makefile.secrets
@@ -11,58 +12,74 @@ default:
 	$(MAKE) --file Makefile.pkg-install
 	$(MAKE) --file Makefile.language
 	$(MAKE) --file Makefile.pkg-erase
-	$(MAKE) --file Makefile.nodejs
-	$(MAKE) --file Makefile.ansible
+	# Apt
 	$(MAKE) --file Makefile.chrome
-	$(MAKE) --file Makefile.cookiecutter
 	$(MAKE) --file Makefile.dbeaver
-	$(MAKE) --file Makefile.dircolors
 	$(MAKE) --file Makefile.docker
-	$(MAKE) --file Makefile.docker-compose
-	$(MAKE) --file Makefile.hadolint
-	$(MAKE) --file Makefile.azure-cli
-	$(MAKE) --file Makefile.hcloudcli
-	$(MAKE) --file Makefile.google-cloud-sdk
 	$(MAKE) --file Makefile.edge
-	$(MAKE) --file Makefile.editorconfig-checker
 	$(MAKE) --file Makefile.etcher
 	$(MAKE) --file Makefile.git
-	$(MAKE) --file Makefile.prettier
-	$(MAKE) --file Makefile.pre_commit
-	$(MAKE) --file Makefile.gitleaks
-	$(MAKE) --file Makefile.golang
-	$(MAKE) --file Makefile.gnometerminal
+	$(MAKE) --file Makefile.google-cloud-sdk
 	$(MAKE) --file Makefile.hamster
-	$(MAKE) --file Makefile.helm
 	$(MAKE) --file Makefile.hugo
 	$(MAKE) --file Makefile.keepassxc
 	$(MAKE) --file Makefile.kubectl
+	$(MAKE) --file Makefile.lens
 	$(MAKE) --file Makefile.minikube
 	$(MAKE) --file Makefile.multi-gitter
-	$(MAKE) --file Makefile.lens
-	$(MAKE) --file Makefile.logcli
-	$(MAKE) --file Makefile.nerdfonts
-	$(MAKE) --file Makefile.poetry
-	$(MAKE) --file Makefile.ohmyzsh
+	$(MAKE) --file Makefile.nodejs
 	$(MAKE) --file Makefile.papirus
-	$(MAKE) --file Makefile.rustypipe-botguard
-	$(MAKE) --file Makefile.shellcheck
-	$(MAKE) --file Makefile.shfmt
-	$(MAKE) --file Makefile.staticcheck
-	$(MAKE) --file Makefile.sweethome3d
 	$(MAKE) --file Makefile.teamviewer
 	$(MAKE) --file Makefile.terraform
-	$(MAKE) --file Makefile.truststore
-	$(MAKE) --file Makefile.tmux-plugins
-	$(MAKE) --file Makefile.virtualbox
 	$(MAKE) --file Makefile.vagrant
 	$(MAKE) --file Makefile.vagrant-plugins
-	$(MAKE) --file Makefile.vim-plugins
+	$(MAKE) --file Makefile.virtualbox
 	$(MAKE) --file Makefile.vscode
-	$(MAKE) --file Makefile.yq
+	# Snap
+	$(MAKE) --file Makefile.golang
+	$(MAKE) --file Makefile.shellcheck
+	# Python
+	$(MAKE) --file Makefile.ansible
+	$(MAKE) --file Makefile.azure-cli
+	$(MAKE) --file Makefile.cookiecutter
+	$(MAKE) --file Makefile.poetry
+	$(MAKE) --file Makefile.pre_commit
 	$(MAKE) --file Makefile.yt-dlp
+	# NodeJS
+	$(MAKE) --file Makefile.prettier
+	# Java
+	$(MAKE) --file Makefile.sweethome3d
+	# Binary
+	$(MAKE) --file Makefile.docker-compose
+	$(MAKE) --file Makefile.hadolint
+	$(MAKE) --file Makefile.hcloudcli
+	$(MAKE) --file Makefile.editorconfig-checker
+	$(MAKE) --file Makefile.gitleaks
+	$(MAKE) --file Makefile.helm
+	$(MAKE) --file Makefile.logcli
+	$(MAKE) --file Makefile.rustypipe-botguard
+	$(MAKE) --file Makefile.shfmt
+	$(MAKE) --file Makefile.staticcheck
+	$(MAKE) --file Makefile.yq
+	# Terminal
+	$(MAKE) --file Makefile.ohmyzsh
+	$(MAKE) --file Makefile.gnometerminal
+	$(MAKE) --file Makefile.dircolors
+	$(MAKE) --file Makefile.nerdfonts
+	$(MAKE) --file Makefile.tmux-plugins
+	$(MAKE) --file Makefile.vim-plugins
+	# Other
+	$(MAKE) --file Makefile.truststore
 	$(MAKE) --file Makefile.gsettings
 
 .PHONY: optional
 optional:
 	$(MAKE) --file Makefile.barracudavpn
+
+.PHONY: firmware
+firmware:
+	$(MAKE) --file Makefile.firmware
+
+.PHONY: update
+update:
+	$(MAKE) --file Makefile.update-all
