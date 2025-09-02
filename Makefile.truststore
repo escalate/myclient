@@ -1,6 +1,6 @@
 .DEFAULT_GOAL := chrome-truststore
 
-certificates = $(shell find "$(HOME)/.truststore" -maxdepth 1 -name "*.crt" -printf '%f\n')
+certificates = $(shell find "$(HOME)/.truststore/" -maxdepth 1 -name "*.crt" -printf '%f\n')
 
 .PHONY: update
 update:
