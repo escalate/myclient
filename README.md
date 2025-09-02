@@ -102,6 +102,10 @@ mv [RESTOREDIR]/Documents ~/Documents/
     - [SonarQube for IDE](https://marketplace.visualstudio.com/items?itemName=SonarSource.sonarlint-vscode)
     - [YAML](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml)
 
+### Stacher7
+
+- URL: https://stacher.io/
+
 ## License
 
 MIT
