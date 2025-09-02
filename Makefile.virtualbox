@@ -14,7 +14,7 @@ update: key
 
 .PHONY: install
 install: update
-	sudo apt-get install --yes virtualbox-7.0 dkms
+	sudo apt-get install --yes virtualbox-7.2 dkms
 
 .PHONY: vboxconfig
 vboxconfig: install
