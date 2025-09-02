@@ -19,6 +19,7 @@ jobs:
       - name: Create test dependencies
         run: |
           dpkg -l
+          mkdir $HOME/.ssh/
           mkdir --parents $HOME/secrets/.network/
           touch $HOME/secrets/.network/dummy.yaml
           mkdir --parents $HOME/secrets/.truststore/
