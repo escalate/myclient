@@ -34,7 +34,7 @@ settings: install
 	# Settings - Ubuntu Desktop
 	gsettings set "org.gnome.shell.extensions.ding" "start-corner" "top-left" || exit 0
 	gsettings set "org.gnome.shell.extensions.ding" "show-home" "false" || exit 0
-	gsettings set "org.gnome.shell.extensions.dash-to-dock" "dash-max-icon-size" "48" || exit 0
+	gsettings set "org.gnome.shell.extensions.dash-to-dock" "dash-max-icon-size" "32" || exit 0
 	gsettings set "org.gnome.shell.extensions.dash-to-dock" "show-mounts-network" "false" || exit 0
 	gsettings set "org.gnome.shell.extensions.dash-to-dock" "show-mounts-only-mounted" "true" || exit 0
 	gsettings set "org.gnome.shell.extensions.dash-to-dock" "show-trash" "false" || exit 0
