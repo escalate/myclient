@@ -1,5 +1,4 @@
-.DEFAULT_GOAL := chrome-truststore
-
+.DEFAULT_GOAL := all
 certificates = $(shell find "$(HOME)/.truststore/" -maxdepth 1 -name "*.crt" -printf '%f\n')
 
 .PHONY: update
@@ -27,3 +26,17 @@ chrome-truststore: os-truststore
 			certutil -d sql:$(HOME)/.pki/nssdb -L -n "$$file"; \
 		done \
 	fi
+
+.PHONY: firefox-truststore
+firefox-truststore:
+	if [ -f "$(HOME)/snap/firefox/common/.mozilla/firefox/$(shell ls "$(HOME)/snap/firefox/common/.mozilla/firefox" | grep default)/cert9.db" ]; then \
+		for file in $(certificates); do \
+			echo "Certificate: $$file"; \
+			certutil -d sql:$(HOME)/snap/firefox/common/.mozilla/firefox/$(shell ls "$(HOME)/snap/firefox/common/.mozilla/firefox" | grep default) -D -n "$$file"; \
+			certutil -d sql:${HOME}/snap/firefox/common/.mozilla/firefox/$(shell ls "$(HOME)/snap/firefox/common/.mozilla/firefox" | grep default) -A -t "CT,C,C" -i "$(HOME)/.truststore/$$file" -n "$$file"; \
+			certutil -d sql:$(HOME)/snap/firefox/common/.mozilla/firefox/$(shell ls "$(HOME)/snap/firefox/common/.mozilla/firefox" | grep default) -L -n "$$file"; \
+		done \
+	fi
+
+.PHONY: all
+all: chrome-truststore firefox-truststore
