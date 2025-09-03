@@ -19,7 +19,7 @@ remote_viewer = remmina virt-viewer
 ruby_dev = bundler rake ri ruby ruby-dev
 shell = bash zsh
 terminal_multiplexer = screen tmux
-video = ubuntu-restricted-extras vlc vlc-plugin-access-extra
+video = ubuntu-restricted-extras ffmpeg vlc vlc-plugin-access-extra
 
 packages := ${anti_virus} ${archive_manager} ${browser} ${common} ${database} ${dev_tools} ${desktop} ${editor} ${java_dev} ${messaging} ${network} ${office} ${partitioning} ${password} ${python_dev} ${remote_viewer} ${ruby_dev} ${shell} ${terminal_multiplexer} ${video}
 
