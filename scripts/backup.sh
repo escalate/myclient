@@ -2,7 +2,7 @@
 set -e -E -u -C -o pipefail
 
 DATE=$(date +%Y_%m_%d)
-DIRS_TO_TAR=("${HOME}/Desktop" "${HOME}/Documents" "${HOME}/Downloads" "${HOME}/Music" "${HOME}/Pictures" "${HOME}/.local/share" "${HOME}/secrets" "${HOME}/workspace")
+DIRS_TO_TAR=("${HOME}/Desktop" "${HOME}/Documents" "${HOME}/Downloads" "${HOME}/Music" "${HOME}/Pictures" "${HOME}/.local/share" "${HOME}/.config/Code/User" "${HOME}/secrets" "${HOME}/workspace")
 DIRS_TO_RSYNC=("${HOME}/VirtualBox VMs")
 LOCAL_BACKUP_PATH="/tmp/backup_${DATE}"
 MOUNT_PATH="/mnt/nas"
