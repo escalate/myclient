@@ -69,6 +69,7 @@ settings: install
 	gsettings set "org.gnome.TextEditor" "tab-width" "uint32 4" || exit 0
 	gsettings set "org.gnome.TextEditor" "show-line-numbers" "true" || exit 0
 	gsettings set "org.gnome.TextEditor" "wrap-text" "false" || exit 0
+	gsettings set "org.gnome.TextEditor" "restore-session" "false" || exit 0
 	# Files
 	gsettings set "org.gnome.nautilus.preferences" "default-folder-viewer" "list-view" || exit 0
 	gsettings set "org.gnome.nautilus.preferences" "default-sort-order" "type" || exit 0
