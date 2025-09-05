@@ -24,5 +24,10 @@ vboxconfig: install
 usermod:
 	sudo usermod --append --groups vboxusers $(USER)
 
+.PHONY: bugfix
+bugfix:
+	# https://www.virtualbox.org/ticket/22248
+	sudo echo -e "blacklist kvm\nblacklist kvm_intel" | sudo tee /etc/modprobe.d/blacklist-kvm.conf > /dev/null
+
 .PHONY: all
-all: vboxconfig usermod
+all: vboxconfig usermod bugfix
