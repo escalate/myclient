@@ -38,7 +38,7 @@ install: update
 
 .PHONY: config
 config:
-	sudo echo "$$CONFIGURATION" | sudo tee /etc/docker/daemon.json > /dev/null
+	sudo echo "$$CONFIGURATION" | sudo tee /etc/docker/daemon.json >/dev/null
 	sudo systemctl restart docker
 
 .PHONY: python

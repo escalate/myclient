@@ -27,7 +27,7 @@ usermod:
 .PHONY: bugfix
 bugfix:
 	# https://www.virtualbox.org/ticket/22248
-	sudo echo -e "blacklist kvm\nblacklist kvm_intel" | sudo tee /etc/modprobe.d/blacklist-kvm.conf > /dev/null
+	sudo echo -e "blacklist kvm\nblacklist kvm_intel" | sudo tee /etc/modprobe.d/blacklist-kvm.conf >/dev/null
 
 .PHONY: all
 all: vboxconfig usermod bugfix
