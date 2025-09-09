@@ -1,0 +1,64 @@
+.DEFAULT_GOAL := config
+
+define CONFIGURATION
+ExcludePath ^/proc
+ExcludePath ^/sys
+ExcludePath ^/run
+ExcludePath ^/dev
+ExcludePath ^/snap
+ExcludePath ^/opt/clamav/quarantine
+VirusEvent /etc/clamav/virus-event.sh
+endef
+export CONFIGURATION
+
+define VIRUSEVENTSCRIPT
+#!/bin/bash
+PATH="/usr/bin"
+ALERT="Signature \"$${CLAM_VIRUSEVENT_VIRUSNAME}\" in \"$${CLAM_VIRUSEVENT_FILENAME}\" detected. File was moved to /opt/clamav/quarantine."
+
+# Send an alert to all graphical users.
+for ADDRESS in /run/user/*; do
+  USERID="$${ADDRESS#/run/user/}"
+  /usr/bin/sudo --user="#$${USERID}" DBUS_SESSION_BUS_ADDRESS="unix:path=$${ADDRESS}/bus" PATH=$${PATH} \
+    /usr/bin/notify-send --app-name=clamav --urgency=critical --icon=dialog-warning "Virus found!" "$${ALERT}"
+done
+endef
+export VIRUSEVENTSCRIPT
+
+.PHONY: update
+update:
+	sudo apt-get update
+
+.PHONY: install
+install: update
+	sudo apt-get install --yes clamav clamav-freshclam clamav-daemon clamtk clamtk-gnome
+
+.PHONY: enable
+enable: install
+	sudo systemctl enable clamav-daemon
+	sudo systemctl enable clamav-freshclam
+
+.PHONY: apparmor
+apparmor: enable
+	sudo aa-complain clamd
+
+.PHONY: directories
+directories: apparmor
+	sudo mkdir --parents /opt/clamav/logs
+	sudo mkdir --parents /opt/clamav/quarantine
+
+.PHONY: cron
+cron: directories
+	sudo echo "30 11 * * * root /usr/bin/clamdscan --multiscan --fdpass --log=/opt/clamav/logs/\$$(date +\%Y-\%m-\%d).log --move=/opt/clamav/quarantine / &>/dev/null" | sudo tee /etc/cron.d/clamdscan
+
+.PHONY: virus-event
+virus-event: cron
+	sudo echo "$$VIRUSEVENTSCRIPT" | sudo tee /etc/clamav/virus-event.sh >/dev/null
+	sudo chmod +x /etc/clamav/virus-event.sh
+
+.PHONY: config
+config: virus-event
+	if ! grep -q "ExcludePath" /etc/clamav/clamd.conf; then \
+		sudo echo "$$CONFIGURATION" | sudo tee --append /etc/clamav/clamd.conf >/dev/null; \
+		sudo systemctl restart clamav-daemon; \
+	fi

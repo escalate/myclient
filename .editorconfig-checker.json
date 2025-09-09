@@ -1,3 +1,3 @@
 {
-  "Exclude": ["Makefile.docker"]
+  "Exclude": ["Makefile.docker", "Makefile.clamav"]
 }

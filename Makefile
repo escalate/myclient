@@ -11,6 +11,7 @@ default:
 	$(MAKE) --file Makefile.needrestart
 	$(MAKE) --file Makefile.pkg-install
 	$(MAKE) --file Makefile.language
+	$(MAKE) --file Makefile.clamav
 	$(MAKE) --file Makefile.pkg-erase
 	# Apt
 	$(MAKE) --file Makefile.chrome
