@@ -40,7 +40,9 @@ enable: install
 
 .PHONY: apparmor
 apparmor: enable
-	sudo aa-complain clamd
+	sudo sed --in-place "s/#include <local/include <local/g" /etc/apparmor.d/usr.sbin.clamd
+	sudo echo "/{,usr/}bin/dash Ux," | sudo tee /etc/apparmor.d/local/usr.sbin.clamd >/dev/null
+	systemctl reload apparmor
 
 .PHONY: directories
 directories: apparmor
@@ -51,8 +53,12 @@ directories: apparmor
 cron: directories
 	sudo echo "30 11 * * * root /usr/bin/clamdscan --multiscan --fdpass --log=/opt/clamav/logs/\$$(date +\%Y-\%m-\%d).log --move=/opt/clamav/quarantine / &>/dev/null" | sudo tee /etc/cron.d/clamdscan
 
+.PHONY: sudoers
+sudoers: cron
+	sudo echo "clamav ALL = (ALL) NOPASSWD: SETENV: /usr/bin/notify-send" | sudo tee /etc/sudoers.d/clamav >/dev/null
+
 .PHONY: virus-event
-virus-event: cron
+virus-event: sudoers
 	sudo echo "$$VIRUSEVENTSCRIPT" | sudo tee /etc/clamav/virus-event.sh >/dev/null
 	sudo chmod +x /etc/clamav/virus-event.sh
 
