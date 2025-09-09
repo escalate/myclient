@@ -1,6 +1,6 @@
 .DEFAULT_GOAL := install
 
-latest_version := $(shell curl --silent "https://api.github.com/repos/hadolint/hadolint/releases/latest" | jq --raw-output '.assets[] | select(.name | test("hadolint-Linux-x86_64$$")).browser_download_url')
+latest_version := $(shell curl --silent "https://api.github.com/repos/hadolint/hadolint/releases/latest" | jq --raw-output '.assets[] | select(.name | test("hadolint-linux-x86_64$$")).browser_download_url')
 
 .PHONY: clean
 clean:
