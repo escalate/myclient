@@ -42,7 +42,7 @@ enable: install
 apparmor: enable
 	sudo sed --in-place "s/#include <local/include <local/g" /etc/apparmor.d/usr.sbin.clamd
 	sudo echo "/{,usr/}bin/dash Ux," | sudo tee /etc/apparmor.d/local/usr.sbin.clamd >/dev/null
-	systemctl reload apparmor
+	sudo systemctl reload apparmor
 
 .PHONY: directories
 directories: apparmor
