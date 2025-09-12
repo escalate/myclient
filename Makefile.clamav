@@ -1,11 +1,12 @@
 .DEFAULT_GOAL := config
 
 define CONFIGURATION
-ExcludePath ^/proc
-ExcludePath ^/sys
-ExcludePath ^/run
 ExcludePath ^/dev
+ExcludePath ^/proc
+ExcludePath ^/run
 ExcludePath ^/snap
+ExcludePath ^/sys
+ExcludePath ^/var/lib/docker/overlay2
 ExcludePath ^/opt/clamav/quarantine
 VirusEvent /etc/clamav/virus-event.sh
 endef
