@@ -9,34 +9,44 @@ update-system:
 
 .PHONY: update-3rd-party
 update-3rd-party:
-	$(MAKE) --file Makefile.ansible
-	$(MAKE) --file Makefile.cookiecutter
+	# Apt
 	$(MAKE) --file Makefile.dbeaver
-	$(MAKE) --file Makefile.docker-compose
-	$(MAKE) --file Makefile.hadolint
-	$(MAKE) --file Makefile.azure-cli
-	$(MAKE) --file Makefile.hcloudcli
-	$(MAKE) --file Makefile.editorconfig-checker
 	$(MAKE) --file Makefile.etcher
-	$(MAKE) --file Makefile.pre_commit install update
-	$(MAKE) --file Makefile.gitleaks
-	$(MAKE) --file Makefile.golang
-	$(MAKE) --file Makefile.helm
 	$(MAKE) --file Makefile.hugo
+	$(MAKE) --file Makefile.lens
 	$(MAKE) --file Makefile.minikube
 	$(MAKE) --file Makefile.multi-gitter
-	$(MAKE) --file Makefile.lens
-	$(MAKE) --file Makefile.logcli
-	$(MAKE) --file Makefile.poetry
-	#$(MAKE) --file Makefile.ohmyzsh
-	$(MAKE) --file Makefile.rustypipe-botguard
-	$(MAKE) --file Makefile.shellcheck
-	$(MAKE) --file Makefile.staticcheck
-	$(MAKE) --file Makefile.tmux-plugins
 	$(MAKE) --file Makefile.vagrant-plugins
-	$(MAKE) --file Makefile.vim-plugins
-	$(MAKE) --file Makefile.yq
+	# Snap
+	$(MAKE) --file Makefile.golang
+	$(MAKE) --file Makefile.shellcheck
+	# Python
+	$(MAKE) --file Makefile.ansible
+	$(MAKE) --file Makefile.azure-cli
+	$(MAKE) --file Makefile.cookiecutter
+	$(MAKE) --file Makefile.poetry
+	$(MAKE) --file Makefile.pre_commit install update
 	$(MAKE) --file Makefile.yt-dlp
+	# NodeJS
+	$(MAKE) --file Makefile.prettier update
+	# Java
+	$(MAKE) --file Makefile.sweethome3d
+	# Binary
+	$(MAKE) --file Makefile.docker-compose
+	$(MAKE) --file Makefile.editorconfig-checker
+	$(MAKE) --file Makefile.gitleaks
+	$(MAKE) --file Makefile.hadolint
+	$(MAKE) --file Makefile.hcloudcli
+	$(MAKE) --file Makefile.helm
+	$(MAKE) --file Makefile.logcli
+	$(MAKE) --file Makefile.rustypipe-botguard
+	$(MAKE) --file Makefile.shfmt
+	$(MAKE) --file Makefile.staticcheck
+	$(MAKE) --file Makefile.yq
+	# Terminal
+	#$(MAKE) --file Makefile.ohmyzsh
+	$(MAKE) --file Makefile.tmux-plugins
+	$(MAKE) --file Makefile.vim-plugins
 
 .PHONY: reboot
 reboot:
