@@ -1,4 +1,4 @@
-.DEFAULT_GOAL := repository
+.DEFAULT_GOAL := all
 
 .PHONY: clean
 clean:
@@ -15,3 +15,16 @@ install: download
 .PHONY: repository
 repository: install
 	sudo teamviewer repo default
+
+.PHONY: stop
+stop:
+	sudo systemctl disable teamviewerd.service
+	sudo systemctl stop teamviewerd.service
+
+.PHONY: start
+start:
+	sudo systemctl enable teamviewerd.service
+	sudo systemctl start teamviewerd.service
+
+.PHONY: all
+all: repository stop
