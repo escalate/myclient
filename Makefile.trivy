@@ -1,0 +1,17 @@
+.DEFAULT_GOAL := install
+
+.PHONY: repository
+repository:
+	sudo sh -c 'echo "deb [signed-by=/usr/share/keyrings/trivy.gpg] https://aquasecurity.github.io/trivy-repo/deb generic main" > /etc/apt/sources.list.d/trivy.list'
+
+.PHONY: key
+key: repository
+	wget --output-document - https://aquasecurity.github.io/trivy-repo/deb/public.key | sudo gpg --dearmor --yes --output /usr/share/keyrings/trivy.gpg
+
+.PHONY: update
+update: key
+	sudo apt-get update
+
+.PHONY: install
+install: update
+	sudo apt-get install --yes trivy

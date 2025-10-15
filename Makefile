@@ -32,6 +32,7 @@ default:
 	$(MAKE) --file Makefile.papirus
 	$(MAKE) --file Makefile.teamviewer
 	$(MAKE) --file Makefile.terraform
+	$(MAKE) --file Makefile.trivy
 	$(MAKE) --file Makefile.vagrant
 	$(MAKE) --file Makefile.vagrant-plugins
 	$(MAKE) --file Makefile.virtualbox
