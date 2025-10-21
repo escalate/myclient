@@ -12,6 +12,7 @@ update-3rd-party:
 	# Apt
 	$(MAKE) --file Makefile.dbeaver
 	$(MAKE) --file Makefile.etcher
+	$(MAKE) --file Makefile.grype
 	$(MAKE) --file Makefile.hugo
 	$(MAKE) --file Makefile.lens
 	$(MAKE) --file Makefile.minikube

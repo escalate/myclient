@@ -21,6 +21,7 @@ default:
 	$(MAKE) --file Makefile.etcher
 	$(MAKE) --file Makefile.git
 	$(MAKE) --file Makefile.google-cloud-sdk
+	$(MAKE) --file Makefile.grype
 	$(MAKE) --file Makefile.hamster
 	$(MAKE) --file Makefile.hugo
 	$(MAKE) --file Makefile.keepassxc
