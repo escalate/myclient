@@ -2,14 +2,9 @@
 
 config = $(shell find "$(HOME)/.pre-commit-config/" -maxdepth 1 -name "*.yaml" -printf '%f\n')
 
-LSB_RELEASE := $(shell lsb_release -r -s)
-ifneq ($(LSB_RELEASE),22.04)
-	PIP_OPTS = --break-system-packages
-endif
-
 .PHONY: install
 install:
-	pip3 install --disable-pip-version-check --upgrade $(PIP_OPTS) pre-commit
+	pip3 install --disable-pip-version-check --upgrade --break-system-packages pre-commit
 
 .PHONY: config
 config: install

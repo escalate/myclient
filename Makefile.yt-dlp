@@ -1,10 +1,5 @@
 .DEFAULT_GOAL := all
 
-LSB_RELEASE := $(shell lsb_release -r -s)
-ifneq ($(LSB_RELEASE),22.04)
-	PIP_OPTS = --break-system-packages
-endif
-
 latest_version := $(shell curl --silent "https://api.github.com/repos/yt-dlp/yt-dlp/releases/latest" | jq --raw-output '.assets[] | select(.name | test("yt-dlp_linux$$")).browser_download_url')
 
 .PHONY: clean
@@ -21,7 +16,7 @@ install: download
 
 .PHONY: po-token
 po-token:
-	pip3 install --disable-pip-version-check --upgrade $(PIP_OPTS) yt-dlp-get-pot-rustypipe
+	pip3 install --disable-pip-version-check --upgrade --break-system-packages yt-dlp-get-pot-rustypipe
 
 .PHONY: all
 all: install po-token

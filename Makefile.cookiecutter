@@ -1,8 +1,3 @@
-LSB_RELEASE := $(shell lsb_release -r -s)
-ifneq ($(LSB_RELEASE),22.04)
-	PIP_OPTS = --break-system-packages
-endif
-
 .PHONY: install
 install:
-	pip3 install --disable-pip-version-check --upgrade $(PIP_OPTS) cookiecutter
+	pip3 install --disable-pip-version-check --upgrade --break-system-packages cookiecutter
