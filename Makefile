@@ -47,6 +47,7 @@ default:
 	$(MAKE) --file Makefile.cookiecutter
 	$(MAKE) --file Makefile.poetry
 	$(MAKE) --file Makefile.pre_commit
+	$(MAKE) --file Makefile.ruff
 	$(MAKE) --file Makefile.yt-dlp
 	# NodeJS
 	$(MAKE) --file Makefile.prettier
