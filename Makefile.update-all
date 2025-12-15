@@ -31,6 +31,7 @@ update-3rd-party:
 	$(MAKE) --file Makefile.yt-dlp
 	# NodeJS
 	$(MAKE) --file Makefile.prettier update
+	$(MAKE) --file Makefile.renovate update
 	# Java
 	$(MAKE) --file Makefile.sweethome3d
 	# Binary

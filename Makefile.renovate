@@ -1,0 +1,7 @@
+.PHONY: install
+install:
+	sudo npm install --global renovate
+
+.PHONY: update
+update:
+	sudo npm update --global renovate

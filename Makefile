@@ -51,6 +51,7 @@ default:
 	$(MAKE) --file Makefile.yt-dlp
 	# NodeJS
 	$(MAKE) --file Makefile.prettier
+	$(MAKE) --file Makefile.renovate
 	# Java
 	$(MAKE) --file Makefile.sweethome3d
 	# Binary
