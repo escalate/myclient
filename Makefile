@@ -58,6 +58,7 @@ default:
 	$(MAKE) --file Makefile.docker-compose
 	$(MAKE) --file Makefile.editorconfig-checker
 	$(MAKE) --file Makefile.gitleaks
+	$(MAKE) --file Makefile.goss
 	$(MAKE) --file Makefile.hadolint
 	$(MAKE) --file Makefile.hcloudcli
 	$(MAKE) --file Makefile.helm
