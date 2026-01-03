@@ -75,6 +75,7 @@ mv [RESTOREDIR]/Documents ~/Documents/
   - Open Extensions tab
     - [Ansible](https://marketplace.visualstudio.com/items?itemName=redhat.ansible)
     - [Ansible-vault](https://marketplace.visualstudio.com/items?itemName=dhoeric.ansible-vault)
+    - [Better Jinja](https://marketplace.visualstudio.com/items?itemName=samuelcolvin.jinjahtml)
     - [Black Formatter](https://marketplace.visualstudio.com/items?itemName=ms-python.black-formatter)
     - [Container Tools](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-containers)
     - [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
