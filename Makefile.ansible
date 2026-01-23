@@ -1,3 +1,5 @@
+.DEFAULT_GOAL := install
+
 .PHONY: update
 update:
 	sudo apt-get update
