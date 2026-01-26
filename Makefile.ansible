@@ -8,3 +8,8 @@ update:
 install: update
 	pip3 install --disable-pip-version-check --upgrade --break-system-packages ansible molecule molecule-plugins[docker] ansible-lint pytest-testinfra ansible-dev-tools flake8 yamllint
 	sudo apt-get install --yes sshpass python3-jmespath python3-passlib python3-bcrypt
+
+.PHONY: fix-apparmor
+fix-apparmor:
+	# https://github.com/fedora-cloud/docker-brew-fedora/issues/117
+	sudo aa-complain /usr/sbin/unix_chkpwd
