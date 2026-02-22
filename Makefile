@@ -30,6 +30,7 @@ default:
 	$(MAKE) --file Makefile.minikube
 	$(MAKE) --file Makefile.multi-gitter
 	$(MAKE) --file Makefile.nodejs
+	$(MAKE) --file Makefile.obs-studio
 	$(MAKE) --file Makefile.papirus
 	$(MAKE) --file Makefile.teamviewer
 	$(MAKE) --file Makefile.terraform
