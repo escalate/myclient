@@ -4,7 +4,7 @@ latest_version := $(shell curl --silent "https://api.github.com/repos/dbeaver/db
 
 .PHONY: clean
 clean:
-	rm --force /tmp/dbeaver-ce_*.deb
+	rm --force /tmp/dbeaver-ce-*.deb
 
 .PHONY: download
 download: clean
@@ -12,4 +12,4 @@ download: clean
 
 .PHONY: install
 install: download
-	sudo apt install --yes /tmp/dbeaver-ce_*.deb
+	sudo apt install --yes /tmp/dbeaver-ce-*.deb
