@@ -43,6 +43,7 @@ update-3rd-party:
 	$(MAKE) --file Makefile.hadolint
 	$(MAKE) --file Makefile.hcloudcli
 	$(MAKE) --file Makefile.helm
+	$(MAKE) --file Makefile.jsonnet-bundler
 	$(MAKE) --file Makefile.logcli
 	$(MAKE) --file Makefile.rustypipe-botguard
 	$(MAKE) --file Makefile.shfmt
