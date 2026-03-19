@@ -1,0 +1,18 @@
+.DEFAULT_GOAL := install
+
+latest_version := $(shell curl --silent "https://api.github.com/repos/astral-sh/ty/releases/latest" | jq --raw-output '.assets[] | select(.name | test(".*-x86_64-unknown-linux-gnu.tar.gz$$")).browser_download_url')
+
+.PHONY: clean
+clean:
+	rm --force /tmp/ty-x86_64-unknown-linux-gnu.tar.gz
+	sudo rm --force /usr/local/bin/ty
+
+.PHONY: download
+download: clean
+	wget --no-clobber --directory-prefix /tmp --content-disposition "$(latest_version)"
+
+.PHONY: install
+install: download
+	tar xzf /tmp/ty-x86_64-unknown-linux-gnu.tar.gz -C /tmp
+	sudo cp /tmp/ty-x86_64-unknown-linux-gnu/ty /usr/local/bin/ty
+	sudo chmod +x /usr/local/bin/ty

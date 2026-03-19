@@ -69,6 +69,7 @@ default:
 	$(MAKE) --file Makefile.rustypipe-botguard
 	$(MAKE) --file Makefile.shfmt
 	$(MAKE) --file Makefile.staticcheck
+	$(MAKE) --file Makefile.ty
 	$(MAKE) --file Makefile.yq
 	# Terminal
 	$(MAKE) --file Makefile.ohmyzsh
