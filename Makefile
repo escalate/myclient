@@ -46,6 +46,7 @@ default:
 	$(MAKE) --file Makefile.ansible
 	$(MAKE) --file Makefile.azure-cli
 	$(MAKE) --file Makefile.cookiecutter
+	$(MAKE) --file Makefile.flake8
 	$(MAKE) --file Makefile.poetry
 	$(MAKE) --file Makefile.pre_commit
 	$(MAKE) --file Makefile.ruff
