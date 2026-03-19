@@ -70,6 +70,7 @@ default:
 	$(MAKE) --file Makefile.shfmt
 	$(MAKE) --file Makefile.staticcheck
 	$(MAKE) --file Makefile.ty
+	$(MAKE) --file Makefile.uv
 	$(MAKE) --file Makefile.yq
 	# Terminal
 	$(MAKE) --file Makefile.ohmyzsh
