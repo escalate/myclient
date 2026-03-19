@@ -50,7 +50,6 @@ default:
 	$(MAKE) --file Makefile.isort
 	$(MAKE) --file Makefile.poetry
 	$(MAKE) --file Makefile.pre_commit
-	$(MAKE) --file Makefile.ruff
 	# NodeJS
 	$(MAKE) --file Makefile.prettier
 	$(MAKE) --file Makefile.renovate
@@ -66,6 +65,7 @@ default:
 	$(MAKE) --file Makefile.helm
 	$(MAKE) --file Makefile.jsonnet-bundler
 	$(MAKE) --file Makefile.logcli
+	$(MAKE) --file Makefile.ruff
 	$(MAKE) --file Makefile.rustypipe-botguard
 	$(MAKE) --file Makefile.shfmt
 	$(MAKE) --file Makefile.staticcheck

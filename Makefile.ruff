@@ -1,3 +1,18 @@
+.DEFAULT_GOAL := install
+
+latest_version := $(shell curl --silent "https://api.github.com/repos/astral-sh/ruff/releases/latest" | jq --raw-output '.assets[] | select(.name | test(".*-x86_64-unknown-linux-gnu.tar.gz$$")).browser_download_url')
+
+.PHONY: clean
+clean:
+	rm --force /tmp/ruff-x86_64-unknown-linux-gnu.tar.gz
+	sudo rm --force /usr/local/bin/ruff
+
+.PHONY: download
+download: clean
+	wget --no-clobber --directory-prefix /tmp --content-disposition "$(latest_version)"
+
 .PHONY: install
-install:
-	pip3 install --disable-pip-version-check --upgrade --break-system-packages ruff
+install: download
+	tar xzf /tmp/ruff-x86_64-unknown-linux-gnu.tar.gz -C /tmp
+	sudo cp /tmp/ruff-x86_64-unknown-linux-gnu/ruff /usr/local/bin/ruff
+	sudo chmod +x /usr/local/bin/ruff

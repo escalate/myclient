@@ -30,7 +30,6 @@ update-3rd-party:
 	$(MAKE) --file Makefile.isort
 	$(MAKE) --file Makefile.poetry
 	$(MAKE) --file Makefile.pre_commit install update
-	$(MAKE) --file Makefile.ruff
 	# NodeJS
 	$(MAKE) --file Makefile.prettier update
 	$(MAKE) --file Makefile.renovate update
@@ -46,6 +45,7 @@ update-3rd-party:
 	$(MAKE) --file Makefile.helm
 	$(MAKE) --file Makefile.jsonnet-bundler
 	$(MAKE) --file Makefile.logcli
+	$(MAKE) --file Makefile.ruff
 	$(MAKE) --file Makefile.rustypipe-botguard
 	$(MAKE) --file Makefile.shfmt
 	$(MAKE) --file Makefile.staticcheck
