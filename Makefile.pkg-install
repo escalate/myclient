@@ -3,7 +3,7 @@
 archive_manager = rar unrar
 browser = firefox
 common = dos2unix expect jq ldap-utils tree
-database = mysql-client
+database = mysql-client postgresql-client
 dev_tools = build-essential make
 desktop = chrome-gnome-shell debconf debconf-utils gnome-tweaks gnome-shell-extension-prefs xclip
 editor = vim vim-addon-manager
