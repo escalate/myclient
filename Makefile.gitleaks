@@ -1,6 +1,6 @@
 .DEFAULT_GOAL := install
 
-latest_version := $(shell curl --silent "https://api.github.com/repos/gitleaks/gitleaks/releases/latest" | jq --raw-output '.assets[] | select(.name | test(".*_linux_x64.tar.gz")).browser_download_url')
+latest_version := $(shell curl --silent "https://api.github.com/repos/gitleaks/gitleaks/releases/latest" | jq --raw-output '.assets[] | select(.name | test(".*_linux_x64.tar.gz$$")).browser_download_url')
 
 .PHONY: clean
 clean:
