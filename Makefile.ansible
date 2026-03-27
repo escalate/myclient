@@ -13,3 +13,7 @@ install: update
 fix-apparmor:
 	# https://github.com/fedora-cloud/docker-brew-fedora/issues/117
 	sudo aa-complain /usr/sbin/unix_chkpwd
+
+.PHONY: fix-testinfra
+fix-testinfra:
+	pip uninstall --break-system-packages pytest-ansible
