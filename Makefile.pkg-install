@@ -1,6 +1,6 @@
 .DEFAULT_GOAL := install
 
-archive_manager = rar unrar
+archive_manager = rar unrar unzip
 browser = firefox
 common = dos2unix expect jq ldap-utils tree
 database = mysql-client postgresql-client
