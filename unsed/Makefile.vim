@@ -1,11 +1,19 @@
-.DEFAULT_GOAL := clone
+.DEFAULT_GOAL := plugins
+
+.PHONY: update
+update:
+	sudo apt-get update
+
+.PHONY: install
+install: update
+	sudo apt-get install --yes vim vim-addon-manager
 
 .PHONY: clean
-clean:
+clean: install
 	rm --recursive --force "$(HOME)/.vim/"
 
-.PHONY: clone
-clone: clean
+.PHONY: plugins
+plugins: clean
 	git clone https://github.com/preservim/nerdtree.git "$(HOME)/.vim/pack/plugins/start/nerdtree"
 	vim -u NONE -c "helptags $(HOME)/.vim/pack/plugins/start/nerdtree/doc" -c q
 	git clone https://github.com/vim-airline/vim-airline.git "$(HOME)/.vim/pack/plugins/start/vim-airline"
