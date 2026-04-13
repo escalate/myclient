@@ -80,7 +80,6 @@ default:
 	$(MAKE) --file Makefile.dircolors
 	$(MAKE) --file Makefile.nerdfonts
 	$(MAKE) --file Makefile.tmux-plugins
-	$(MAKE) --file Makefile.vim-plugins
 	# Other
 	$(MAKE) --file Makefile.truststore
 	$(MAKE) --file Makefile.gsettings
