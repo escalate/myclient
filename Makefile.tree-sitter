@@ -1,0 +1,18 @@
+.DEFAULT_GOAL := install
+
+latest_version := $(shell curl --silent "https://api.github.com/repos/tree-sitter/tree-sitter/releases/latest" | jq --raw-output '.assets[] | select(.name | test("tree-sitter-cli-linux-x64.zip$$")).browser_download_url')
+
+.PHONY: clean
+clean:
+	rm --force /tmp/tree-sitter-cli-linux-x64.zip
+	sudo rm --force /usr/local/bin/tree-sitter
+
+.PHONY: download
+download: clean
+	wget --no-clobber --directory-prefix /tmp --content-disposition "$(latest_version)"
+
+.PHONY: install
+install: download
+	sudo unzip /tmp/tree-sitter-cli-linux-x64.zip -d /tmp
+	sudo mv /tmp/tree-sitter /usr/local/bin/tree-sitter
+	sudo chmod +x /usr/local/bin/tree-sitter

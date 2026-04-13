@@ -1,0 +1,31 @@
+.DEFAULT_GOAL := config
+
+latest_version := $(shell curl --silent "https://api.github.com/repos/neovim/neovim/releases/latest" | jq --raw-output '.assets[] | select(.name | test("nvim-linux-x86_64.tar.gz$$")).browser_download_url')
+
+.PHONY: clean
+clean:
+	rm --force /tmp/nvim-linux-x86_64.tar.gz
+	sudo rm --recursive --force /opt/nvim-linux-x86_64/
+
+.PHONY: download
+download: clean
+	wget --no-clobber --directory-prefix /tmp --content-disposition "$(latest_version)"
+
+.PHONY: install
+install: download
+	sudo tar --directory /opt --extract --gzip --file /tmp/nvim-linux-x86_64.tar.gz
+
+.PHONY: dependencies
+dependencies: install
+	sudo apt-get install --yes ripgrep fd-find tree-sitter-cli
+
+.PHONY: clean
+clean: dependencies
+	rm --recursive --force "$(HOME)/.config/nvim"
+	rm --recursive --force "$(HOME)/.local/share/nvim"
+
+.PHONY: config
+config: clean
+	git clone https://github.com/escalate/kickstart.nvim.git "$(HOME)/.config/nvim"
+	sudo update-alternatives --install /usr/bin/vi vi /opt/nvim-linux-x86_64/bin/nvim 100
+	sudo update-alternatives --install /usr/bin/editor editor /opt/nvim-linux-x86_64/bin/nvim 100

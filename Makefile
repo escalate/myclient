@@ -65,10 +65,12 @@ default:
 	$(MAKE) --file Makefile.helm
 	$(MAKE) --file Makefile.jsonnet-bundler
 	$(MAKE) --file Makefile.logcli
+	$(MAKE) --file Makefile.neovim
 	$(MAKE) --file Makefile.ruff
 	$(MAKE) --file Makefile.rustypipe-botguard
 	$(MAKE) --file Makefile.shfmt
 	$(MAKE) --file Makefile.staticcheck
+	$(MAKE) --file Makefile.tree-sitter
 	$(MAKE) --file Makefile.ty
 	$(MAKE) --file Makefile.uv
 	$(MAKE) --file Makefile.yq
