@@ -55,7 +55,6 @@ update-3rd-party:
 	# Terminal
 	#$(MAKE) --file Makefile.ohmyzsh
 	$(MAKE) --file Makefile.tmux-plugins
-	$(MAKE) --file Makefile.vim-plugins
 
 .PHONY: reboot
 reboot:
