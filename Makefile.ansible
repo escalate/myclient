@@ -6,8 +6,8 @@ update:
 
 .PHONY: install
 install: update
-	pip3 install --disable-pip-version-check --upgrade --break-system-packages ansible molecule molecule-plugins[docker] ansible-lint pytest-testinfra ansible-dev-tools yamllint
-	sudo apt-get install --yes sshpass python3-jmespath python3-passlib python3-bcrypt python3-pyvmomi
+	pip3 install --disable-pip-version-check --upgrade --break-system-packages ansible molecule molecule-plugins[docker] ansible-lint pytest-testinfra ansible-dev-tools pyvmomi passlib jmespath bcrypt==4.3.0 yamllint
+	sudo apt-get install --yes sshpass
 
 .PHONY: fix-apparmor
 fix-apparmor:
