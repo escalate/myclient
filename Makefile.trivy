@@ -6,7 +6,7 @@ repository:
 
 .PHONY: key
 key: repository
-	wget --output-document - https://aquasecurity.github.io/trivy-repo/deb/public.key | sudo gpg --dearmor --yes --output /usr/share/keyrings/trivy.gpg
+	wget --output-document - https://get.trivy.dev/deb/public.key | sudo gpg --dearmor --yes --output /usr/share/keyrings/trivy.gpg
 
 .PHONY: update
 update: key
