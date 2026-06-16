@@ -51,6 +51,7 @@ default:
 	$(MAKE) --file Makefile.isort
 	$(MAKE) --file Makefile.poetry
 	$(MAKE) --file Makefile.pre_commit
+	$(MAKE) --file Makefile.sqlfluff
 	# NodeJS
 	$(MAKE) --file Makefile.prettier
 	$(MAKE) --file Makefile.renovate
