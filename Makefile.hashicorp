@@ -14,4 +14,4 @@ update: key
 
 .PHONY: install
 install: update
-	sudo apt-get install --yes terraform
+	sudo apt-get install --yes terraform packer
