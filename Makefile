@@ -23,6 +23,7 @@ default:
 	$(MAKE) --file Makefile.google-cloud-sdk
 	$(MAKE) --file Makefile.grype
 	$(MAKE) --file Makefile.hamster
+	$(MAKE) --file Makefile.hashicorp
 	$(MAKE) --file Makefile.hugo
 	$(MAKE) --file Makefile.keepassxc
 	$(MAKE) --file Makefile.kubectl
@@ -33,8 +34,8 @@ default:
 	$(MAKE) --file Makefile.obs-studio
 	$(MAKE) --file Makefile.papirus
 	$(MAKE) --file Makefile.stretchly
+	$(MAKE) --file Makefile.syft
 	$(MAKE) --file Makefile.teamviewer
-	$(MAKE) --file Makefile.hashicorp
 	$(MAKE) --file Makefile.trivy
 	$(MAKE) --file Makefile.vagrant
 	$(MAKE) --file Makefile.vagrant-plugins
