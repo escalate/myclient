@@ -1,15 +1,18 @@
 .DEFAULT_GOAL := install
 
-latest_version := $(shell curl --silent "https://api.github.com/repos/goss-org/goss/releases/latest" | jq --raw-output '.assets[] | select(.name | test(".*-linux-amd64$$")).browser_download_url')
+latest_version := $(shell curl --silent "https://api.github.com/repos/goss-org/goss/releases/latest" | jq --raw-output '.assets[] | select(.name | test(".*_linux_x86_64.tar.gz$$")).browser_download_url')
 
 .PHONY: clean
 clean:
+	rm --force /tmp/goss_*_linux_x86_64.tar.gz
 	sudo rm --force /usr/local/bin/goss
 
 .PHONY: download
 download: clean
-	sudo wget --no-clobber --output-document /usr/local/bin/goss "$(latest_version)"
+	wget --no-clobber --directory-prefix /tmp --content-disposition "$(latest_version)"
 
 .PHONY: install
 install: download
+	tar xzf /tmp/goss_*_linux_x86_64.tar.gz -C /tmp
+	sudo cp /tmp/goss /usr/local/bin/goss
 	sudo chmod +x /usr/local/bin/goss
