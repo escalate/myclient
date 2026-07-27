@@ -6,6 +6,16 @@ TEXTURES_VERSION := 1.3.1
 
 .PHONY: clean
 clean:
+	rm --force /tmp/SweetHome3D-$(SWEETHOME3D_VERSION)-linux-x64.tgz*
+	rm --force /tmp/3DModels-BlendSwap-CC-0-$(3DMODELS_VERSION).zip*
+	rm --force /tmp/3DModels-Contributions-$(3DMODELS_VERSION).zip*
+	rm --force /tmp/3DModels-KatorLegaz-$(3DMODELS_VERSION).zip*
+	rm --force /tmp/3DModels-LucaPresidente-$(3DMODELS_VERSION).zip*
+	rm --force /tmp/3DModels-Reallusion-$(3DMODELS_VERSION).zip*
+	rm --force /tmp/3DModels-Scopia-$(3DMODELS_VERSION).zip*
+	rm --force /tmp/3DModels-Trees-$(3DMODELS_VERSION).zip*
+	rm --force /tmp/Textures-Contributions-$(TEXTURES_VERSION).zip*
+	rm --force /tmp/Textures-eTeksScopia-$(TEXTURES_VERSION).zip*
 	sudo rm --recursive --force /usr/local/bin/SweetHome3D*
 
 .PHONY: download
@@ -23,17 +33,27 @@ download: clean
 
 .PHONY: install
 install: download
-	tar xzf /tmp/SweetHome3D-$(SWEETHOME3D_VERSION)-linux-x64.tgz* -C /tmp
+	mv /tmp/SweetHome3D-$(SWEETHOME3D_VERSION)-linux-x64.tgz* /tmp/SweetHome3D-$(SWEETHOME3D_VERSION)-linux-x64.tgz
+	tar xzf /tmp/SweetHome3D-$(SWEETHOME3D_VERSION)-linux-x64.tgz -C /tmp
 	mkdir --parents /tmp/SweetHome3D-$(SWEETHOME3D_VERSION)/3DModels
-	unzip -uo /tmp/3DModels-BlendSwap-CC-0-$(3DMODELS_VERSION).zip* -d /tmp/SweetHome3D-$(SWEETHOME3D_VERSION)/3DModels
-	unzip -uo /tmp/3DModels-Contributions-$(3DMODELS_VERSION).zip* -d /tmp/SweetHome3D-$(SWEETHOME3D_VERSION)/3DModels
-	unzip -uo /tmp/3DModels-KatorLegaz-$(3DMODELS_VERSION).zip* -d /tmp/SweetHome3D-$(SWEETHOME3D_VERSION)/3DModels
-	unzip -uo /tmp/3DModels-LucaPresidente-$(3DMODELS_VERSION).zip* -d /tmp/SweetHome3D-$(SWEETHOME3D_VERSION)/3DModels
-	unzip -uo /tmp/3DModels-Reallusion-$(3DMODELS_VERSION).zip* -d /tmp/SweetHome3D-$(SWEETHOME3D_VERSION)/3DModels
-	unzip -uo /tmp/3DModels-Scopia-$(3DMODELS_VERSION).zip* -d /tmp/SweetHome3D-$(SWEETHOME3D_VERSION)/3DModels
-	unzip -uo /tmp/3DModels-Trees-$(3DMODELS_VERSION).zip* -d /tmp/SweetHome3D-$(SWEETHOME3D_VERSION)/3DModels
+	mv /tmp/3DModels-BlendSwap-CC-0-$(3DMODELS_VERSION).zip* /tmp/3DModels-BlendSwap-CC-0-$(3DMODELS_VERSION).zip
+	unzip -uo /tmp/3DModels-BlendSwap-CC-0-$(3DMODELS_VERSION).zip -d /tmp/SweetHome3D-$(SWEETHOME3D_VERSION)/3DModels
+	mv /tmp/3DModels-Contributions-$(3DMODELS_VERSION).zip* /tmp/3DModels-Contributions-$(3DMODELS_VERSION).zip
+	unzip -uo /tmp/3DModels-Contributions-$(3DMODELS_VERSION).zip -d /tmp/SweetHome3D-$(SWEETHOME3D_VERSION)/3DModels
+	mv /tmp/3DModels-KatorLegaz-$(3DMODELS_VERSION).zip* /tmp/3DModels-KatorLegaz-$(3DMODELS_VERSION).zip
+	unzip -uo /tmp/3DModels-KatorLegaz-$(3DMODELS_VERSION).zip -d /tmp/SweetHome3D-$(SWEETHOME3D_VERSION)/3DModels
+	mv /tmp/3DModels-LucaPresidente-$(3DMODELS_VERSION).zip* /tmp/3DModels-LucaPresidente-$(3DMODELS_VERSION).zip
+	unzip -uo /tmp/3DModels-LucaPresidente-$(3DMODELS_VERSION).zip -d /tmp/SweetHome3D-$(SWEETHOME3D_VERSION)/3DModels
+	mv /tmp/3DModels-Reallusion-$(3DMODELS_VERSION).zip* /tmp/3DModels-Reallusion-$(3DMODELS_VERSION).zip
+	unzip -uo /tmp/3DModels-Reallusion-$(3DMODELS_VERSION).zip -d /tmp/SweetHome3D-$(SWEETHOME3D_VERSION)/3DModels
+	mv /tmp/3DModels-Scopia-$(3DMODELS_VERSION).zip* /tmp/3DModels-Scopia-$(3DMODELS_VERSION).zip
+	unzip -uo /tmp/3DModels-Scopia-$(3DMODELS_VERSION).zip -d /tmp/SweetHome3D-$(SWEETHOME3D_VERSION)/3DModels
+	mv /tmp/3DModels-Trees-$(3DMODELS_VERSION).zip* /tmp/3DModels-Trees-$(3DMODELS_VERSION).zip
+	unzip -uo /tmp/3DModels-Trees-$(3DMODELS_VERSION).zip -d /tmp/SweetHome3D-$(SWEETHOME3D_VERSION)/3DModels
 	mkdir --parents /tmp/SweetHome3D-$(SWEETHOME3D_VERSION)/Textures
-	unzip -uo /tmp/Textures-Contributions-$(TEXTURES_VERSION).zip* -d /tmp/SweetHome3D-$(SWEETHOME3D_VERSION)/Textures
-	unzip -uo /tmp/Textures-eTeksScopia-$(TEXTURES_VERSION).zip* -d /tmp/SweetHome3D-$(SWEETHOME3D_VERSION)/Textures
+	mv /tmp/Textures-Contributions-$(TEXTURES_VERSION).zip* /tmp/Textures-Contributions-$(TEXTURES_VERSION).zip
+	unzip -uo /tmp/Textures-Contributions-$(TEXTURES_VERSION).zip -d /tmp/SweetHome3D-$(SWEETHOME3D_VERSION)/Textures
+	mv /tmp/Textures-eTeksScopia-$(TEXTURES_VERSION).zip* /tmp/Textures-eTeksScopia-$(TEXTURES_VERSION).zip
+	unzip -uo /tmp/Textures-eTeksScopia-$(TEXTURES_VERSION).zip -d /tmp/SweetHome3D-$(SWEETHOME3D_VERSION)/Textures
 	sudo mv /tmp/SweetHome3D-$(SWEETHOME3D_VERSION) /usr/local/bin/
 	sudo ln --symbolic --force /usr/local/bin/SweetHome3D-$(SWEETHOME3D_VERSION)/SweetHome3D /usr/local/bin/SweetHome3D
