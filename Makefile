@@ -67,6 +67,7 @@ default:
 	$(MAKE) --file Makefile.hcloudcli
 	$(MAKE) --file Makefile.helm
 	$(MAKE) --file Makefile.jsonnet-bundler
+	$(MAKE) --file Makefile.k0s
 	$(MAKE) --file Makefile.logcli
 	$(MAKE) --file Makefile.neovim
 	$(MAKE) --file Makefile.ruff
