@@ -33,7 +33,6 @@ default:
 	$(MAKE) --file Makefile.nodejs
 	$(MAKE) --file Makefile.obs-studio
 	$(MAKE) --file Makefile.papirus
-	$(MAKE) --file Makefile.stretchly
 	$(MAKE) --file Makefile.syft
 	$(MAKE) --file Makefile.teamviewer
 	$(MAKE) --file Makefile.trivy

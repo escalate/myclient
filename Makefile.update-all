@@ -18,7 +18,6 @@ update-3rd-party:
 	$(MAKE) --file Makefile.lens
 	$(MAKE) --file Makefile.minikube
 	$(MAKE) --file Makefile.multi-gitter
-	$(MAKE) --file Makefile.stretchly
 	$(MAKE) --file Makefile.syft
 	$(MAKE) --file Makefile.vagrant-plugins
 	# Snap
