@@ -1,0 +1,25 @@
+.DEFAULT_GOAL := config
+
+latest_version := $(shell curl --silent "https://api.github.com/repos/docker/scout-cli/releases/latest" | jq --raw-output '.assets[] | select(.name | test(".*_linux_amd64.tar.gz$$")).browser_download_url')
+
+.PHONY: clean
+clean:
+	rm --force /tmp/docker-scout_*_linux_amd64.tar.gz
+	rm --recursive --force "$(HOME)/.docker/scout/"
+
+.PHONY: download
+download: clean
+	wget --no-clobber --directory-prefix /tmp --content-disposition "$(latest_version)"
+
+.PHONY: install
+install: download
+	mkdir --parent "$(HOME)/.docker/scout/"
+	tar xzf /tmp/docker-scout_*_linux_amd64.tar.gz -C /tmp
+	cp /tmp/docker-scout "$(HOME)/.docker/scout/docker-scout"
+	chmod +x "$(HOME)/.docker/scout/docker-scout"
+
+.PHONY: config
+config: install
+	if ! grep -q '"cliPluginsExtraDirs"' "$(HOME)/.docker/config.json"; then \
+		sed -i '1s|^{|{\n\t"cliPluginsExtraDirs": [\n\t\t"$(HOME)/.docker/scout"\n\t],|' "$(HOME)/.docker/config.json"; \
+	fi

@@ -59,6 +59,7 @@ default:
 	$(MAKE) --file Makefile.sweethome3d
 	# Binary
 	$(MAKE) --file Makefile.docker-compose
+	$(MAKE) --file Makefile.docker-scout
 	$(MAKE) --file Makefile.editorconfig-checker
 	$(MAKE) --file Makefile.gitleaks
 	$(MAKE) --file Makefile.goss
