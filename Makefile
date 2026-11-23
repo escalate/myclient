@@ -23,6 +23,7 @@ default:
 	$(MAKE) --file Makefile.google-cloud-sdk
 	$(MAKE) --file Makefile.grype
 	$(MAKE) --file Makefile.hamster
+	$(MAKE) --file Makefile.handy
 	$(MAKE) --file Makefile.hashicorp
 	$(MAKE) --file Makefile.hugo
 	$(MAKE) --file Makefile.keepassxc

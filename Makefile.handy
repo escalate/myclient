@@ -1,0 +1,19 @@
+.DEFAULT_GOAL := install
+
+latest_version := $(shell curl --silent "https://api.github.com/repos/cjpais/Handy/releases/latest" | jq --raw-output '.assets[] | select(.name | test(".*_amd64.deb$$")).browser_download_url')
+
+.PHONY: clean
+clean:
+	rm --force /tmp/Handy_*_amd64.deb
+
+.PHONY: download
+download: clean
+	wget --no-clobber --directory-prefix /tmp --content-disposition "$(latest_version)"
+
+.PHONY: dependencies
+dependencies: download
+	sudo apt-get install libopenblas-dev libgtk-layer-shell0
+
+.PHONY: install
+install: dependencies
+	sudo apt install --yes /tmp/Handy_*_amd64.deb

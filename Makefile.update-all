@@ -14,6 +14,7 @@ update-3rd-party:
 	$(MAKE) --file Makefile.dbeaver
 	$(MAKE) --file Makefile.etcher
 	$(MAKE) --file Makefile.grype
+	$(MAKE) --file Makefile.handy
 	$(MAKE) --file Makefile.hugo
 	$(MAKE) --file Makefile.lens
 	$(MAKE) --file Makefile.minikube
